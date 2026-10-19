@@ -1,4 +1,4 @@
-# CANBIM Revit Graphics and Materials Standard v0.1
+# OpenBEP Revit Graphics and Materials Standard v0.1
 
 Oct 17, 2026 · @Samuel Arsenault-Brassard
 
@@ -67,7 +67,7 @@ Revit metric defaults, pens 1 to 8 (pens 9 to 16 run to 9 mm and are not used):
 | 7 | 2.00 | 1.40 | 1.40 | 1.00 | 0.70 | 0.50 | Profile, ground line | Profil, ligne de sol |
 | 8 | 2.80 | 2.00 | 2.00 | 1.40 | 1.00 | 0.70 | Not used in views; reserved | Réservé |
 
-Values checked against Revit's Line Weights dialog in a new metric project (screenshot from Sam, 2026-10-17). At 1:200 and 1:500, pens 1 and 2 drop to 0.05 mm, which many printers can't show, so hatch at those scales uses pen 2 or 3. At 1:10, pen 5 and up are heavy, so details use pens 1 to 4.
+Values checked against Revit's Line Weights dialog in a new metric project. At 1:200 and 1:500, pens 1 and 2 drop to 0.05 mm, which many printers can't show, so hatch at those scales uses pen 2 or 3. At 1:10, pen 5 and up are heavy, so details use pens 1 to 4.
 
 Annotation pens are the one place we change Revit: its metric default starts at 0.30 mm, too heavy for 2.5 mm text and leaders. We use the USACE metric annotation set: 1 = 0.10, 2 = 0.18, 3 = 0.25, 4 = 0.35, 5 = 0.50, 6 = 0.70, 7 = 1.00 (sheet border).
 
@@ -217,7 +217,7 @@ The most used graphics standards worldwide, and the rule each one gives us.
 | [NBS BIM Object Standard](https://www.thenbs.com/knowledge/exploring-the-nbs-bim-object-standard-metadata-requirements) | UK national object library | Textures at least 512 px, 150 dpi, tileable | Textures d'au moins 512 px |
 | [Transport for NSW](https://standards.transport.nsw.gov.au/_entity/annotation/1a48d971-b235-ed11-9db2-000d3ae019e0) (applies AS 1100) | State transport agency | Every sheet must read at half size | Lisible à demi-échelle |
 
-### US National CAD Standard v4 (read from Sam's licensed copy)
+### US National CAD Standard v4
 
 The NCS is the main US drafting standard, published by NIBS with AIA and CSI. Version 4 agrees with most of this standard. What it adds:
 
@@ -250,6 +250,6 @@ Pages opened on 2026-10-17. Not readable: PSPC Revit template annex, US National
 - [DND BIM Template and Content User Guide v1.0](https://www.geniemdnquebec.ca/SalleTechniqueCommuns/DND_BIM_Template_and_Content_User_Guide_v1.0.pdf)
 - [SQI exigences BIM](https://www.sqi.gouv.qc.ca/fileadmin/expertises/bim-pci/fr-gp-030.079_-exigences_bim_web.pdf)
 
-National Defence [CAD/BIM Standard 2.3, C-98-002-CAD/FP-003](https://cafnet.dcc-cdc.gc.ca/cad_bim_gis/index-eng.htm), August 2012, read from the copy Sam downloaded with a DND account (sections 2.1, 3, 4.3 to 4.7, Appendices A to C). DND states the standard is its property and only pre-authorized use is allowed, so this document cites it and does not copy its tables.
+National Defence [CAD/BIM Standard 2.3, C-98-002-CAD/FP-003](https://cafnet.dcc-cdc.gc.ca/cad_bim_gis/index-eng.htm), August 2012 (sections 2.1, 3, 4.3 to 4.7, Appendices A to C; access needs a DND account). DND states the standard is its property and only pre-authorized use is allowed, so this document cites it and does not copy its tables.
 
 
