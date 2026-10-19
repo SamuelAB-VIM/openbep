@@ -15,7 +15,7 @@ Vague BIM is useless BIM. When an owner only asks for "the BIM", with no uses, n
 | [`docs/parameter-dictionary.md`](docs/parameter-dictionary.md) | The parameter dictionary: every parameter with English and French labels, data type, accepted values, categories, uses and LOD. | Draft v0.1 |
 | [`docs/graphics-and-materials-standard.md`](docs/graphics-and-materials-standard.md) | One set of line weights, text styles and material names for Revit projects in Canada. | Draft v0.1 |
 | [`revit-addin/`](revit-addin/) | **CANBIM Sync**: a Revit add-in that makes a model's shared parameters match the plan. | Source only, not yet built or tested |
-| [`translations/`](translations/) | The English-master string table with French (Quebec) translations, used by the BEP Builder. | Filled for French |
+| [`translations/`](translations/) | One English-keyed dictionary for every page of the site, with French (Quebec), and a glossary of BIM terms it is checked against. | Filled for French |
 
 ## Try it or run your own copy
 
