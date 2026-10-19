@@ -1,0 +1,21 @@
+id,en,reason
+owner,"On large projects, failures happen where one contract or system meets another. Each interface gets an owner, and its status is checked in the model.","Owner of an interface: the person responsible (responsable), not the project owner."
+owner,"Track issues in a tool linked to the model (BCF), with an owner, a status and a due date for each.","Owner of an issue: the person responsible."
+owner,"To review: No model issue tracking chosen. Track issues in a tool linked to the model (BCF), with an owner, a status and a due date for each.","Owner of an issue: the person responsible."
+owner,Editors and the owner see private details,"Owner of a shared project page in the app (propriétaire), not the project owner."
+owner,You can read this plan but not sign it. Ask the owner of this page for Contributor access.,"Owner of a shared project page in the app (propriétaire)."
+owner,Example: Owner level {1},"Example of a level code typed by the user; stays as typed."
+model,"Energy models predict consumption; carbon analysis counts emissions from materials and operation, so options can be compared on evidence.","Energy model: a calculation model (modèle énergétique), not a 3D maquette."
+model,Energy model at each milestone,Energy model (modèle énergétique).
+model,"Areas, material quantities, product declarations, energy model results",Energy model (modèle énergétique).
+model,"Equipment data such as tags, makes, models and warranties is delivered in the format your maintenance system imports, and tested before handover.",Product model (make and model).
+model,Manufacturer model designation (installed model at LOD {1}).,Product model.
+model,Basis-of-design model,Product model.
+model,"e.g. installed model and serial, location",Product model.
+model,Installed model,Product model.
+model,Scanner make and model,Product model.
+model,Built-in: Model,Name of the Revit built-in parameter; stays in English.
+model,Local model (on the firm's own hardware),AI model (modèle d’IA).
+model,"The Quebec and federal tenders we could read give BIM no points of its own, and the notices rarely mention BIM at all. The UK Ministry of Defence does the opposite: bidders submit a BEP with the bid, judged on {1} criteria, {2} of them pass or fail. This grid follows that model and is built from your choices.","""Follows that model"" means example (modèle), not a maquette."
+issue,Model-to-sheet check before each issue,Issue of drawings (émission).
+bep,BEP (BIM Execution Plan),"The in-app glossary entry names both PGB (STM, 2022 SQI guide) and PEB on purpose, so readers recognise either."

@@ -9,3 +9,6 @@ __pycache__/
 sp_map.json
 sp_embed.js
 .DS_Store
+# Translation crawl output (node translations/tools/crawl_app.js)
+translations/build/
+node_modules/
