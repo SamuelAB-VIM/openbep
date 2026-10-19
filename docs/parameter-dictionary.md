@@ -1,4 +1,4 @@
-# CANBIM Revit Parameter Dictionary v0.1
+# OpenBEP Revit Parameter Dictionary v0.1
 
 Oct 17, 2026 · @Samuel Arsenault-Brassard
 
@@ -15,7 +15,7 @@ This dictionary fixes the list once for Canada:
 - **Each parameter is tied to a BIM use and an LOD.** The BEP Builder only asks for the ones the project's chosen uses need.
 - **Accepted values are written down.** A programmer could check every value automatically, and so can our model checker.
 
-Version 0.1 has 398 parameters: 300 CANBIM shared parameters and 98 Revit built-ins, across 63 element types and 17 BIM uses. It has not yet been tested in Revit.
+Version 0.1 has 398 parameters: 300 OpenBEP shared parameters and 98 Revit built-ins, across 63 element types and 17 BIM uses. It has not yet been tested in Revit.
 
 ## Rules
 
@@ -55,7 +55,7 @@ Every parameter has one data type and one rule, so a value is either right or wr
 | Duration | Text | 2 | ISO 8601 duration | `P25Y`, `P18M` | Durée |
 | Date | Text | 2 | ISO date, YYYY-MM-DD | 2026-10-17 | Date |
 
-Where the codes come from: 34 lists are IFC 4.3 property enumerations, 13 are CANBIM proposals (such as NBC occupancy groups and CSA exposure classes), and 1 is Revit's own System Classification. Placeholder values ("TBD", "N/A", "0", "Default", "\<By Category>") always fail.
+Where the codes come from: 34 lists are IFC 4.3 property enumerations, 13 are OpenBEP proposals (such as NBC occupancy groups and CSA exposure classes), and 1 is Revit's own System Classification. Placeholder values ("TBD", "N/A", "0", "Default", "\<By Category>") always fail.
 
 Still to check: the fire-rating list, the Uniformat and OmniClass patterns, and the CSA class lists against current editions. Fields like voltage ("120/208") hold one number for now.
 
