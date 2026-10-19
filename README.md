@@ -17,6 +17,10 @@ Vague BIM is useless BIM. When an owner only asks for "the BIM", with no uses, n
 | [`revit-addin/`](revit-addin/) | **CANBIM Sync**: a Revit add-in that makes a model's shared parameters match the plan. | Source only, not yet built or tested |
 | [`translations/`](translations/) | The English-master string table with French (Quebec) translations, used by the BEP Builder. | Filled for French |
 
+## Try it or run your own copy
+
+Try it at [openbep.com](https://openbep.com). Your work stays in your browser. Real BEPs hold private information, so for real projects run your own copy on your own computers or network: see [Run your own copy of OpenBEP](docs/self-hosting.md).
+
 ## Principles
 
 - **Uses first.** Every requirement traces back to a BIM use the owner chose.
