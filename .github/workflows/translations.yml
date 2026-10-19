@@ -1,0 +1,26 @@
+name: Translations
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Lookup rules
+        run: node translations/tools/test_i18n.js
+      - name: Install a headless browser
+        run: npm install --no-save playwright@1.56.1 && npx playwright install --with-deps chromium
+      - name: Open every page and list what it shows
+        run: node translations/tools/crawl_app.js
+      - name: Dictionary, glossary and coverage
+        run: python3 translations/check_i18n.py --app --strict

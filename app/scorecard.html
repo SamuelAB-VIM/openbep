@@ -102,6 +102,8 @@ svg.spark .dot.ok{fill:var(--good)} svg.spark .dot.warn{fill:var(--warn)} svg.sp
 @media (max-width:900px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.ladder{grid-template-columns:1fr}.verdict{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
+<script src="../translations/strings.js"></script>
+<script src="../translations/i18n.js"></script>
 
 <div class="wrap">
 <header class="top">
@@ -110,6 +112,7 @@ svg.spark .dot.ok{fill:var(--good)} svg.spark .dot.warn{fill:var(--warn)} svg.sp
     <label class="btn" for="fileIn">Open a BEP or scorecard file</label><input type="file" id="fileIn" accept=".json" hidden>
     <button class="btn" type="button" id="saveBtn">Save scorecard file</button>
     <button class="btn primary" type="button" id="reportBtn">Monthly report</button>
+    <select class="btn" data-i18n-lang data-notr aria-label="Language"></select>
   </div>
 </header>
 <div class="ctx">
