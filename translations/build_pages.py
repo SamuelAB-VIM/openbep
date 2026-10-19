@@ -2,15 +2,15 @@
 
 Usage:
   python3 build_pages.py            -> writes every language page, lists missing strings
-  python3 build_pages.py --extract  -> adds new English strings to site_strings.csv (empty cells)
+  python3 build_pages.py --extract  -> adds new English strings to canbim_strings.csv (empty cells)
 
 How it works:
 - The English page is the master (for example why/index.html). Every element that carries
   the attribute data-i18n is one translation unit, keyed by its exact inner HTML in English
   (whitespace collapsed). Inline tags such as <a>, <strong> and <sup> stay inside the key,
   so a translator keeps them in the translated cell.
-- site_strings.csv holds the table: column en is the key, then one column per language
-  (fr, ja, es, ...), then where. Add a language by adding a column.
+- canbim_strings.csv is the dictionary for the whole site: column en is the key, then one
+  column per language (fr, ja, es, ...), then where. Add a language by adding a column.
 - Each language page is written to <folder>/<lang>/index.html. A string with no translation
   stays in English and is listed, so nothing is lost silently.
 """
@@ -18,8 +18,9 @@ import csv, html, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-TABLE = os.path.join(HERE, 'site_strings.csv')
-PAGES = ['why/index.html']  # English masters, relative to the repository root
+TABLE = os.path.join(HERE, 'canbim_strings.csv')  # the one dictionary, shared with the app
+# English masters (relative to the repository root) and the where label of their rows
+PAGES = {'why/index.html': 'Why OpenBEP'}
 
 UNIT = re.compile(r'<(?P<tag>[a-z0-9]+)(?P<attrs>[^>]*\bdata-i18n(?![-\w])[^>]*)>(?P<body>.*?)</(?P=tag)>', re.S)
 ATTR = re.compile(r'(?P<name>content|alt|aria-label|title)="(?P<val>[^"]*)"')
@@ -47,7 +48,7 @@ def load():
 
 
 def save(rows, fields):
-    with open(TABLE, 'w', encoding='utf-8', newline='') as f:
+    with open(TABLE, 'w', encoding='utf-8-sig', newline='') as f:
         w = csv.DictWriter(f, fieldnames=fields, quoting=csv.QUOTE_ALL, lineterminator='\n')
         w.writeheader()
         w.writerows(rows)
@@ -92,16 +93,17 @@ def main():
     if '--extract' in sys.argv:
         current = {p: list(units(open(os.path.join(ROOT, p), encoding='utf-8').read())) for p in PAGES}
         # Drop strings no longer on their page (the English was reworded), and say so.
-        stale = [r for r in rows if r.get('where') in current and r['en'] not in current[r['where']]]
+        label = {PAGES[p]: p for p in PAGES}
+        stale = [r for r in rows if r.get('where') in label and r['en'] not in current[label[r['where']]]]
         for r in stale:
-            print('  removed (no longer on %s): %s' % (r['where'], r['en'][:90]))
+            print('  removed (no longer on %s): %s' % (label[r['where']], r['en'][:90]))
         rows = [r for r in rows if r not in stale]
         known = {r['en'] for r in rows}
         added = 0
         for p in PAGES:
             for key in current[p]:
                 if key and key not in known:
-                    rows.append({**{c: '' for c in fields}, 'en': key, 'where': p})
+                    rows.append({**{c: '' for c in fields}, 'en': key, 'where': PAGES[p]})
                     known.add(key)
                     added += 1
         save(rows, fields)
