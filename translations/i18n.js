@@ -24,10 +24,10 @@ function trText(k,T,L,part){if(!k) return null; if(!/[A-Za-z]/.test(k)) return k
   const nums=k.match(I18N_NUM); if(nums){const t=T[i18nKey(k)]; if(t) return t.replace(/\{(\d+)\}/g,(x,i)=>nums[i-1]==null?x:nums[i-1])}
   for(const sep of [' · ','; ',', ']) if(k.includes(sep)){const out=k.split(sep).map(p=>trText(p.trim(),T,L,1)); if(out.every(Boolean)) return out.join(I18N_CJK(L)&&sep!==' · '?'、':sep)}
   const ss=k.split(/(?<=[.!?]) (?=[A-Z])/); if(ss.length>1){const out=ss.map(p=>trText(p,T,L)); if(out.every(Boolean)) return out.join(I18N_CJK(L)?'':' ')}
-  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+I18N_COLON(L))(trText(h,T,L)||(I18N_NAME(h)?h:null))), tr=th&&trText(k.slice(c+2).trim(),T,L,1); if(tr) return th+(I18N_CJK(L)&&/：$/.test(th)?'':' ')+tr}
+  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+I18N_COLON(L))(trText(h,T,L)||(I18N_NAME(h)||/^[A-Z]{2,5}$/.test(h)||/^[\u3040-\u30ff\u4e00-\u9fff][\u3040-\u30ff\u4e00-\u9fff ・]*$/.test(h)?h:null))), tr=th&&trText(k.slice(c+2).trim(),T,L,1); if(tr) return th+(I18N_CJK(L)&&/：$/.test(th)?'':' ')+tr}
   if(/[^.]\.$/.test(k)){const t=trText(k.slice(0,-1),T,L,part); if(t) return /[.。！？]$/.test(t)?t:t+(I18N_CJK(L)?'。':'.')}
   if(/^[a-z][a-z]/.test(k)){const t=trText(k[0].toUpperCase()+k.slice(1),T,L,part); if(t) return I18N_CJK(L)||!/^.[a-zà-ÿ]/.test(t)?t:t[0].toLowerCase()+t.slice(1)}
-  if(part&&(I18N_NAME(k)||/[\u3040-\u30ff\u4e00-\u9fff]/.test(k)&&!/[A-Za-z]{3,} [a-z]{2,}/.test(k))) return k;
+  if(part&&(I18N_NAME(k)||/^(?=.*\d)[A-Z0-9-]{4,}$/.test(k)||/[\u3040-\u30ff\u4e00-\u9fff]/.test(k)&&!/[A-Za-z]{3,} [a-z]{2,}/.test(k))) return k;
   // A value typed by the user in brackets at the end (a product name, or text in the reader's own script) stays as typed.
   m=k.match(/^(.+?) \(([^()]+)\)(\.?)$/); if(m&&(I18N_NAME(m[2])||!/[A-Za-z]{3}/.test(m[2]))){const t=trText(m[1]+m[3],T,L,part); if(t) return I18N_CJK(L)?t.replace(/。$/,'')+'（'+m[2]+'）'+(m[3]?'。':''):t.replace(/\.$/,'')+' ('+m[2]+')'+m[3]}
   return null}

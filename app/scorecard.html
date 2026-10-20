@@ -124,7 +124,7 @@ svg.spark .dot.ok{fill:var(--good)} svg.spark .dot.warn{fill:var(--warn)} svg.sp
   <button class="btn small" type="button" id="blankBtn">Start empty</button>
   <span id="msg" aria-live="polite"></span>
 </div>
-<p class="note">Every commitment in the BIM Execution Plan becomes a number checked each month, the owner's included. Firms slipping show up months before handover, and so does an owner who is slowing the work. Values within 10% of target are marked as slipping.</p>
+<p class="note">Every commitment in the BIM Execution Plan becomes a number checked each month, the owner's included. Firms slipping show up months before handover, and so does an owner who is slowing the work. Values within 10% of target are marked as slipping. Three slipping months in a row count as one month off target.</p>
 
 <div class="tiles" id="tiles"></div>
 
@@ -202,7 +202,8 @@ function logStats(months){const L=D.log.filter(x=>months.includes((x.d||'').slic
 function win3(m){const i=D.months.indexOf(m);return D.months.slice(Math.max(0,i-2),i+1)}
 function val(k,m){if(k.auto){const s=logStats(win3(m));return s[k.auto]}const v=(k.vals||{})[m];return v===''||v==null?null:+v}
 function st(k,v){if(v==null||isNaN(v))return null;return k.hi?(v>=k.target?'ok':v>=k.target*0.9?'warn':'bad'):(v<=k.target?'ok':(k.target>0?v<=k.target*1.1:v<=1)?'warn':'bad')}
-function streak(k,m){let n=0;const i=D.months.indexOf(m);for(let j=i;j>=0;j--){if(st(k,val(k,D.months[j]))==='bad')n++;else break}return n}
+// Months off target in the current run; three slipping months in a run count as one off target, so sitting just under target still escalates.
+function streak(k,m){let n=0,w=0;const i=D.months.indexOf(m);for(let j=i;j>=0;j--){const s=st(k,val(k,D.months[j]));if(s==='bad')n++;else if(s==='warn')w++;else break}return n+Math.floor(w/3)}
 function partyOf(id){return D.parties.find(p=>p.id===id)||{n:'Unassigned',kind:'firm'}}
 function pScore(pid,m){const ks=D.kpis.filter(k=>k.party===pid), s=ks.map(k=>st(k,val(k,m))).filter(Boolean);if(!s.length)return null;return {ok:s.filter(x=>x==='ok').length,n:s.length,cls:s.includes('bad')?'bad':s.includes('warn')?'warn':'ok'}}
 
@@ -238,7 +239,7 @@ function render(){
   $('#kRows').innerHTML=K.length?D.parties.map(p=>{const ks=K.filter(k=>k.party===p.id); if(!ks.length) return ''; return `<tr class="grp"><td colspan="8">${esc(p.n)}</td></tr>`+ks.map(k=>{const v=val(k,m), s=st(k,v), sk=streak(k,m), lad=p.kind==='owner'?OLAD:FLAD;
     return `<tr><td>${esc(k.t)}<div><select class="mini" data-kparty="${k.id}" aria-label="Party responsible">${pOpts(k.party)}</select> <button class="btn small" type="button" data-kdel="${k.id}" aria-label="Remove ${esc(k.t)}">Remove</button></div></td><td class="num">${k.hi?'≥':'≤'} ${esc(k.target)} ${esc(k.u)}</td><td>${spark(k)}</td>
     <td class="num">${k.auto?`<span class="mono">${v??'–'}</span><div class="auto">from the decision log</div>`:`<input class="n" type="number" step="any" data-kval="${k.id}" value="${v??''}" aria-label="${esc(k.t)}, ${mLabel(m)}">`}</td>
-    <td>${s?`<span class="pill ${s}">${{ok:'On target',warn:'Slipping',bad:'Off target'}[s]}</span>`:'<span class="pill na">No value</span>'}</td><td class="num">${sk||''}</td><td>${s==='bad'?esc(lad[Math.min(3,sk)]):s==='warn'?'Ask for an explanation':s?'None':'Enter this month\'s value'}</td>
+    <td>${s?`<span class="pill ${s}">${{ok:'On target',warn:'Slipping',bad:'Off target'}[s]}</span>`:'<span class="pill na">No value</span>'}</td><td class="num">${sk||''}</td><td>${s==='bad'||(s==='warn'&&sk)?esc(lad[Math.min(3,sk)]):s==='warn'?'Ask for an explanation':s?'None':'Enter this month\'s value'}</td>
     <td><select data-ksrc="${k.id}" aria-label="Evidence">${Object.entries(SRC).map(([a,b])=>`<option value="${a}" ${k.src===a?'selected':''}>${b}</option>`).join('')}</select></td></tr>`}).join('')}).join('')+((()=>{const un=K.filter(k=>!D.parties.some(p=>p.id===k.party));return un.length?`<tr class="grp"><td colspan="8">Unassigned</td></tr>`+un.map(k=>`<tr><td colspan="8">${esc(k.t)} <select data-kparty="${k.id}" aria-label="Party responsible"><option value="">Choose a party</option>${pOpts('')}</select></td></tr>`).join(''):''})()):`<tr><td colspan="8" class="empty">No commitments yet. Open a BEP project file to import its commitments, or add one below.</td></tr>`;
   $('#kP').innerHTML=pOpts(D.parties[1]?D.parties[1].id:'owner');
   const fOpts=sel=>D.parties.filter(p=>p.kind!=='owner').map(p=>`<option value="${p.id}" ${p.id===sel?'selected':''}>${esc(p.n)}</option>`).join('');
