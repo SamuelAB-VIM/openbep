@@ -251,7 +251,8 @@
    ],
    "rn": "Phase Created / Phase Demolished",
    "rk": "builtin",
-   "rnote": "map to IFC Status on export"
+   "rnote": "map to IFC Status on export",
+   "exl": "Existing"
   },
   "manufacturer": {
    "l": "Manufacturer",
@@ -802,7 +803,8 @@
    ],
    "rk": "shared",
    "rn": "CA_MountingType",
-   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510",
+   "exl": "Recessed"
   },
   "lf_placing_type": {
    "l": "Placing (ceiling / wall / floor ...)",
@@ -831,7 +833,8 @@
    ],
    "rk": "shared",
    "rn": "CA_Placing",
-   "guid": "fe104e4d-70e4-554e-b596-afeea8ebfd04"
+   "guid": "fe104e4d-70e4-554e-b596-afeea8ebfd04",
+   "exl": "Ceiling"
   },
   "lf_total_wattage": {
    "l": "Total wattage",
@@ -1154,7 +1157,8 @@
    ],
    "rk": "shared",
    "rn": "CA_EmergencySecurityLightingType",
-   "guid": "0ab15a8a-01e8-5a9f-8f14-5a858cc7ac32"
+   "guid": "0ab15a8a-01e8-5a9f-8f14-5a858cc7ac32",
+   "exl": "Emergency light"
   },
   "lf_space_sensible_load": {
    "l": "Heat gain to space",
@@ -1298,7 +1302,8 @@
     "OperationType"
    ],
    "rk": "family",
-   "rn": ""
+   "rn": "",
+   "exl": "Single swing, left hand"
   },
   "door_acoustic_rating": {
    "l": "Acoustic rating (STC)",
@@ -1873,7 +1878,8 @@
     "System Classification"
    ],
    "rn": "System Classification",
-   "rk": "builtin"
+   "rk": "builtin",
+   "exl": "Supply air"
   },
   "at_airflow_rate": {
    "l": "Design airflow",
@@ -1932,7 +1938,8 @@
    ],
    "rk": "shared",
    "rn": "CA_Shape",
-   "guid": "dd95fb12-f6f3-5dba-a1f1-f0d0efecb7ac"
+   "guid": "dd95fb12-f6f3-5dba-a1f1-f0d0efecb7ac",
+   "exl": "Square"
   },
   "at_face_type": {
    "l": "Face type",
@@ -1961,7 +1968,8 @@
    ],
    "rk": "shared",
    "rn": "CA_FaceType",
-   "guid": "9a49326b-fb8c-5413-95d7-5099316e4de0"
+   "guid": "9a49326b-fb8c-5413-95d7-5099316e4de0",
+   "exl": "Four-way pattern"
   },
   "at_mounting_type": {
    "l": "Mounting type",
@@ -1991,7 +1999,8 @@
    ],
    "rk": "shared",
    "rn": "CA_MountingType",
-   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510",
+   "exl": "Flat, flush"
   },
   "at_neck_size": {
    "l": "Neck / connection size",
@@ -2166,7 +2175,8 @@
    ],
    "rk": "shared",
    "rn": "CA_Construction",
-   "guid": "e406de54-15d6-505b-a214-3421c8583550"
+   "guid": "e406de54-15d6-505b-a214-3421c8583550",
+   "exl": "Factory-built unit"
   },
   "ahu_fan_arrangement": {
    "l": "Fan arrangement",
@@ -2195,7 +2205,8 @@
    ],
    "rk": "shared",
    "rn": "CA_FanArrangement",
-   "guid": "45b04f3d-fd46-5113-b75a-25b3ec629455"
+   "guid": "45b04f3d-fd46-5113-b75a-25b3ec629455",
+   "exl": "Draw-through"
   },
   "ahu_supply_airflow": {
    "l": "Design supply airflow",
@@ -2804,7 +2815,8 @@
    ],
    "rk": "shared",
    "rn": "CA_MountingType",
-   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510",
+   "exl": "Wall-hung"
   },
   "pf_color": {
    "l": "Colour",
@@ -3063,7 +3075,8 @@
    ],
    "rk": "shared",
    "rn": "CA_EnergySourceFuel",
-   "guid": "93a71903-5b8d-5f70-9e56-11483977b131"
+   "guid": "93a71903-5b8d-5f70-9e56-11483977b131",
+   "exl": "Natural gas"
   },
   "bas_ref": {
    "l": "Building automation (BAS) reference",
@@ -4662,7 +4675,8 @@
     "OperationType"
    ],
    "rk": "family",
-   "rn": ""
+   "rn": "",
+   "exl": "Two panels, vertical split"
   },
   "win_sill_height": {
    "l": "Sill height",
@@ -5560,7 +5574,8 @@
     "CrossSectionShape"
    ],
    "rk": "family",
-   "rn": ""
+   "rn": "",
+   "exl": "Rectangular"
   },
   "dct_size": {
    "l": "Size",
@@ -5795,7 +5810,8 @@
    ],
    "rk": "shared",
    "rn": "CA_DynamicStaticRating",
-   "guid": "63359bc0-18be-5351-a176-1dad46ef0fbc"
+   "guid": "63359bc0-18be-5351-a176-1dad46ef0fbc",
+   "exl": "Dynamic"
   },
   "dmp_release_temp": {
    "l": "Release temperature",
@@ -5854,7 +5870,8 @@
    ],
    "rk": "shared",
    "rn": "CA_ActuationOperation",
-   "guid": "0260cd90-ef56-59c2-a1dd-ad5f936da798"
+   "guid": "0260cd90-ef56-59c2-a1dd-ad5f936da798",
+   "exl": "Automatic"
   },
   "dmp_leakage": {
    "l": "Leakage when closed",
@@ -6167,7 +6184,8 @@
     "ValvePattern"
    ],
    "rk": "family",
-   "rn": ""
+   "rn": "",
+   "exl": "Butterfly"
   },
   "vlv_operation": {
    "l": "Operation",
@@ -6196,7 +6214,8 @@
    ],
    "rk": "shared",
    "rn": "CA_Operation",
-   "guid": "3dee3c89-ebfc-555a-9116-6d9519a0d58c"
+   "guid": "3dee3c89-ebfc-555a-9116-6d9519a0d58c",
+   "exl": "Lever"
   },
   "vlv_pressure": {
    "l": "Working / test pressure",
@@ -6425,7 +6444,8 @@
    ],
    "rk": "shared",
    "rn": "CA_BaseDriveArrangement",
-   "guid": "98f1b834-21bf-57bf-a0c7-7186d596a887"
+   "guid": "98f1b834-21bf-57bf-a0c7-7186d596a887",
+   "exl": "On a frame, direct drive"
   },
   "eq_vfd": {
    "l": "Variable-frequency drive",
@@ -6619,7 +6639,8 @@
    ],
    "rk": "shared",
    "rn": "CA_FiringOperatingMode",
-   "guid": "dc51359e-0d09-54b2-b2b2-d48bb4f71184"
+   "guid": "dc51359e-0d09-54b2-b2b2-d48bb4f71184",
+   "exl": "Modulating"
   },
   "chl_capacity": {
    "l": "Cooling capacity",
@@ -6935,7 +6956,8 @@
    ],
    "rk": "shared",
    "rn": "CA_CircuitType",
-   "guid": "28e22e34-d9ec-5e8f-8af8-06bf248c5793"
+   "guid": "28e22e34-d9ec-5e8f-8af8-06bf248c5793",
+   "exl": "Open circuit"
   },
   "fan_airflow": {
    "l": "Design airflow",
@@ -7052,7 +7074,8 @@
    ],
    "rk": "shared",
    "rn": "CA_DriveType",
-   "guid": "9ebff48b-2f44-596d-a66d-49a1a4fa380e"
+   "guid": "9ebff48b-2f44-596d-a66d-49a1a4fa380e",
+   "exl": "Direct drive"
   },
   "fan_capacity_control": {
    "l": "Capacity control",
@@ -7081,7 +7104,8 @@
    ],
    "rk": "shared",
    "rn": "CA_CapacityControl",
-   "guid": "630c57ff-6a23-509a-8f67-0a2e00767e60"
+   "guid": "630c57ff-6a23-509a-8f67-0a2e00767e60",
+   "exl": "Variable speed drive"
   },
   "fan_mounting": {
    "l": "Mounting",
@@ -7197,7 +7221,8 @@
    ],
    "rk": "shared",
    "rn": "CA_ReheatType",
-   "guid": "ba921ff9-3632-5d57-885b-0dd30e2bd762"
+   "guid": "ba921ff9-3632-5d57-885b-0dd30e2bd762",
+   "exl": "Hot water coil"
   },
   "vav_inlet_size": {
    "l": "Inlet size",
@@ -7309,7 +7334,8 @@
    ],
    "rk": "shared",
    "rn": "CA_FlowArrangement",
-   "guid": "b799de3d-cedf-5759-bad3-3e8da60fe0be"
+   "guid": "b799de3d-cedf-5759-bad3-3e8da60fe0be",
+   "exl": "Counterflow"
   },
   "hx_plates": {
    "l": "Number of plates",
@@ -7478,7 +7504,8 @@
    ],
    "rk": "shared",
    "rn": "CA_SprinklerType",
-   "guid": "af9b1f8c-d4ea-562b-8101-4e1c5f333e21"
+   "guid": "af9b1f8c-d4ea-562b-8101-4e1c5f333e21",
+   "exl": "Pendant"
   },
   "spk_response": {
    "l": "Response",
@@ -7507,7 +7534,8 @@
    ],
    "rk": "shared",
    "rn": "CA_Response",
-   "guid": "f1a22acd-b545-56f2-8824-f2ee1b79d17a"
+   "guid": "f1a22acd-b545-56f2-8824-f2ee1b79d17a",
+   "exl": "Quick response"
   },
   "spk_temp": {
    "l": "Temperature rating",
@@ -8472,7 +8500,8 @@
    ],
    "rk": "shared",
    "rn": "CA_SwitchFunction",
-   "guid": "51ba43d1-70c1-52df-93e9-9f102a6048d8"
+   "guid": "51ba43d1-70c1-52df-93e9-9f102a6048d8",
+   "exl": "On/off switch"
   },
   "cs_network_address": {
    "l": "Network / head-end reference",
@@ -9452,7 +9481,8 @@
    ],
    "rk": "shared",
    "rn": "CA_ZoneType",
-   "guid": "5cdc5a6e-898c-54d2-8171-15c962d4d2f7"
+   "guid": "5cdc5a6e-898c-54d2-8171-15c962d4d2f7",
+   "exl": "Fire safety"
   },
   "zn_members": {
    "l": "Member spaces",
@@ -9745,7 +9775,8 @@
    ],
    "rk": "shared",
    "rn": "CA_PavementType",
-   "guid": "4f1185af-24b4-56d2-87f2-7669e59dbbd5"
+   "guid": "4f1185af-24b4-56d2-87f2-7669e59dbbd5",
+   "exl": "Flexible"
   },
   "pav_slope": {
    "l": "Cross slope",
