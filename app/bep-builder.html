@@ -291,6 +291,12 @@ table.lodg{border-collapse:collapse;width:100%;font-size:12.5px}table.lodg th,ta
 .otp{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 6px;font-size:12.5px}.otp .lbl{color:var(--muted)}
 .more-issues summary{cursor:pointer;font-size:13px;margin-top:6px}
 @media print{.ssum,.otp{display:none}.sec.fold>*{display:revert}}
+.selw{position:relative;display:block}
+.selw>select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.selv{display:block;border:1px solid var(--line);background:var(--surface);border-radius:4px;padding:7px 26px 7px 9px;min-height:36px;line-height:1.35;white-space:normal;overflow-wrap:anywhere;position:relative}
+.selv::after{content:'';position:absolute;right:10px;top:50%;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-70%) rotate(45deg);opacity:.7}
+.selw:focus-within .selv{outline:2px solid var(--accent);outline-offset:1px}
+.selw>select:disabled{cursor:default}.selw:has(select:disabled) .selv{opacity:.6}
 </style>
 
 <header class="top">
@@ -2047,6 +2053,12 @@ function renderLedger(){
 }
 
 /* ================= Render and events ================= */
+// Native dropdowns cut long choices off. Show the chosen text in a box that wraps, with the real dropdown laid invisibly on top.
+function selText(el){const o=el.options[el.selectedIndex]; return o?o.text:''}
+function wrapSels(){document.querySelectorAll('#main .field select:not([multiple])').forEach(el=>{if(el.parentNode.classList.contains('selw')) return;
+  const w=document.createElement('span'); w.className='selw'; const v=document.createElement('span'); v.className='selv'; v.setAttribute('aria-hidden','true'); v.textContent=selText(el);
+  el.parentNode.insertBefore(w,el); w.append(v,el)})}
+document.addEventListener('change',e=>{const el=e.target; if(el.tagName==='SELECT'&&el.parentNode&&el.parentNode.classList.contains('selw')) el.previousSibling.textContent=selText(el)},true);
 function foldSecs(){const secs=[...document.querySelectorAll('#main > .sec')].filter(s=>!s.classList.contains('ssum')&&s.querySelector(':scope>h3')); if(secs.length<4||(typeof NET!=='undefined'&&NET.port)) return; S.fold=S.fold||{};
   const bar=document.createElement('div'); bar.className='otp'; bar.innerHTML=`<span class="lbl">On this page:</span>${secs.map((s,i)=>`<button type="button" class="btn small" data-fj="${i}">${esc(s.querySelector(':scope>h3').textContent)}</button>`).join('')}<button type="button" class="btn small" data-fall="1">Open all</button><button type="button" class="btn small" data-fall="0">Close all</button>`;
   secs[0].before(bar);
@@ -2056,7 +2068,7 @@ function setFold(h,closed){S.fold=S.fold||{}; S.fold[h.dataset.fk]=closed; h.par
 function render(keepScroll){setTimeout(()=>{if(typeof renderSign==='function') renderSign()},0);renderGloss(); syncDisc(); if(S.step>STEPS.length) S.step=STEPS.length;
   const y=window.scrollY; renderSteps();
   $('#main').innerHTML=(typeof NET!=='undefined'&&NET.port)?vPortfolio():[vProject,vOwner,vExisting,vUses,vLod,vLodB,vTeam,vInfo,vPlan,vAI,vContract,vBid,vDraft][S.step-1]();
-  foldSecs(); renderLedger();
+  foldSecs(); wrapSels(); renderLedger();
   $('#bannerMsg').textContent=S.example==='rail'?'Light rail example loaded.':S.example==='school'?'School renovation example loaded.':'Your own project.';
   if(keepScroll) window.scrollTo({top:y});
 }
