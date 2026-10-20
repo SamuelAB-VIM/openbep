@@ -8,19 +8,21 @@
    4. several sentences, each of them in the dictionary;
    5. "Label: rest" when both the label and the rest are in the dictionary.
    Text with no letters stays as is; a leading "· " or a trailing ":" is kept around the
-   translation (French gets its no-break space before the colon).
+   translation (French gets its no-break space before the colon; Japanese gets a full-width
+   colon, the 、 list mark and no space between sentences).
    It returns null when nothing matches, so the page keeps the English.
    build_i18n.py copies the block between the I18NCORE markers into app/bep-builder.html. */
 /*I18NCORE*/
+const I18N_COLON=L=>L==='fr'?'\u00a0:':L==='ja'||L==='zh'?'：':':', I18N_CJK=L=>L==='ja'||L==='zh';
 const I18N_NUM=/\bv\d+(?:\.\d+)+\b|\b\d{4}-\d{2}-\d{2}\b|(?<![\w.,])\d+(?:\.\d+)?(?![\w])/g, I18N_LEAD=/^([·:;,.–—-]\s*)(.+)$/s;
 function i18nKey(k){const m=k.match(I18N_LEAD); if(m) k=m[2]; if(/[^:]:$/.test(k)) k=k.slice(0,-1).trim(); let i=0; return k.replace(I18N_NUM,()=>'{'+(++i)+'}')}
 function trText(k,T,L){if(!k) return null; if(!/[A-Za-z]/.test(k)) return k; if(T[k]) return T[k];
   let m=k.match(I18N_LEAD); if(m){const t=trText(m[2],T,L); return t&&m[1]+t}
-  if(/[^:]:$/.test(k)){const t=trText(k.slice(0,-1).trim(),T,L); return t&&t+(L==='fr'?'\u00a0:':':')}
+  if(/[^:]:$/.test(k)){const t=trText(k.slice(0,-1).trim(),T,L); return t&&t+I18N_COLON(L)}
   const nums=k.match(I18N_NUM); if(nums){const t=T[i18nKey(k)]; if(t) return t.replace(/\{(\d+)\}/g,(x,i)=>nums[i-1]==null?x:nums[i-1])}
-  for(const sep of [' · ','; ',', ']) if(k.includes(sep)){const out=k.split(sep).map(p=>trText(p.trim(),T,L)); if(out.every(Boolean)) return out.join(sep)}
-  const ss=k.split(/(?<=[.!?]) (?=[A-Z])/); if(ss.length>1){const out=ss.map(p=>trText(p,T,L)); if(out.every(Boolean)) return out.join(' ')}
-  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+(L==='fr'?'\u00a0:':':'))(trText(h,T,L))), tr=th&&trText(k.slice(c+2).trim(),T,L); if(tr) return th+' '+tr}
+  for(const sep of [' · ','; ',', ']) if(k.includes(sep)){const out=k.split(sep).map(p=>trText(p.trim(),T,L)); if(out.every(Boolean)) return out.join(I18N_CJK(L)&&sep!==' · '?'、':sep)}
+  const ss=k.split(/(?<=[.!?]) (?=[A-Z])/); if(ss.length>1){const out=ss.map(p=>trText(p,T,L)); if(out.every(Boolean)) return out.join(I18N_CJK(L)?'':' ')}
+  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+I18N_COLON(L))(trText(h,T,L))), tr=th&&trText(k.slice(c+2).trim(),T,L); if(tr) return th+(I18N_CJK(L)&&/：$/.test(th)?'':' ')+tr}
   return null}
 /*/I18NCORE*/
 
@@ -34,7 +36,7 @@ function trText(k,T,L){if(!k) return null; if(!/[A-Za-z]/.test(k)) return k; if(
   const ATTRS=['placeholder','aria-label','title','alt'], ORIG=new WeakMap(), SEEN=new Set();
   let L=new URLSearchParams(location.search).get('lang');
   try{L=L||localStorage.getItem(KEY)}catch(e){}
-  if(!LANGS[L]) L=(navigator.language||'').slice(0,2)==='fr'&&LANGS.fr?'fr':'en';
+  if(!LANGS[L]){const b=(navigator.language||'').slice(0,2); L=LANGS[b]?b:'en'}
   const ok=n=>{const p=n.parentNode; return p&&!/^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)&&!(p.closest&&p.closest('[data-notr]'))};
   function run(root){const T=TABLE[L]||{};
     const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>ok(n)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT});

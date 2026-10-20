@@ -3,6 +3,7 @@
 const OPENBEP_WHY_LANGUAGES = [
   { code: "en", name: "English", path: "" },
   { code: "fr", name: "Français", path: "fr/" },
+  { code: "ja", name: "日本語", path: "ja/" },
 ];
 
 (function () {

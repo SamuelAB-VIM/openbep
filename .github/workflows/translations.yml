@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: LOD data built from lod/spec.json
+        run: python3 lod/build_lod.py --check
       - name: Lookup rules
         run: node translations/tools/test_i18n.js
       - name: Install a headless browser

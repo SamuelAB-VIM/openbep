@@ -312,3 +312,7 @@ PARAM	740fde81-5e64-51dd-9ade-fa2656a00e5c	CA_TrackIdentifier	TEXT		8	1	Track id
 PARAM	dac3e981-c200-5819-86a5-bd6403cb5b5f	CA_TurnoutType	TEXT		8	1	Turnout type. Turnout designation.	1
 PARAM	79dbd273-c20f-5520-9aa2-00a48d5da067	CA_VerticalLoadCapacity_kN	NUMBER		8	1	Vertical load capacity (kN). Factored vertical capacity of the bearing.	1
 PARAM	bf946e13-9c2f-5167-a50e-cc05abeb128e	CA_WearingSurfaceWaterproofing	TEXT		8	1	Wearing surface / waterproofing. Deck protection system.	1
+PARAM	770602c2-0cf0-59df-9734-9abc2cb36792	CA_SpecificationSection	TEXT		1	1	Specification section. Specification section the type follows (OpenBEP addition).	1
+PARAM	8433cb04-5219-577a-b742-86283b2140d1	CA_EPDReference	TEXT		1	1	Environmental product declaration. Product declaration used for the certification credits (OpenBEP addition).	1
+PARAM	f7d24471-2d9b-57c2-b514-d303a031502a	CA_RecycledContent	NUMBER		1	1	Recycled content (%). Share of recycled material by mass (OpenBEP addition).	1
+PARAM	b6a567c0-f8d6-5cef-be22-8c5e77f71c5e	CA_EmbodiedCarbon	NUMBER		1	1	Embodied carbon (kg CO2e per unit). Cradle-to-gate emissions per unit, from the product declaration (OpenBEP addition).	1

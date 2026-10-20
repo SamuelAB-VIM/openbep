@@ -6,7 +6,7 @@ One list of Revit parameters that every owner in Canada can ask for, tied to the
 
 | File | What it is |
 |---|---|
-| `CANBIM_SharedParameters_v0.1.txt` | A Revit shared parameter file with 300 shared parameters in 8 groups. Load it in Revit under Manage › Shared Parameters. |
+| `CANBIM_SharedParameters_v0.1.txt` | A Revit shared parameter file with 304 shared parameters in 8 groups. Four were added for the LOD specification (CA_SpecificationSection, CA_EPDReference, CA_RecycledContent, CA_EmbodiedCarbon) and are listed in [`lod/spec.json`](../lod/spec.json), not yet in the manifest. Load it in Revit under Manage › Shared Parameters. |
 | `CANBIM_Parameters_Manifest_v0.1.csv` | The full list, one row per parameter and element type. It covers all 398 parameters: 300 shared and 98 Revit built-in. Each row gives the Revit categories, instance or type, the LOD it is required from, the BIM uses that need it, the IFC target, an example value, the placeholder values the checker rejects, and the English and French labels. |
 | `gen_sp.py` | The script that writes the .txt and the manifest from the BEP Builder element library (`lb_all.json`, to be added). GUIDs are derived from names, so reruns give the same GUIDs. |
 
