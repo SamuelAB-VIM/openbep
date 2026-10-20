@@ -70,7 +70,23 @@ for (const lang of ['en']) {
   const setv = (q, v) => page.evaluate(([q, v]) => { const x = document.querySelector(q); if (x) { if (x.type === 'checkbox') x.checked = v; else x.value = v; x.dispatchEvent(new Event('change', { bubbles: true })); } }, [q, v]);
   await setv('[data-lbnote]', 'Crawl note'); await openAll(); await setv('[data-lbgf]', '400'); await openAll();
   await page.fill('#lbg-t', 'Crawl geometry'); await page.locator('#lbgAdd').click(); await page.waitForTimeout(150); await openAll();
+  await setv('#lb-ho', '500'); await page.waitForTimeout(150); await openAll(); await page.locator('[data-lbview="500"]').click(); await page.waitForTimeout(150); await openAll();
   for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
+}
+// Airport terminal: specialty systems (baggage handling, boarding bridges) and an element type the project adds itself.
+for (const lang of ['en']) {
+  await page.evaluate(() => { localStorage.clear(); }); await page.reload();
+  if (await page.locator('#ctrySel').count()) await page.selectOption('#ctrySel', 'ca');
+  await page.selectOption('#langSel', lang);
+  await page.locator('[data-ex="school"]').first().click(); await page.waitForTimeout(200);
+  await page.locator('#steps [data-step="1"]').click(); await page.selectOption('#p-asset', 'airportb'); await page.waitForTimeout(150);
+  await page.locator('#steps [data-step="5"]').click(); await openAll();
+  await page.locator('#steps [data-step="6"]').click(); await openAll();
+  await page.fill('#cel-n', 'Crawl element'); await page.locator('#celAdd').click(); await page.waitForTimeout(150); await openAll();
+  await page.locator('[data-lbsel="baggage_handling"]').click(); await page.waitForTimeout(150); await openAll();
+  for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k) && !k.includes('Crawl element')) seen.set(k, [w, fr]);
+  await page.locator('[data-lbsel="boarding_bridge"]').click(); await page.waitForTimeout(150); await openAll();
+  for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k) && !k.includes('Crawl element')) seen.set(k, [w, fr]);
 }
 // Other site pages use translations/i18n.js; record what they show too.
 const record = async (p2, rel) => {

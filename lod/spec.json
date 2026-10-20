@@ -38,7 +38,8 @@
   "05 Plumbing and fire protection",
   "06 Electrical and communications",
   "07 Site and civil",
-  "08 Rail, bridges and tunnels"
+  "08 Rail, bridges and tunnels",
+  "09 Specialty systems"
  ],
  "P": {
   "ifc_export_class": {
@@ -12274,6 +12275,411 @@
    "rk": "shared",
    "rn": "CA_EmbodiedCarbon",
    "guid": "b6a567c0-f8d6-5cef-be22-8c5e77f71c5e"
+  },
+  "bhs_function": {
+   "l": "Baggage system function",
+   "lf": "Fonction dans le système de bagages",
+   "t": "IfcLabel",
+   "u": null,
+   "ex": "Sortation",
+   "d": "Role of the section in the baggage flow: check-in, collector, screening, sortation, make-up, early bag storage, transfer or reclaim.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BaggageSystemFunction",
+   "guid": "db066e0e-5a05-57ef-9d18-7309f40f9cc3"
+  },
+  "bhs_section": {
+   "l": "Conveyor section ID",
+   "lf": "Identifiant de section de convoyeur",
+   "t": "IfcIdentifier",
+   "u": null,
+   "ex": "CI03-12",
+   "d": "Identifier the controls use for the section, so the model, the control screens and the maintenance system name it the same way.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "instance",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ConveyorSectionID",
+   "guid": "6e51951f-cb7b-5142-8bae-27aeb904111e"
+  },
+  "bhs_belt_width": {
+   "l": "Belt width",
+   "lf": "Largeur de courroie",
+   "t": "IfcPositiveLengthMeasure",
+   "u": "mm",
+   "ex": "1000",
+   "d": "Width of the conveying surface.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BeltWidth",
+   "guid": "bb84a58c-fa0e-59ba-813a-5cc805e7c6c5"
+  },
+  "bhs_tob": {
+   "l": "Top of belt height",
+   "lf": "Hauteur du dessus de courroie",
+   "t": "IfcLengthMeasure",
+   "u": "mm",
+   "ex": "750",
+   "d": "Height of the conveying surface above finished floor, used to check clearances with structure, ceilings, doors and other services.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "instance",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_TopOfBeltHeight",
+   "guid": "066b7e6e-4d75-5ec6-9092-ae726526157e"
+  },
+  "bhs_speed": {
+   "l": "Conveyor speed",
+   "lf": "Vitesse du convoyeur",
+   "t": "IfcLinearVelocityMeasure",
+   "u": "m/s",
+   "ex": "0.5",
+   "d": "Design belt speed of the section.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ConveyorSpeed_ms",
+   "guid": "e7e48ad2-adc8-5ace-8e51-fde75857e572"
+  },
+  "bhs_rate": {
+   "l": "Design throughput",
+   "lf": "Débit de conception",
+   "t": "IfcCountMeasure",
+   "u": "bags/h",
+   "ex": "1200",
+   "d": "Number of bags per hour the section is designed to carry.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "instance",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignThroughput",
+   "guid": "2e0d728f-2487-51b9-9598-7348eda45c61"
+  },
+  "bhs_zone": {
+   "l": "Control zone",
+   "lf": "Zone de commande",
+   "t": "IfcLabel",
+   "u": null,
+   "ex": "MCP-04",
+   "d": "Motor control panel or control zone that powers and controls the section.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "instance",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ControlZone",
+   "guid": "766e8af9-b2ad-5395-a231-2418ed17f131"
+  },
+  "pbb_gate": {
+   "l": "Gate number",
+   "lf": "Numéro de porte",
+   "t": "IfcIdentifier",
+   "u": null,
+   "ex": "B27",
+   "d": "Gate the boarding bridge serves.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "instance",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_GateNumber",
+   "guid": "7e66e5ab-ee48-5736-af26-015dac4545b7"
+  },
+  "pbb_type": {
+   "l": "Boarding bridge type",
+   "lf": "Type de passerelle",
+   "t": "IfcLabel",
+   "u": null,
+   "ex": "Apron drive, 3 tunnels",
+   "d": "Kind of bridge (apron drive, nose loader, fixed, over-the-wing) and number of tunnel sections.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BoardingBridgeType",
+   "guid": "7a711f47-05d8-5d65-b6d0-9d77f6480dc6"
+  },
+  "pbb_aircraft": {
+   "l": "Aircraft served",
+   "lf": "Aéronefs desservis",
+   "t": "IfcLabel",
+   "u": null,
+   "ex": "Code C to E",
+   "d": "Range of aircraft the bridge must reach, by aerodrome reference code letter or by aircraft type.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_AircraftServed",
+   "guid": "71ca8f51-29df-554b-ae4b-4f90a857311e"
+  },
+  "pbb_len_min": {
+   "l": "Retracted length",
+   "lf": "Longueur rétractée",
+   "t": "IfcPositiveLengthMeasure",
+   "u": "mm",
+   "ex": "19500",
+   "d": "Length from rotunda centre to cab front with the tunnels fully retracted.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RetractedLength",
+   "guid": "4e3849d5-77a0-5092-a803-b2dddd3ef9fc"
+  },
+  "pbb_len_max": {
+   "l": "Extended length",
+   "lf": "Longueur déployée",
+   "t": "IfcPositiveLengthMeasure",
+   "u": "mm",
+   "ex": "36000",
+   "d": "Length from rotunda centre to cab front with the tunnels fully extended.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ExtendedLength",
+   "guid": "c026a502-cf9f-54d1-9c89-25654a43804f"
+  },
+  "pbb_cab_range": {
+   "l": "Cab floor height range",
+   "lf": "Plage de hauteur du plancher de la cabine",
+   "t": "IfcLabel",
+   "u": null,
+   "ex": "2.6 to 5.9 m",
+   "d": "Lowest and highest cab floor height, which sets the aircraft door sills the bridge can reach.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_CabFloorHeightRange",
+   "guid": "fda9ff10-ea98-540e-9827-dc5cdf571ae3"
+  },
+  "pbb_pca": {
+   "l": "Pre-conditioned air unit",
+   "lf": "Unité d’air préconditionné",
+   "t": "IfcBoolean",
+   "u": null,
+   "ex": "true",
+   "d": "Bridge carries a pre-conditioned air unit for the parked aircraft.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PreconditionedAirUnit",
+   "guid": "bee30006-db9d-5526-b32c-acd1d2ca1d2c"
+  },
+  "pbb_gpu": {
+   "l": "400 Hz ground power unit",
+   "lf": "Groupe de puissance au sol 400 Hz",
+   "t": "IfcBoolean",
+   "u": null,
+   "ex": "true",
+   "d": "Bridge carries a 400 Hz ground power unit for the parked aircraft.",
+   "ifc": "Project property set",
+   "rv": [
+    "shared",
+    null
+   ],
+   "cb": null,
+   "sc": "type",
+   "sus": [
+    "",
+    "TBD",
+    "N/A",
+    "0",
+    "Default",
+    "<By Category>"
+   ],
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_GroundPower400Hz",
+   "guid": "37fed21b-4ca2-5cdd-b9a1-56e2a013ce8a"
   }
  },
  "C": [
@@ -37846,6 +38252,799 @@
    "mf": [
     "31 70 00"
    ]
+  },
+  {
+   "id": "baggage_handling",
+   "n": "Baggage handling system",
+   "nf": "Système de manutention des bagages",
+   "uf": [
+    "D1090 Other Conveying Systems"
+   ],
+   "rc": [
+    "Specialty Equipment (OST_SpecialityEquipment)",
+    "Mechanical Equipment (OST_MechanicalEquipment) - when the supplier families use it"
+   ],
+   "ifc": "IfcTransportElement (USERDEFINED, object type CONVEYOR)",
+   "sqi": "",
+   "g": {
+    "100": "Baggage areas as volumes and main routes as lines.",
+    "200": "Generic conveyor envelopes along their routes and generic boxes for the main equipment.",
+    "300": "Designed conveyor routes, widths, top-of-belt heights and inclines; equipment at designed size with access zones.",
+    "350": "Adds supports, hangers, platforms, control panels and their interfaces with structure and electrical.",
+    "400": "Supplier shop drawing geometry for every section, curve, merge, diverter and support.",
+    "500": "As-installed routes, heights and equipment with registration data."
+   },
+   "r": [
+    [
+     "ifc_export_class",
+     "200",
+     [
+      "handover",
+      "asset_reg",
+      "coordination"
+     ],
+     ""
+    ],
+    [
+     "type_name",
+     "200",
+     [
+      "design_review",
+      "cost",
+      "quantities",
+      "handover"
+     ],
+     ""
+    ],
+    [
+     "status",
+     "200",
+     [
+      "existing",
+      "cost",
+      "quantities"
+     ],
+     ""
+    ],
+    [
+     "type_mark",
+     "300",
+     [
+      "design_review",
+      "cost",
+      "quantities"
+     ],
+     ""
+    ],
+    [
+     "uniformat_code",
+     "300",
+     [
+      "cost",
+      "quantities",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "description",
+     "300",
+     [
+      "design_review",
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "spec_section",
+     "300",
+     [
+      "spec"
+     ],
+     ""
+    ],
+    [
+     "mark",
+     "300",
+     [
+      "design_review",
+      "fm"
+     ],
+     "Equipment or section tag"
+    ],
+    [
+     "bhs_function",
+     "200",
+     [
+      "design_review",
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "bhs_section",
+     "300",
+     [
+      "fm",
+      "asset_reg",
+      "commissioning"
+     ],
+     ""
+    ],
+    [
+     "bhs_belt_width",
+     "300",
+     [
+      "coordination",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "bhs_tob",
+     "300",
+     [
+      "coordination",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "bhs_speed",
+     "300",
+     [
+      "design_review",
+      "energy"
+     ],
+     ""
+    ],
+    [
+     "bhs_rate",
+     "300",
+     [
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "el_load",
+     "300",
+     [
+      "energy",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "bhs_zone",
+     "350",
+     [
+      "commissioning",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "manufacturer",
+     "300",
+     [
+      "cost",
+      "design_review"
+     ],
+     "Basis of design"
+    ],
+    [
+     "model_label",
+     "300",
+     [
+      "cost"
+     ],
+     "Basis of design"
+    ],
+    [
+     "manufacturer",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     "Installed product (as-built), not basis of design"
+    ],
+    [
+     "model_label",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     "Installed model"
+    ],
+    [
+     "serial_number",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "installation_date",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "warranty_start",
+     "500",
+     [
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "warranty_period",
+     "500",
+     [
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "asset_identifier",
+     "500",
+     [
+      "asset_reg",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "barcode",
+     "500",
+     [
+      "asset_reg",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "space_ref",
+     "500",
+     [
+      "fm",
+      "space_mgmt",
+      "handover"
+     ],
+     ""
+    ],
+    [
+     "service_life",
+     "500",
+     [
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ]
+   ],
+   "notes": [
+    "Revit has no conveyor category: agree in the BEP one category for every baggage family, so schedules and checks find them.",
+    "Uniformat II and MasterFormat placement of baggage systems varies between owners; verify."
+   ],
+   "grp": "09",
+   "m": "spec.0",
+   "mf": [
+    "34 77 00"
+   ],
+   "gx": [
+    {
+     "t": "Baggage areas (check-in, screening, sortation, make-up, reclaim) are modelled as volumes, with the main routes as lines or simple bands.",
+     "f": "100",
+     "k": "zone",
+     "u": [
+      "design_review",
+      "space_mgmt"
+     ]
+    },
+    {
+     "t": "Conveyor runs are modelled as generic envelopes at approximate width and height along their routes, including level changes and spirals.",
+     "f": "200",
+     "k": "shape",
+     "u": [
+      "coordination",
+      "design_review"
+     ]
+    },
+    {
+     "t": "Screening machines, sorters, carousels, make-up and reclaim units are shown as generic boxes at approximate size.",
+     "f": "200",
+     "k": "shape",
+     "u": [
+      "design_review",
+      "space_mgmt"
+     ]
+    },
+    {
+     "t": "Each conveyor section is modelled at its designed route, width, top-of-belt height and incline, so clearances to structure, ceilings and services can be measured.",
+     "f": "300",
+     "k": "shape",
+     "u": [
+      "coordination",
+      "code_check"
+     ]
+    },
+    {
+     "t": "Screening machines, sorters, carousels and reclaim units are modelled at designed footprint and height.",
+     "f": "300",
+     "k": "shape",
+     "u": [
+      "coordination",
+      "space_mgmt"
+     ]
+    },
+    {
+     "t": "Openings and fire shutters where conveyors pass through walls and floors are modelled at designed size.",
+     "f": "300",
+     "k": "open",
+     "u": [
+      "coordination",
+      "code_check"
+     ]
+    },
+    {
+     "t": "Maintenance walkways, crossovers and access clearances along the conveyors are modelled as switchable zones.",
+     "f": "300",
+     "k": "zone",
+     "u": [
+      "fm",
+      "coordination"
+     ]
+    },
+    {
+     "t": "Hangers, supports and platforms are modelled with their attachment points to structure.",
+     "f": "350",
+     "k": "conn",
+     "u": [
+      "coordination",
+      "prefab"
+     ]
+    },
+    {
+     "t": "Motor control panels and drive locations are placed for coordination with electrical.",
+     "f": "350",
+     "k": "place",
+     "u": [
+      "coordination"
+     ]
+    },
+    {
+     "t": "Sections, curves, merges, diverters and supports follow the approved supplier shop drawings, ready for fabrication and installation.",
+     "f": "400",
+     "k": "part",
+     "u": [
+      "prefab",
+      "coordination"
+     ]
+    },
+    {
+     "t": "Installed routes, top-of-belt heights and equipment positions are field-verified and the model is corrected to the stated tolerance.",
+     "f": "500",
+     "k": "rec",
+     "u": [
+      "handover",
+      "existing"
+     ]
+    }
+   ],
+   "nx": [
+    {
+     "t": "Belts, rollers, motors and photo-eyes are not modelled one by one; they are listed in the supplier maintenance data."
+    },
+    {
+     "t": "Control logic, sort rules and PLC programs are not in the model; they live in the controls documentation."
+    }
+   ]
+  },
+  {
+   "id": "boarding_bridge",
+   "n": "Passenger boarding bridges",
+   "nf": "Passerelles d’embarquement",
+   "uf": [
+    "E1090 Other Equipment"
+   ],
+   "rc": [
+    "Specialty Equipment (OST_SpecialityEquipment)"
+   ],
+   "ifc": "IfcTransportElement (USERDEFINED, object type PASSENGERBOARDINGBRIDGE)",
+   "sqi": "",
+   "g": {
+    "100": "A symbol or simple volume at each gate.",
+    "200": "Generic rotunda, tunnels and cab in the parked position.",
+    "300": "Designed bridge at its retracted length, with its travel envelope and the terminal door connection.",
+    "350": "Adds foundations, supports, connections to the terminal and the services units on the bridge.",
+    "400": "Manufacturer drawing geometry.",
+    "500": "As-installed bridge and parked position with registration data."
+   },
+   "r": [
+    [
+     "ifc_export_class",
+     "200",
+     [
+      "handover",
+      "asset_reg",
+      "coordination"
+     ],
+     ""
+    ],
+    [
+     "type_name",
+     "200",
+     [
+      "design_review",
+      "cost",
+      "quantities",
+      "handover"
+     ],
+     ""
+    ],
+    [
+     "status",
+     "200",
+     [
+      "existing",
+      "cost",
+      "quantities"
+     ],
+     ""
+    ],
+    [
+     "type_mark",
+     "300",
+     [
+      "design_review",
+      "cost",
+      "quantities"
+     ],
+     ""
+    ],
+    [
+     "uniformat_code",
+     "300",
+     [
+      "cost",
+      "quantities",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "description",
+     "300",
+     [
+      "design_review",
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "spec_section",
+     "300",
+     [
+      "spec"
+     ],
+     ""
+    ],
+    [
+     "mark",
+     "300",
+     [
+      "design_review",
+      "fm"
+     ],
+     "Bridge tag"
+    ],
+    [
+     "pbb_gate",
+     "300",
+     [
+      "fm",
+      "asset_reg",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "pbb_type",
+     "200",
+     [
+      "design_review",
+      "cost"
+     ],
+     ""
+    ],
+    [
+     "pbb_aircraft",
+     "200",
+     [
+      "design_review",
+      "code_check"
+     ],
+     ""
+    ],
+    [
+     "pbb_len_min",
+     "300",
+     [
+      "coordination",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "pbb_len_max",
+     "300",
+     [
+      "coordination",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "pbb_cab_range",
+     "300",
+     [
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "pbb_pca",
+     "300",
+     [
+      "design_review",
+      "energy"
+     ],
+     ""
+    ],
+    [
+     "pbb_gpu",
+     "300",
+     [
+      "design_review",
+      "energy"
+     ],
+     ""
+    ],
+    [
+     "el_load",
+     "300",
+     [
+      "energy",
+      "design_review"
+     ],
+     ""
+    ],
+    [
+     "manufacturer",
+     "300",
+     [
+      "cost",
+      "design_review"
+     ],
+     "Basis of design"
+    ],
+    [
+     "model_label",
+     "300",
+     [
+      "cost"
+     ],
+     "Basis of design"
+    ],
+    [
+     "manufacturer",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     "Installed product (as-built), not basis of design"
+    ],
+    [
+     "model_label",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     "Installed model"
+    ],
+    [
+     "serial_number",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "installation_date",
+     "500",
+     [
+      "handover",
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ],
+    [
+     "warranty_start",
+     "500",
+     [
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "warranty_period",
+     "500",
+     [
+      "handover",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "asset_identifier",
+     "500",
+     [
+      "asset_reg",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "barcode",
+     "500",
+     [
+      "asset_reg",
+      "fm"
+     ],
+     ""
+    ],
+    [
+     "space_ref",
+     "500",
+     [
+      "fm",
+      "space_mgmt",
+      "handover"
+     ],
+     ""
+    ],
+    [
+     "service_life",
+     "500",
+     [
+      "fm",
+      "asset_reg"
+     ],
+     ""
+    ]
+   ],
+   "notes": [
+    "Uniformat II and MasterFormat placement of boarding bridges varies between owners; verify."
+   ],
+   "grp": "09",
+   "m": "spec.1",
+   "mf": [
+    "34 77 13"
+   ],
+   "gx": [
+    {
+     "t": "Each gate’s boarding bridge is shown as a symbol or simple volume at the gate, with its fixed link.",
+     "f": "100",
+     "k": "place",
+     "u": [
+      "design_review",
+      "space_mgmt"
+     ]
+    },
+    {
+     "t": "Rotunda, tunnels and cab are shown as generic envelopes at approximate size in the parked position.",
+     "f": "200",
+     "k": "shape",
+     "u": [
+      "coordination"
+     ]
+    },
+    {
+     "t": "The bridge is modelled at its designed retracted length, with rotunda, tunnel sections, cab, drive column and wheel bogie at designed size.",
+     "f": "300",
+     "k": "shape",
+     "u": [
+      "coordination",
+      "design_review"
+     ]
+    },
+    {
+     "t": "The travel envelope (extended and swung positions, cab height range) is modelled as a switchable zone and checked against aircraft parking positions and apron services.",
+     "f": "300",
+     "k": "zone",
+     "u": [
+      "coordination",
+      "code_check"
+     ]
+    },
+    {
+     "t": "The fixed link or terminal door connection is modelled with its opening, floor level and slope.",
+     "f": "300",
+     "k": "open",
+     "u": [
+      "coordination",
+      "code_check"
+     ]
+    },
+    {
+     "t": "Rotunda foundation, fixed link supports and connections to the terminal structure are modelled.",
+     "f": "350",
+     "k": "conn",
+     "u": [
+      "coordination"
+     ]
+    },
+    {
+     "t": "Pre-conditioned air unit, 400 Hz ground power unit and potable water cabinet are placed on the bridge with their service routes.",
+     "f": "350",
+     "k": "place",
+     "u": [
+      "coordination"
+     ]
+    },
+    {
+     "t": "Bridge components follow the approved manufacturer drawings.",
+     "f": "400",
+     "k": "part",
+     "u": [
+      "prefab"
+     ]
+    },
+    {
+     "t": "Installed position, parked position and rotunda centre are field-verified and the model is corrected to the stated tolerance.",
+     "f": "500",
+     "k": "rec",
+     "u": [
+      "handover",
+      "existing"
+     ]
+    }
+   ],
+   "nx": [
+    {
+     "t": "Hydraulics, drives, controls and wiring are not modelled; they are in the manufacturer manuals."
+    },
+    {
+     "t": "Aircraft are not modelled as elements; their outlines are reference geometry for clearance checks only."
+    }
+   ]
   }
  ],
  "mfdiv": {
@@ -37900,5 +39099,19 @@
   "ifc_export_class",
   "status",
   "spec_section"
- ]
+ ],
+ "lean500": {
+  "keep": [
+   "handover",
+   "fm",
+   "asset_reg",
+   "space_mgmt",
+   "commissioning",
+   "existing"
+  ],
+  "dropKinds": [
+   "conn",
+   "part"
+  ]
+ }
 }

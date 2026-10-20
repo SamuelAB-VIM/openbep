@@ -70,11 +70,13 @@ p.edit{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}p.ed
 table{border-collapse:collapse;width:100%;font-size:13.5px}
 th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 th{font-size:12px;font-weight:600;color:var(--muted);background:var(--sunk);position:sticky;top:0}
-th.l,td.l{width:44px;min-width:44px;text-align:center;padding:6px 2px}
-td.l span{display:inline-block;width:22px;height:18px;border-radius:3px}
-td.l.on span{opacity:.32}
-td.l.from span{opacity:1}
-td.l.from span::after{content:"●";font-size:10px;line-height:18px;color:inherit}
+th.l,td.l{width:40px;min-width:40px;text-align:center;padding:6px 0}
+td.l.on{background-clip:padding-box}
+td.l.b100{background:#DCE6EC}td.l.b200{background:#2E9E8F33}td.l.b300{background:#2E6FD933}td.l.b350{background:#7B5CC433}td.l.b400{background:#D98A1C33}td.l.b500{background:#B23A4833}
+td.l.from.b100{background:#6F8796;color:#fff}td.l.from.b200{background:#2E9E8F;color:#fff}td.l.from.b300{background:#2E6FD9;color:#fff}td.l.from.b350{background:#7B5CC4;color:#fff}td.l.from.b400{background:#D98A1C;color:#14201D}td.l.from.b500{background:#B23A48;color:#fff}
+td.l.from span{font-weight:700;font-size:13px}
+td.l.drop{background:repeating-linear-gradient(135deg,transparent 0 4px,#B23A4814 4px 8px);color:var(--muted)}.caveat{border-left:4px solid #B23A48;background:#B23A480D;padding:10px 14px;margin:12px 0;max-width:880px}.caveat h3{margin:0 0 6px;font-size:16px}.caveat p{margin:6px 0}
+td.rv small.sc{color:var(--muted)}
 tr.k td{background:var(--bg);font-weight:600;font-size:12.5px;color:var(--muted);letter-spacing:.03em}
 td small{display:block;color:var(--muted);font-size:12.5px}
 td.req{min-width:240px}
@@ -119,7 +121,11 @@ td.sc{white-space:nowrap;font-size:12.5px}
   <p class="lead">"LOD 300" alone says almost nothing. For each kind of element, this page lists what must be drawn in 3D and which Revit parameters it must carry at each level, and which BIM uses need it. A BEP or contract can point to these rows, and a model checker can test them.</p>
   <p>The BEP Builder's LOD matrix sets the level of each element type at each stage. This page is what each of those cells means. Each level adds to the one before; geometry and data are listed separately because they mature at different speeds.</p>
   <div class="legend" id="legend"></div>
-  <p class="note">LOD 500 means checked in the field after construction, to a stated accuracy. It is not more detail than LOD 400, and it is never assumed: the owner asks for it, pays for it and says who surveys.</p>
+  <div class="caveat"><h3>LOD 500 is not "more of everything"</h3>
+  <p>LOD 500 means the model was checked in the field after construction, to a stated accuracy. It is not a step above LOD 400, and it is never assumed: the owner asks for it, pays for it and says who surveys.</p>
+  <p>It should usually carry less than LOD 400, not more. Facility management needs the right elements, where they are and the data to run them; it does not need fabrication detail or design-stage parameters nobody will read again. Read as the top of a scale, LOD 500 has led teams to model and fill in far more than the owner ever used.</p>
+  <p>So at LOD 500 this specification keeps a parameter only if an operations use needs it (handover, maintenance, asset register, space management, commissioning, existing conditions), if it identifies the element, or if it is first asked for at LOD 500. Connections, supports and fabrication parts from LOD 350 and 400 are dropped. A dash in the LOD 500 column marks what is left out.</p>
+  <p class="note">The idea is explained in LOD Planner's <a href="https://www.lodplanner.com/lod-500-explained/" target="_blank" rel="noopener">LOD 500 explained</a>. The BIMForum LOD Specification leaves LOD 500 out because it is field verification, not more geometry or information.</p></div>
 </section>
 
 <div class="layout">
@@ -186,8 +192,12 @@ function list(){const q=st.q.toLowerCase();
 
 const useOk=u=>!st.uses.size||u.some(x=>st.uses.has(x));
 const tags=u=>`<span class="tags">${u.map(x=>`<span class="${st.uses.has(x)?'hit':''}">${esc(D.uses[x]||x)}</span>`).join('')}</span>`;
-const cells=f=>LV.map(v=>{const on=+v>=+f, from=v===f, out=+v>+st.upto;
-  return `<td class="l ${on?'on':''} ${from?'from':''}" ${from?`title="Required from LOD ${f}"`:''}>${on&&!out?`<span class="v${v}"></span>`:''}</td>`}).join('');
+// LOD 500 is lean: only what operations need stays (see the caveat above and spec.json lean500).
+const L5=D.lean500||{keep:[],dropKinds:[]};
+const g500=x=>x.f==='500'||!(L5.dropKinds.includes(x.k)&&+x.f>=350);
+const p500=(c,id)=>{const rs=c.r.filter(r=>r[0]===id); return rs.some(r=>r[1]==='500')||D.idp.includes(id)||rs.some(r=>r[2].some(u=>L5.keep.includes(u)))};
+const cells=(f,k5=true)=>LV.map(v=>{const drop=v==='500'&&!k5&&f!=='500', on=+v>=+f&&!drop, from=v===f, out=+v>+st.upto;
+  return `<td class="l ${on?'on':''} ${from?'from':''} ${on&&!out?'b'+f:''} ${drop&&!out?'drop':''}" ${from?`title="Required from LOD ${f}"`:drop?'title="Left out at LOD 500: not needed to run the asset"':''}>${from&&!out?'<span>✓</span>':drop&&!out?'<span>–</span>':''}</td>`}).join('');
 const lvHead=()=>LV.map(v=>`<th class="l"><span class="chip v${v}">${v}</span></th>`).join('');
 function rvCell(p){const n=p.rn?`<code data-notr>${esc(p.rn)}</code>`:(p.rk==='family'?'<span>Set inside the family</span>':'<span>Shared parameter to add</span>');
   return `<span class="rk ${p.rk}">${esc(RK[p.rk])}</span> ${n}${p.guid?`<small data-notr>GUID ${esc(p.guid)}</small>`:''}${p.rnote?`<small>${esc(p.rnote)}</small>`:''}`}
@@ -201,10 +211,10 @@ function view(){const c=byId[st.el], up=+st.upto, ik=ILL.of(c.id);
   const rows=c.r.filter(r=>D.P[r[0]]).map(r=>({p:D.P[r[0]],id:r[0],f:r[1],u:r[2],x:r[3]}));
   const rShow=rows.filter(r=>+r.f<=up&&useOk(r.u)), rHidden=rows.length-rShow.length;
   const idRows=D.idp.map(k=>rShow.find(r=>r.id===k)).filter(Boolean), other=rShow.filter(r=>!D.idp.includes(r.id)).sort((a,b)=>+a.f-+b.f||a.p.l.localeCompare(b.p.l));
-  const nCol=LV.length+4+(st.ifc?1:0);
+  const nCol=LV.length+3+(st.ifc?1:0);
   const gRows=KIND.map(([k,n])=>{const its=gShow.filter(x=>x.k===k).sort((a,b)=>+a.f-+b.f); if(!its.length) return '';
-    return `<tr class="k"><td colspan="${LV.length+2}">${esc(n)}</td></tr>`+its.map(x=>`<tr><td class="req">${esc(x.t)}</td>${cells(x.f)}<td>${tags(x.u||[])}</td></tr>`).join('')}).join('');
-  const pRow=r=>`<tr><td class="req"><b>${esc(r.p.l)}</b>${r.p.d?`<small>${esc(r.p.d)}</small>`:''}${r.x?`<small>${esc(r.x)}</small>`:''}${r.p.ex?`<small><span>Example:</span> <span data-notr>${esc(r.p.ex)}${r.p.u?' '+esc(r.p.u):''}</span></small>`:''}</td>${cells(r.f)}<td>${tags(r.u)}</td><td class="rv">${rvCell(r.p)}</td><td class="sc">${r.p.sc==='type'?'Type':'Instance'}</td>${st.ifc?`<td class="ifc">${ifcCell(r.p)}</td>`:''}</tr>`;
+    return `<tr class="k"><td colspan="${LV.length+2}">${esc(n)}</td></tr>`+its.map(x=>`<tr><td class="req">${esc(x.t)}</td>${cells(x.f,g500(x))}<td>${tags(x.u||[])}</td></tr>`).join('')}).join('');
+  const pRow=r=>`<tr><td class="req"><b>${esc(r.p.l)}</b>${r.p.d?`<small>${esc(r.p.d)}</small>`:''}${r.x?`<small>${esc(r.x)}</small>`:''}${r.p.ex?`<small><span>Example:</span> <span data-notr>${esc(r.p.ex)}${r.p.u?' '+esc(r.p.u):''}</span></small>`:''}</td>${cells(r.f,p500(c,r.id))}<td>${tags(r.u)}</td><td class="rv">${rvCell(r.p)}<small class="sc">${r.p.sc==='type'?'Type parameter':'Instance parameter'}</small></td>${st.ifc?`<td class="ifc">${ifcCell(r.p)}</td>`:''}</tr>`;
   const pRows=(idRows.length?`<tr class="k"><td colspan="${nCol}">Identification and classification</td></tr>${idRows.map(pRow).join('')}`:'')+(other.length?`<tr class="k"><td colspan="${nCol}">Data, by the level it is first needed</td></tr>${other.map(pRow).join('')}`:'');
   $('#el').innerHTML=`<h2>${esc(c.n)}</h2>
   <p class="meta"><span>Revit categories:</span> <span data-notr>${esc((c.rc||[]).join(', '))}</span></p>
@@ -214,13 +224,13 @@ function view(){const c=byId[st.el], up=+st.upto, ik=ILL.of(c.id);
   <div class="sum">${LV.map(v=>`<div class="${+v>up?'dim':''}"><span class="chip v${v}">LOD ${v}</span>${ik?ILL.svg(ik,v):''}<div>${esc(c.g[v]||'–')}</div></div>`).join('')}</div>
   ${ik&&!['door','duct','ahu'].includes(c.id)?'<p class="note">Sketches show a typical element of this kind, not this exact element type.</p>':''}
   <h3>Geometry: what must be drawn in 3D</h3>
-  <p class="note">● marks the level where a requirement starts; it stays required at every higher level.</p>
+  <p class="note">✓ marks the level where a requirement starts; the shaded band shows it stays required at every higher level.</p>
   ${gRows?`<div class="tw"><table><thead><tr><th>Requirement</th>${lvHead()}<th>Needed for</th></tr></thead><tbody>${gRows}</tbody></table></div>`:'<p class="note">No geometry requirement matches these filters.</p>'}
   ${gHidden?`<p class="hidden-note">${gHidden} geometry requirements hidden by the filters.</p>`:''}
   <h3>Data: Revit parameters the element must carry</h3>
   <div class="kinds"><div><span class="rk builtin">Revit built-in</span> Comes with Revit in every model. Nothing to add: fill it.</div><div><span class="rk shared">OpenBEP shared</span> Load it from the OpenBEP shared parameter file and add it as a project parameter on the listed categories. Its fixed GUID lets data from different projects and firms be combined, and it can be tagged and scheduled.</div><div><span class="rk family">Family parameter</span> Defined inside the family by its author; check the family before accepting it.</div></div>
   <p class="note">Plain project parameters, made without a shared parameter file, are not used: they cannot be tagged and do not keep the same identity from one project to the next.</p>
-  ${pRows?`<div class="tw"><table><thead><tr><th>Parameter</th>${lvHead()}<th>Needed for</th><th>Revit parameter</th><th>Type or instance</th>${st.ifc?'<th>IFC export (optional)</th>':''}</tr></thead><tbody>${pRows}</tbody></table></div>`:'<p class="note">No parameter matches these filters.</p>'}
+  ${pRows?`<div class="tw"><table><thead><tr><th>Parameter</th>${lvHead()}<th>Needed for</th><th>Revit parameter</th>${st.ifc?'<th>IFC export (optional)</th>':''}</tr></thead><tbody>${pRows}</tbody></table></div>`:'<p class="note">No parameter matches these filters.</p>'}
   ${rHidden?`<p class="hidden-note">${rHidden} parameters hidden by the filters.</p>`:''}
   ${(c.nx||[]).length?`<h3>Not expected in the model</h3><ul class="nx">${c.nx.map(x=>`<li>${esc(x.t)}</li>`).join('')}</ul>`:''}
   ${(c.notes||[]).length?`<h3>Notes</h3><ul class="nx">${c.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
