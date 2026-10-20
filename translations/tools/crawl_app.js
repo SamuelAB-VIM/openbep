@@ -59,7 +59,7 @@ if (await page.locator('#ctrySel').count()) {
 }
 
 // Other site pages use translations/i18n.js; record what they show too.
-for (const rel of ['app/scorecard.html']) {
+for (const rel of ['app/scorecard.html', 'lod/index.html']) {
   const p2 = await browser.newPage();
   p2.on('pageerror', e => errors.push(rel + ': ' + String(e)));
   p2.on('dialog', d => d.dismiss());
@@ -67,6 +67,11 @@ for (const rel of ['app/scorecard.html']) {
   for (const id of ['#exBtn', '#reportBtn']) if (await p2.locator(id).count()) { await p2.locator(id).first().click(); await p2.waitForTimeout(300); }
   await p2.evaluate(() => document.querySelectorAll('details').forEach(d => { d.open = true }));
   await p2.waitForTimeout(200);
+  // LOD specification: open every element type, then once with a BIM use filter so the "hidden" notes show.
+  if (rel === 'lod/index.html') {
+    for (const id of await p2.evaluate(() => [...document.querySelectorAll('[data-el]')].map(b => b.dataset.el))) await p2.locator(`[data-el="${id}"]`).click();
+    await p2.locator('[data-use="fm"]').click(); await p2.waitForTimeout(100);
+  }
   for (const k of await p2.evaluate(() => window.openbepStrings ? window.openbepStrings() : [])) {
     const r = await p2.evaluate(k => { const F = (window.OPENBEP_STRINGS || {}).fr || {}; if (k.endsWith('…') || !/[a-z]{3}/.test(k)) return null; if (F[k]) return [k, true]; if (trText(k, F, 'fr')) return null; return [i18nKey(k), !!F[i18nKey(k)]]; }, k);
     if (r && !seen.has(r[0])) seen.set(r[0], [rel, r[1]]);
