@@ -69,7 +69,10 @@
     "Export to IFC As",
     "IFC Predefined Type",
     "ObjectType"
-   ]
+   ],
+   "rn": "Export to IFC As / IFC Predefined Type",
+   "rk": "builtin",
+   "rnote": "names vary by Revit version - verify"
   },
   "type_name": {
    "l": "Type name",
@@ -95,7 +98,9 @@
    "ip": [
     "Name",
     "Type Name"
-   ]
+   ],
+   "rn": "Type Name",
+   "rk": "builtin"
   },
   "type_mark": {
    "l": "Type mark / reference",
@@ -122,7 +127,9 @@
    "ip": [
     "Reference",
     "Type Mark"
-   ]
+   ],
+   "rn": "Type Mark",
+   "rk": "builtin"
   },
   "mark": {
    "l": "Instance mark / tag",
@@ -151,7 +158,9 @@
     "TagNumber",
     "Mark",
     "IfcTag"
-   ]
+   ],
+   "rn": "Mark",
+   "rk": "builtin"
   },
   "uniformat_code": {
    "l": "UniFormat II code",
@@ -179,7 +188,9 @@
     "ClassificationCode",
     "Identification",
     "Assembly Code"
-   ]
+   ],
+   "rn": "Assembly Code",
+   "rk": "builtin"
   },
   "description": {
    "l": "Description",
@@ -206,7 +217,9 @@
    "ip": [
     "Description",
     "IfcDescription"
-   ]
+   ],
+   "rn": "Description",
+   "rk": "builtin"
   },
   "status": {
    "l": "Status (new / existing / demolish / temporary)",
@@ -234,7 +247,10 @@
     "Status",
     "Phase Created",
     "Phase Demolished"
-   ]
+   ],
+   "rn": "Phase Created / Phase Demolished",
+   "rk": "builtin",
+   "rnote": "map to IFC Status on export"
   },
   "manufacturer": {
    "l": "Manufacturer",
@@ -260,7 +276,9 @@
    ],
    "ip": [
     "Manufacturer"
-   ]
+   ],
+   "rn": "Manufacturer",
+   "rk": "builtin"
   },
   "model_label": {
    "l": "Model name / number",
@@ -288,7 +306,9 @@
     "ModelReference",
     "ModelNumber",
     "Model"
-   ]
+   ],
+   "rn": "Model",
+   "rk": "builtin"
   },
   "article_number": {
    "l": "Catalogue / article number",
@@ -315,7 +335,10 @@
    "ip": [
     "ArticleNumber",
     "GlobalTradeItemNumber"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CatalogueArticleNumber",
+   "guid": "b33a8479-fe6b-5ba7-b45a-f52c3511e66f"
   },
   "serial_number": {
    "l": "Serial number",
@@ -341,7 +364,10 @@
    ],
    "ip": [
     "SerialNumber"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SerialNumber",
+   "guid": "48d2210c-6ef9-5d20-8fa7-10426a5c5b9c"
   },
   "barcode": {
    "l": "Barcode / asset label",
@@ -367,7 +393,10 @@
    ],
    "ip": [
     "BarCode"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BarcodeAssetLabel",
+   "guid": "d24e1c2e-c37e-58b2-80df-9757b1599fd2"
   },
   "asset_identifier": {
    "l": "Owner asset identifier",
@@ -393,7 +422,10 @@
    ],
    "ip": [
     "AssetIdentifier"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_OwnerAssetIdentifier",
+   "guid": "88aa1291-9700-57c1-ae46-e352ab860dd0"
   },
   "installation_date": {
    "l": "Installation date",
@@ -419,7 +451,10 @@
    ],
    "ip": [
     "InstallationDate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_InstallationDate",
+   "guid": "f4fd1488-3ba3-5ecd-913a-8b8ba1f1a31a"
   },
   "warranty_start": {
    "l": "Warranty start date",
@@ -445,7 +480,10 @@
    ],
    "ip": [
     "WarrantyStartDate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_WarrantyStartDate",
+   "guid": "6f27fa46-6071-5f42-9d59-cbddd971ce53"
   },
   "warranty_period": {
    "l": "Warranty duration",
@@ -471,7 +509,10 @@
    ],
    "ip": [
     "WarrantyPeriod"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_WarrantyDuration",
+   "guid": "229e7714-b5b0-51ba-8f0a-7944202fa9d8"
   },
   "service_life": {
    "l": "Expected service life",
@@ -498,7 +539,10 @@
    "ip": [
     "ServiceLifeDuration",
     "ExpectedServiceLife"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ExpectedServiceLife",
+   "guid": "c906ec1d-fa27-5765-adc3-bed8c181e526"
   },
   "space_ref": {
    "l": "Room / space served or containing",
@@ -524,7 +568,10 @@
    ],
    "ip": [
     "IfcSpatialContainer"
-   ]
+   ],
+   "rn": "Room / Space",
+   "rk": "builtin",
+   "rnote": "calculated, read-only"
   },
   "unit_cost": {
    "l": "Unit cost",
@@ -550,7 +597,9 @@
    ],
    "ip": [
     "Cost"
-   ]
+   ],
+   "rn": "Cost",
+   "rk": "builtin"
   },
   "material": {
    "l": "Primary material",
@@ -575,7 +624,9 @@
    "ip": [
     "Material",
     "Structural Material"
-   ]
+   ],
+   "rn": "Material / Structural Material / compound structure",
+   "rk": "builtin"
   },
   "prefab_status": {
    "l": "Prefabricated (true/false)",
@@ -599,7 +650,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_Prefabricated",
+   "guid": "05716e4a-921c-57f0-8d72-56eb44d5ef3f"
   },
   "gross_weight": {
    "l": "Gross weight",
@@ -626,7 +680,10 @@
    "ip": [
     "GrossWeight",
     "NetWeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_GrossWeight_kg",
+   "guid": "8865cf1b-81e7-502f-a627-478cf20f3508"
   },
   "is_external": {
    "l": "Is external",
@@ -653,7 +710,10 @@
    "ip": [
     "IsExternal",
     "Function"
-   ]
+   ],
+   "rn": "Function",
+   "rk": "builtin",
+   "rnote": "walls"
   },
   "fire_rating": {
    "l": "Fire-resistance rating",
@@ -680,7 +740,9 @@
    "ip": [
     "FireRating",
     "Fire Rating"
-   ]
+   ],
+   "rn": "Fire Rating",
+   "rk": "builtin"
   },
   "load_bearing": {
    "l": "Load bearing",
@@ -707,7 +769,10 @@
    "ip": [
     "LoadBearing",
     "Structural"
-   ]
+   ],
+   "rn": "Structural",
+   "rk": "builtin",
+   "rnote": "walls"
   },
   "lf_mounting_type": {
    "l": "Mounting type",
@@ -733,7 +798,10 @@
    ],
    "ip": [
     "LightFixtureMountingType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MountingType",
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
   },
   "lf_placing_type": {
    "l": "Placing (ceiling / wall / floor ...)",
@@ -759,7 +827,10 @@
    ],
    "ip": [
     "LightFixturePlacingType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Placing",
+   "guid": "fe104e4d-70e4-554e-b596-afeea8ebfd04"
   },
   "lf_total_wattage": {
    "l": "Total wattage",
@@ -787,7 +858,10 @@
     "TotalWattage",
     "Wattage",
     "Apparent Load"
-   ]
+   ],
+   "rn": "Apparent Load / Wattage",
+   "rk": "builtin",
+   "rnote": "electrical data - family dependent"
   },
   "lf_number_of_sources": {
    "l": "Number of light sources",
@@ -813,7 +887,10 @@
    ],
    "ip": [
     "NumberOfSources"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfLightSources",
+   "guid": "bdb2a530-92a1-5217-b2c5-03be86124f7e"
   },
   "lf_maintenance_factor": {
    "l": "Maintenance (light loss) factor",
@@ -841,7 +918,9 @@
     "MaintenanceFactor",
     "LampMaintenanceFactor",
     "Light Loss Factor"
-   ]
+   ],
+   "rn": "Light Loss Factor",
+   "rk": "builtin"
   },
   "lf_luminous_flux": {
    "l": "Luminous flux (lumen output)",
@@ -868,7 +947,10 @@
    "ip": [
     "ContributedLuminousFlux",
     "Initial Intensity"
-   ]
+   ],
+   "rn": "Initial Intensity",
+   "rk": "builtin",
+   "rnote": "luminous flux option"
   },
   "lf_photometric_file": {
    "l": "Photometric file (IES / LDT)",
@@ -891,7 +973,10 @@
    "ip": [
     "LightDistributionDataSource",
     "Photometric Web File"
-   ]
+   ],
+   "rn": "Photometric Web File",
+   "rk": "builtin",
+   "rnote": "Revit does not keep a link to the file"
   },
   "lf_colour_temperature": {
    "l": "Colour temperature (CCT)",
@@ -919,7 +1004,9 @@
     "ColourTemperature",
     "ColorTemperature",
     "Initial Color"
-   ]
+   ],
+   "rn": "Initial Color",
+   "rk": "builtin"
   },
   "lf_cri": {
    "l": "Colour rendering index",
@@ -946,7 +1033,10 @@
    "ip": [
     "ColourRenderingIndex",
     "ColorRenderingIndex"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ColourRenderingIndex",
+   "guid": "2cf25718-52b9-549b-8993-8195061770bc"
   },
   "lf_lamp_type": {
    "l": "Lamp / light source type",
@@ -972,7 +1062,10 @@
    ],
    "ip": [
     "LightEmissionSource"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LampLightSourceType",
+   "guid": "6de83961-5206-5b1d-8324-cec7f103b281"
   },
   "lf_rated_voltage": {
    "l": "Rated voltage",
@@ -999,7 +1092,10 @@
    "ip": [
     "RatedVoltage",
     "Voltage"
-   ]
+   ],
+   "rn": "Voltage",
+   "rk": "builtin",
+   "rnote": "connector"
   },
   "lf_ip_code": {
    "l": "IP rating",
@@ -1025,7 +1121,10 @@
    ],
    "ip": [
     "IP_Code"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_IPRating",
+   "guid": "840d722d-5d6e-5a55-9351-3d003d034de5"
   },
   "lf_emergency": {
    "l": "Emergency / security lighting type",
@@ -1051,7 +1150,10 @@
    ],
    "ip": [
     "SecurityLightingType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_EmergencySecurityLightingType",
+   "guid": "0ab15a8a-01e8-5a9f-8f14-5a858cc7ac32"
   },
   "lf_space_sensible_load": {
    "l": "Heat gain to space",
@@ -1078,7 +1180,10 @@
    "ip": [
     "MaximumSpaceSensibleLoad",
     "HeatDissipation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HeatGainToSpace_W",
+   "guid": "c6986814-3d58-51b2-8e52-30bad9c8e228"
   },
   "lf_circuit": {
    "l": "Panel / circuit",
@@ -1105,7 +1210,10 @@
    "ip": [
     "Panel",
     "Circuit Number"
-   ]
+   ],
+   "rn": "Panel / Circuit Number",
+   "rk": "builtin",
+   "rnote": "read-only, from electrical circuits"
   },
   "door_width": {
    "l": "Leaf / nominal width",
@@ -1131,7 +1239,9 @@
    ],
    "ip": [
     "Width"
-   ]
+   ],
+   "rn": "Width",
+   "rk": "builtin"
   },
   "door_height": {
    "l": "Nominal height",
@@ -1157,7 +1267,9 @@
    ],
    "ip": [
     "Height"
-   ]
+   ],
+   "rn": "Height",
+   "rk": "builtin"
   },
   "door_operation": {
    "l": "Operation type",
@@ -1183,7 +1295,9 @@
    ],
    "ip": [
     "OperationType"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "door_acoustic_rating": {
    "l": "Acoustic rating (STC)",
@@ -1209,7 +1323,10 @@
    ],
    "ip": [
     "AcousticRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_AcousticRating",
+   "guid": "783c7406-f04c-5678-99c4-1c7190c1de23"
   },
   "door_security_rating": {
    "l": "Security rating",
@@ -1235,7 +1352,10 @@
    ],
    "ip": [
     "SecurityRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SecurityRating",
+   "guid": "207749ad-eb47-59f9-bd35-8adabfb982ec"
   },
   "door_accessible": {
    "l": "Barrier-free (accessible)",
@@ -1261,7 +1381,10 @@
    ],
    "ip": [
     "HandicapAccessible"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BarrierFree",
+   "guid": "86719345-13d1-5528-b048-2fa72ac7aa2c"
   },
   "door_fire_exit": {
    "l": "Fire exit",
@@ -1287,7 +1410,10 @@
    ],
    "ip": [
     "FireExit"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FireExit",
+   "guid": "357a74a9-a1ca-5692-b532-166da706f40c"
   },
   "door_self_closing": {
    "l": "Self-closing",
@@ -1313,7 +1439,10 @@
    ],
    "ip": [
     "SelfClosing"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SelfClosing",
+   "guid": "b2486136-9dda-5640-99c1-c62ae5f969fd"
   },
   "door_smoke_stop": {
    "l": "Smoke stop",
@@ -1339,7 +1468,10 @@
    ],
    "ip": [
     "SmokeStop"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SmokeStop",
+   "guid": "90dbd9a7-ef10-5672-9c09-5cc351cfaae7"
   },
   "door_u_value": {
    "l": "Thermal transmittance (U)",
@@ -1366,7 +1498,10 @@
    "ip": [
     "ThermalTransmittance",
     "Heat Transfer Coefficient (U)"
-   ]
+   ],
+   "rn": "Heat Transfer Coefficient",
+   "rk": "builtin",
+   "rnote": "U"
   },
   "door_hardware_set": {
    "l": "Hardware set",
@@ -1390,7 +1525,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HardwareSet",
+   "guid": "9164580f-95dd-5822-ba6a-aa945cceb29b"
   },
   "door_frame_material": {
    "l": "Frame material",
@@ -1416,7 +1554,9 @@
    ],
    "ip": [
     "Frame Material"
-   ]
+   ],
+   "rk": "family",
+   "rn": "Frame Material"
   },
   "door_leaf_material": {
    "l": "Leaf material",
@@ -1440,7 +1580,9 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "family",
+   "rn": ""
   },
   "wall_thickness": {
    "l": "Overall thickness",
@@ -1466,7 +1608,9 @@
    ],
    "ip": [
     "Width"
-   ]
+   ],
+   "rn": "Width",
+   "rk": "builtin"
   },
   "wall_net_side_area": {
    "l": "Net side area",
@@ -1493,7 +1637,9 @@
    "ip": [
     "NetSideArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "wall_layers": {
    "l": "Layer build-up",
@@ -1519,7 +1665,10 @@
    ],
    "ip": [
     "Structure"
-   ]
+   ],
+   "rn": "Structure",
+   "rk": "builtin",
+   "rnote": "compound structure"
   },
   "wall_acoustic_rating": {
    "l": "Acoustic rating (STC / ASTC)",
@@ -1545,7 +1694,10 @@
    ],
    "ip": [
     "AcousticRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_AcousticRating",
+   "guid": "783c7406-f04c-5678-99c4-1c7190c1de23"
   },
   "wall_extend_to_structure": {
    "l": "Extends to structure",
@@ -1571,7 +1723,10 @@
    ],
    "ip": [
     "ExtendToStructure"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ExtendsToStructure",
+   "guid": "ef5df88b-15ca-587f-8f45-1dfab1b9564b"
   },
   "wall_compartmentation": {
    "l": "Fire compartment boundary",
@@ -1597,7 +1752,10 @@
    ],
    "ip": [
     "Compartmentation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FireCompartmentBoundary",
+   "guid": "5f5fe7db-e041-5c4e-b50c-26b5fda16662"
   },
   "wall_combustible": {
    "l": "Combustible construction",
@@ -1623,7 +1781,10 @@
    ],
    "ip": [
     "Combustible"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CombustibleConstruction",
+   "guid": "1e1420df-eddd-5289-a06e-d65008387d16"
   },
   "wall_flame_spread": {
    "l": "Surface flame-spread rating",
@@ -1649,7 +1810,10 @@
    ],
    "ip": [
     "SurfaceSpreadOfFlame"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SurfaceFlameSpreadRating",
+   "guid": "04405714-aa0d-50d2-9707-2d5523352390"
   },
   "wall_u_value": {
    "l": "Thermal transmittance (U)",
@@ -1676,7 +1840,10 @@
    "ip": [
     "ThermalTransmittance",
     "Heat Transfer Coefficient (U)"
-   ]
+   ],
+   "rn": "Heat Transfer Coefficient",
+   "rk": "builtin",
+   "rnote": "U"
   },
   "at_airflow_type": {
    "l": "Air flow type",
@@ -1703,7 +1870,9 @@
    "ip": [
     "AirFlowType",
     "System Classification"
-   ]
+   ],
+   "rn": "System Classification",
+   "rk": "builtin"
   },
   "at_airflow_rate": {
    "l": "Design airflow",
@@ -1730,7 +1899,9 @@
    "ip": [
     "AirFlowRate",
     "Flow"
-   ]
+   ],
+   "rn": "Flow",
+   "rk": "builtin"
   },
   "at_shape": {
    "l": "Shape",
@@ -1757,7 +1928,10 @@
    "ip": [
     "AirTerminalShape",
     "Shape"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Shape",
+   "guid": "dd95fb12-f6f3-5dba-a1f1-f0d0efecb7ac"
   },
   "at_face_type": {
    "l": "Face type",
@@ -1783,7 +1957,10 @@
    ],
    "ip": [
     "FaceType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FaceType",
+   "guid": "9a49326b-fb8c-5413-95d7-5099316e4de0"
   },
   "at_mounting_type": {
    "l": "Mounting type",
@@ -1810,7 +1987,10 @@
    "ip": [
     "AirTerminalMountingType",
     "MountingType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MountingType",
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
   },
   "at_neck_size": {
    "l": "Neck / connection size",
@@ -1839,7 +2019,9 @@
     "Diameter",
     "Width",
     "Height"
-   ]
+   ],
+   "rn": "Connector diameter / width x height",
+   "rk": "builtin"
   },
   "at_throw": {
    "l": "Throw length",
@@ -1865,7 +2047,10 @@
    ],
    "ip": [
     "ThrowLength"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ThrowLength",
+   "guid": "c85c2b7d-831b-54c4-a98c-768bdae5b970"
   },
   "at_finish_color": {
    "l": "Finish colour",
@@ -1892,7 +2077,10 @@
    "ip": [
     "FinishColour",
     "FinishColor"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FinishColour",
+   "guid": "21706a78-61a3-591f-a97a-1a5cf6f3573e"
   },
   "at_integral_control": {
    "l": "Has integral damper / control",
@@ -1918,7 +2106,10 @@
    ],
    "ip": [
     "HasIntegralControl"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HasIntegralDamperControl",
+   "guid": "eae50db5-ca1e-54b2-9686-863a52a136d9"
   },
   "at_noise_criterion": {
    "l": "Noise criterion (NC) at design flow",
@@ -1942,7 +2133,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_NoiseCriterionAtDesignFlow",
+   "guid": "c522b3fc-16fc-5796-9e01-90383cc4e2c0"
   },
   "ahu_construction": {
    "l": "Construction (factory / site-built)",
@@ -1968,7 +2162,10 @@
    ],
    "ip": [
     "AirHandlerConstruction"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Construction",
+   "guid": "e406de54-15d6-505b-a214-3421c8583550"
   },
   "ahu_fan_arrangement": {
    "l": "Fan arrangement",
@@ -1994,7 +2191,10 @@
    ],
    "ip": [
     "AirHandlerFanCoilArrangement"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FanArrangement",
+   "guid": "45b04f3d-fd46-5113-b75a-25b3ec629455"
   },
   "ahu_supply_airflow": {
    "l": "Design supply airflow",
@@ -2020,7 +2220,10 @@
    ],
    "ip": [
     "NominalAirFlowRate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignSupplyAirflow_Ls",
+   "guid": "3eb5d3fe-0a32-56e6-ac33-1ebb8fe4f687"
   },
   "ahu_outdoor_airflow": {
    "l": "Minimum outdoor airflow",
@@ -2044,7 +2247,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_MinimumOutdoorAirflow_Ls",
+   "guid": "dccb2e29-1335-5405-bd6c-d417700f80ec"
   },
   "ahu_external_static": {
    "l": "External static pressure",
@@ -2070,7 +2276,10 @@
    ],
    "ip": [
     "NominalStaticPressure"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ExternalStaticPressure_Pa",
+   "guid": "48e7b24e-1181-5ce7-8f75-f6e137e8cb41"
   },
   "ahu_cooling_capacity": {
    "l": "Total cooling capacity",
@@ -2094,7 +2303,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_TotalCoolingCapacity_kW",
+   "guid": "2482afeb-2e72-51a1-87ac-7b500d206924"
   },
   "ahu_heating_capacity": {
    "l": "Heating capacity",
@@ -2118,7 +2330,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HeatingCapacity_kW",
+   "guid": "2b74e1a2-9ebb-5bd7-a772-675c537ec259"
   },
   "ahu_heat_recovery_eff": {
    "l": "Heat-recovery effectiveness",
@@ -2142,7 +2357,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HeatRecoveryEffectiveness_pct",
+   "guid": "549db1fe-f7ca-5fc9-91a3-ae24177a2840"
   },
   "ahu_fan_power": {
    "l": "Fan motor power",
@@ -2168,7 +2386,10 @@
    ],
    "ip": [
     "NominalPowerRate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FanMotorPower_kW",
+   "guid": "94f71443-392e-5642-83e4-ef313ecb83bc"
   },
   "ahu_voltage_phase": {
    "l": "Electrical supply (V / phase)",
@@ -2197,7 +2418,10 @@
     "NumberOfPoles",
     "Voltage",
     "Number of Poles"
-   ]
+   ],
+   "rn": "Voltage / Number of Poles",
+   "rk": "builtin",
+   "rnote": "connector"
   },
   "ahu_filter_rating": {
    "l": "Filter rating (MERV)",
@@ -2221,7 +2445,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FilterRating",
+   "guid": "576bf4fe-557d-5111-afce-c4a0e8fddfdd"
   },
   "ahu_system_id": {
    "l": "System served",
@@ -2248,7 +2475,9 @@
    "ip": [
     "System Name",
     "System Classification"
-   ]
+   ],
+   "rn": "System Name",
+   "rk": "builtin"
   },
   "col_profile": {
    "l": "Section / profile",
@@ -2275,7 +2504,10 @@
    "ip": [
     "ProfileName",
     "Section Name Key"
-   ]
+   ],
+   "rn": "Type Name / Section Name Key",
+   "rk": "builtin",
+   "rnote": "structural families"
   },
   "col_material_grade": {
    "l": "Material grade / strength",
@@ -2303,7 +2535,10 @@
     "StrengthClass",
     "StructuralGrade",
     "CompressiveStrength"
-   ]
+   ],
+   "rn": "Structural Material",
+   "rk": "builtin",
+   "rnote": "material properties"
   },
   "col_exposure_class": {
    "l": "Concrete exposure class",
@@ -2329,7 +2564,10 @@
    ],
    "ip": [
     "ExposureClass"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ConcreteExposureClass",
+   "guid": "fe94060a-4d36-5faf-8a21-5989a403643d"
   },
   "col_cover": {
    "l": "Concrete cover",
@@ -2357,7 +2595,10 @@
     "ConcreteCover",
     "ConcreteCoverAtMainBars",
     "ConcreteCoverAtLinks"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ConcreteCover",
+   "guid": "1fca5d77-2a21-5e17-9fb1-fea6e92270d8"
   },
   "col_rebar_ratio": {
    "l": "Reinforcement ratio",
@@ -2383,7 +2624,10 @@
    ],
    "ip": [
     "ReinforcementVolumeRatio"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ReinforcementRatio_kgm3",
+   "guid": "43c350e1-7b60-5569-b8db-3f4d2e642e46"
   },
   "col_length": {
    "l": "Length",
@@ -2409,7 +2653,9 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rn": "Length",
+   "rk": "builtin"
   },
   "col_volume": {
    "l": "Net volume",
@@ -2437,7 +2683,9 @@
     "NetVolume",
     "GrossVolume",
     "Volume"
-   ]
+   ],
+   "rn": "Volume",
+   "rk": "builtin"
   },
   "col_fab_mark": {
    "l": "Piece / fabrication mark",
@@ -2464,7 +2712,10 @@
    "ip": [
     "PieceMark",
     "Tag"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PieceFabricationMark",
+   "guid": "a45394c1-a6f6-540c-abbb-585db1dcf63e"
   },
   "pf_nominal_length": {
    "l": "Nominal length",
@@ -2490,7 +2741,10 @@
    ],
    "ip": [
     "NominalLength"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NominalLength",
+   "guid": "8ff84c9e-83f1-5990-b4ef-9f3d145cb049"
   },
   "pf_nominal_width": {
    "l": "Nominal width",
@@ -2516,7 +2770,10 @@
    ],
    "ip": [
     "NominalWidth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NominalWidth",
+   "guid": "0ef0bba7-62fa-5fa9-a699-d0cdc06f5e07"
   },
   "pf_mounting": {
    "l": "Mounting",
@@ -2543,7 +2800,10 @@
    "ip": [
     "Mounting",
     "PanMounting"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MountingType",
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
   },
   "pf_color": {
    "l": "Colour",
@@ -2570,7 +2830,10 @@
    "ip": [
     "Colour",
     "Color"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FinishColour",
+   "guid": "21706a78-61a3-591f-a97a-1a5cf6f3573e"
   },
   "pf_drain_size": {
    "l": "Drain size",
@@ -2596,7 +2859,9 @@
    ],
    "ip": [
     "DrainSize"
-   ]
+   ],
+   "rn": "Connector diameter",
+   "rk": "builtin"
   },
   "pf_flow_rate": {
    "l": "Flow rate / flush volume",
@@ -2620,7 +2885,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FlowRateFlushVolume",
+   "guid": "9ead8926-4de9-503d-a6e1-040e95fff1fa"
   },
   "pf_fixture_units": {
    "l": "Fixture units (DFU / WSFU)",
@@ -2646,7 +2914,10 @@
    ],
    "ip": [
     "Fixture Units"
-   ]
+   ],
+   "rn": "Fixture Units",
+   "rk": "builtin",
+   "rnote": "plumbing connector / family"
   },
   "pf_accessible": {
    "l": "Barrier-free fixture",
@@ -2670,7 +2941,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BarrierFreeFixture",
+   "guid": "8023ebe8-9213-5327-aae6-c8fe375d0609"
   },
   "pf_mounting_height": {
    "l": "Mounting / rim height",
@@ -2697,7 +2971,9 @@
    "ip": [
     "MountingOffset",
     "Elevation from Level"
-   ]
+   ],
+   "rn": "Elevation from Level / Offset",
+   "rk": "builtin"
   },
   "space_illuminance": {
    "l": "Required illuminance (space)",
@@ -2723,7 +2999,10 @@
    ],
    "ip": [
     "Illuminance"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RequiredIlluminance_lx",
+   "guid": "25521c22-a285-51c2-af98-816f6e5d1dde"
   },
   "eq_motor_power": {
    "l": "Motor nameplate power",
@@ -2750,7 +3029,10 @@
    "ip": [
     "Power",
     "MaximumPowerOutput"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MotorNameplatePower_kW",
+   "guid": "669db385-9557-5c09-8b2c-f968e908caa2"
   },
   "eq_energy_source": {
    "l": "Energy source / fuel",
@@ -2777,7 +3059,10 @@
    "ip": [
     "EnergySource",
     "EnergySourceLabel"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_EnergySourceFuel",
+   "guid": "93a71903-5b8d-5f70-9e56-11483977b131"
   },
   "bas_ref": {
    "l": "Building automation (BAS) reference",
@@ -2801,7 +3086,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BuildingAutomationReference",
+   "guid": "7c5a7a0d-f50e-5e88-be15-bbc806fe4be5"
   },
   "mep_insulation": {
    "l": "Insulation type and thickness",
@@ -2828,7 +3116,9 @@
    "ip": [
     "Insulation Type",
     "Insulation Thickness"
-   ]
+   ],
+   "rn": "Insulation Type / Insulation Thickness",
+   "rk": "builtin"
   },
   "mep_flow": {
    "l": "Design flow",
@@ -2854,7 +3144,9 @@
    ],
    "ip": [
     "Flow"
-   ]
+   ],
+   "rn": "Flow",
+   "rk": "builtin"
   },
   "mep_length": {
    "l": "Length",
@@ -2880,7 +3172,9 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rn": "Length",
+   "rk": "builtin"
   },
   "el_voltage": {
    "l": "Rated voltage",
@@ -2908,7 +3202,9 @@
     "RatedVoltage",
     "Voltage",
     "Distribution System"
-   ]
+   ],
+   "rn": "Voltage / Distribution System",
+   "rk": "builtin"
   },
   "el_rated_current": {
    "l": "Rated current (mains / bus)",
@@ -2935,7 +3231,9 @@
    "ip": [
     "RatedCurrent",
     "Mains"
-   ]
+   ],
+   "rn": "Mains",
+   "rk": "builtin"
   },
   "el_poles": {
    "l": "Phases / number of poles",
@@ -2962,7 +3260,9 @@
    "ip": [
     "NumberOfPoles",
     "Number of Poles"
-   ]
+   ],
+   "rn": "Number of Poles",
+   "rk": "builtin"
   },
   "el_enclosure": {
    "l": "Enclosure rating",
@@ -2989,7 +3289,9 @@
    "ip": [
     "IP_Code",
     "Enclosure"
-   ]
+   ],
+   "rn": "Enclosure",
+   "rk": "builtin"
   },
   "el_short_circuit": {
    "l": "Short-circuit rating",
@@ -3015,7 +3317,9 @@
    ],
    "ip": [
     "Short Circuit Rating"
-   ]
+   ],
+   "rn": "Short Circuit Rating",
+   "rk": "builtin"
   },
   "el_load": {
    "l": "Connected electrical load",
@@ -3043,7 +3347,10 @@
     "Power",
     "NominalPowerConsumption",
     "Apparent Load"
-   ]
+   ],
+   "rn": "Apparent Load",
+   "rk": "builtin",
+   "rnote": "connector"
   },
   "el_emergency": {
    "l": "On emergency / life-safety power",
@@ -3064,7 +3371,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_OnEmergencyLifeSafetyPower",
+   "guid": "e117e9b2-92ef-5bc0-93a8-1c8d8fee26d7"
   },
   "dev_mounting_height": {
    "l": "Mounting height",
@@ -3091,7 +3401,9 @@
    "ip": [
     "Elevation from Level",
     "Elevation"
-   ]
+   ],
+   "rn": "Elevation from Level",
+   "rk": "builtin"
   },
   "ffe_responsibility": {
    "l": "Supply / install responsibility",
@@ -3115,7 +3427,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SupplyInstallResponsibility",
+   "guid": "50832367-e4e9-5f59-a50e-9ce7dbe8dc95"
   },
   "loa_tolerance": {
    "l": "Positional accuracy (as-built)",
@@ -3144,7 +3459,10 @@
     "HorizontalTolerance",
     "VerticalTolerance",
     "ToleranceBasis"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PositionalAccuracy",
+   "guid": "b112bce4-20a8-5737-9319-51c3f16e05dd"
   },
   "lin_station": {
    "l": "Station / chainage range",
@@ -3171,7 +3489,10 @@
    "ip": [
     "Station",
     "IncomingStation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_StationChainageRange",
+   "guid": "2772f4e1-c7a5-5534-acfd-12cac31cb5ec"
   },
   "lin_alignment_ref": {
    "l": "Reference alignment",
@@ -3195,7 +3516,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ReferenceAlignment",
+   "guid": "57c90d7b-4f7d-5d95-892a-b446ec10c93f"
   },
   "slab_thickness": {
    "l": "Overall thickness",
@@ -3223,7 +3547,9 @@
     "Depth",
     "Default Thickness",
     "Thickness"
-   ]
+   ],
+   "rn": "Default Thickness",
+   "rk": "builtin"
   },
   "slab_area": {
    "l": "Net area",
@@ -3251,7 +3577,9 @@
     "NetArea",
     "GrossArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "slab_live_load": {
    "l": "Design live load",
@@ -3275,7 +3603,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignLiveLoad_kPa",
+   "guid": "03b6f9a2-176f-5ec2-ae58-dfc9f9144a4e"
   },
   "roof_slope": {
    "l": "Slope",
@@ -3302,7 +3633,9 @@
    "ip": [
     "PitchAngle",
     "Slope"
-   ]
+   ],
+   "rn": "Slope",
+   "rk": "builtin"
   },
   "roof_area": {
    "l": "Roof area",
@@ -3331,7 +3664,9 @@
     "ProjectedArea",
     "GrossArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "roof_membrane": {
    "l": "Roofing membrane system",
@@ -3355,7 +3690,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RoofingMembraneSystem",
+   "guid": "608f875f-b8f8-5f32-b5c5-e5a6f9286b25"
   },
   "roof_insulation_rsi": {
    "l": "Insulation thermal resistance (RSI)",
@@ -3381,7 +3719,10 @@
    ],
    "ip": [
     "Thermal Resistance (R)"
-   ]
+   ],
+   "rn": "Thermal Resistance",
+   "rk": "builtin",
+   "rnote": "R"
   },
   "roof_sri": {
    "l": "Solar reflectance index (SRI)",
@@ -3405,7 +3746,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SolarReflectanceIndex",
+   "guid": "fc61624e-3647-51ed-b4b8-55af84de0182"
   },
   "clg_height": {
    "l": "Ceiling height",
@@ -3432,7 +3776,9 @@
    "ip": [
     "FinishCeilingHeight",
     "Height Offset From Level"
-   ]
+   ],
+   "rn": "Height Offset From Level",
+   "rk": "builtin"
   },
   "clg_system": {
    "l": "Ceiling system",
@@ -3456,7 +3802,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_CeilingSystem",
+   "guid": "9ac0e317-e51c-5a35-888e-0efa17d7d0c6"
   },
   "clg_area": {
    "l": "Ceiling area",
@@ -3484,7 +3833,9 @@
     "NetArea",
     "GrossArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "clg_nrc": {
    "l": "Sound absorption (NRC)",
@@ -3510,7 +3861,10 @@
    ],
    "ip": [
     "AcousticRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SoundAbsorption",
+   "guid": "8c2b725d-e9ba-5fcb-91b8-4060b1a228eb"
   },
   "clg_finish": {
    "l": "Finish",
@@ -3536,7 +3890,10 @@
    ],
    "ip": [
     "Finish"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Finish",
+   "guid": "a137b84c-9b01-5582-98ba-3eb3a060c88a"
   },
   "clg_accessible": {
    "l": "Accessible (demountable) ceiling",
@@ -3557,7 +3914,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_AccessibleCeiling",
+   "guid": "9de341f9-dcfc-5921-ba65-82e5ee7025da"
   },
   "st_risers": {
    "l": "Number of risers",
@@ -3584,7 +3944,9 @@
    "ip": [
     "NumberOfRiser",
     "Actual Number of Risers"
-   ]
+   ],
+   "rn": "Actual Number of Risers",
+   "rk": "builtin"
   },
   "st_riser_height": {
    "l": "Riser height",
@@ -3611,7 +3973,9 @@
    "ip": [
     "RiserHeight",
     "Actual Riser Height"
-   ]
+   ],
+   "rn": "Actual Riser Height",
+   "rk": "builtin"
   },
   "st_tread_length": {
    "l": "Tread run",
@@ -3638,7 +4002,9 @@
    "ip": [
     "TreadLength",
     "Actual Tread Depth"
-   ]
+   ],
+   "rn": "Actual Tread Depth",
+   "rk": "builtin"
   },
   "circ_clear_width": {
    "l": "Clear width",
@@ -3666,7 +4032,9 @@
     "ClearWidth",
     "Actual Run Width",
     "Width"
-   ]
+   ],
+   "rn": "Actual Run Width / Width",
+   "rk": "builtin"
   },
   "circ_headroom": {
    "l": "Headroom",
@@ -3693,7 +4061,10 @@
    "ip": [
     "RequiredHeadroom",
     "Headroom"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Headroom",
+   "guid": "d52a136c-cedd-5a8a-b775-e20baa13f6cc"
   },
   "circ_nonslip": {
    "l": "Non-slip surface",
@@ -3716,7 +4087,10 @@
    ],
    "ip": [
     "HasNonSkidSurface"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NonSlipSurface",
+   "guid": "21d640c4-228a-56ca-8e22-478ee4f89e01"
   },
   "circ_accessible": {
    "l": "Barrier-free features",
@@ -3739,7 +4113,10 @@
    ],
    "ip": [
     "HandicapAccessible"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BarrierFreeFeatures",
+   "guid": "4e542bbf-e07e-5371-a871-b9e235bfe630"
   },
   "circ_fire_exit": {
    "l": "Part of an exit",
@@ -3762,7 +4139,10 @@
    ],
    "ip": [
     "FireExit"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PartOfAnExit",
+   "guid": "5b00a6d7-619e-5e77-9db8-dbe3193c3508"
   },
   "rmp_slope": {
    "l": "Slope",
@@ -3790,7 +4170,10 @@
     "Slope",
     "RequiredSlope",
     "Ramp Max Slope (1/x)"
-   ]
+   ],
+   "rn": "Ramp Max Slope",
+   "rk": "builtin",
+   "rnote": "1/x"
   },
   "rlg_height": {
    "l": "Guard / railing height",
@@ -3817,7 +4200,9 @@
    "ip": [
     "Height",
     "Railing Height"
-   ]
+   ],
+   "rn": "Railing Height",
+   "rk": "builtin"
   },
   "rlg_length": {
    "l": "Length",
@@ -3843,7 +4228,9 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rn": "Length",
+   "rk": "builtin"
   },
   "rlg_handrail_dia": {
    "l": "Handrail diameter",
@@ -3869,7 +4256,10 @@
    ],
    "ip": [
     "Diameter"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HandrailDiameter",
+   "guid": "8952c99d-fb15-5c69-bb0f-6fcf3bb7e4c4"
   },
   "rlg_design_load": {
    "l": "Design load",
@@ -3893,7 +4283,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignLoad_kNm",
+   "guid": "f90e8ef0-cc3e-55df-9e74-b79609d62fa6"
   },
   "rlg_infill": {
    "l": "Infill type",
@@ -3917,7 +4310,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_InfillType",
+   "guid": "0f5e80d1-99d2-573e-b5cd-5558f1580c97"
   },
   "glz_u_value": {
    "l": "Overall thermal transmittance (U)",
@@ -3944,7 +4340,10 @@
    "ip": [
     "ThermalTransmittance",
     "Heat Transfer Coefficient (U)"
-   ]
+   ],
+   "rn": "Heat Transfer Coefficient",
+   "rk": "builtin",
+   "rnote": "U"
   },
   "glz_shgc": {
    "l": "Solar heat gain coefficient",
@@ -3971,7 +4370,9 @@
    "ip": [
     "SolarHeatGainTransmittance",
     "Solar Heat Gain Coefficient"
-   ]
+   ],
+   "rn": "Solar Heat Gain Coefficient - analytical properties",
+   "rk": "builtin"
   },
   "glz_vlt": {
    "l": "Visible light transmittance",
@@ -3998,7 +4399,9 @@
    "ip": [
     "VisibleLightTransmittance",
     "Visual Light Transmittance"
-   ]
+   ],
+   "rn": "Visual Light Transmittance - analytical properties",
+   "rk": "builtin"
   },
   "glz_makeup": {
    "l": "Glazing make-up",
@@ -4029,7 +4432,10 @@
     "IsCoated",
     "IsTempered",
     "IsLaminated"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_GlazingMakeUp",
+   "guid": "27e8f099-c062-55ec-b2d5-f6d8986fb157"
   },
   "glz_air_leakage": {
    "l": "Air leakage rate",
@@ -4055,7 +4461,10 @@
    ],
    "ip": [
     "Infiltration"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_AirLeakageRate_Lsm2",
+   "guid": "dfd2ed76-f045-51e5-8d5e-06d3782e2da8"
   },
   "glz_performance": {
    "l": "Performance class (NAFS)",
@@ -4083,7 +4492,10 @@
     "WindLoadRating",
     "WaterTightnessRating",
     "MechanicalLoadRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PerformanceClass",
+   "guid": "b65f95f1-116b-55f6-ae79-f8e57388ea91"
   },
   "glz_bird_friendly": {
    "l": "Bird-friendly glazing",
@@ -4104,7 +4516,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BirdFriendlyGlazing",
+   "guid": "257502ba-a35d-5cc1-8d44-1767ddfc361b"
   },
   "cw_area": {
    "l": "Curtain wall area",
@@ -4132,7 +4547,9 @@
     "GrossSideArea",
     "NetSideArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "cw_system": {
    "l": "Curtain wall system",
@@ -4156,7 +4573,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_CurtainWallSystem",
+   "guid": "9ebf5765-6427-5136-87ea-ea412dc34fb3"
   },
   "win_width": {
    "l": "Width",
@@ -4182,7 +4602,9 @@
    ],
    "ip": [
     "Width"
-   ]
+   ],
+   "rn": "Width",
+   "rk": "builtin"
   },
   "win_height": {
    "l": "Height",
@@ -4208,7 +4630,9 @@
    ],
    "ip": [
     "Height"
-   ]
+   ],
+   "rn": "Height",
+   "rk": "builtin"
   },
   "win_operation": {
    "l": "Operation / partitioning",
@@ -4235,7 +4659,9 @@
    "ip": [
     "PartitioningType",
     "OperationType"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "win_sill_height": {
    "l": "Sill height",
@@ -4261,7 +4687,9 @@
    ],
    "ip": [
     "Sill Height"
-   ]
+   ],
+   "rn": "Sill Height",
+   "rk": "builtin"
   },
   "win_frame_material": {
    "l": "Frame material",
@@ -4285,7 +4713,9 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "family",
+   "rn": ""
   },
   "mem_length": {
    "l": "Length",
@@ -4312,7 +4742,9 @@
    "ip": [
     "Length",
     "Cut Length"
-   ]
+   ],
+   "rn": "Cut Length / Length",
+   "rk": "builtin"
   },
   "bm_span": {
    "l": "Span",
@@ -4338,7 +4770,10 @@
    ],
    "ip": [
     "Span"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Span",
+   "guid": "82f59833-01b7-5c30-a602-dc5676f2f269"
   },
   "bm_camber": {
    "l": "Camber",
@@ -4365,7 +4800,9 @@
    "ip": [
     "Camber Size",
     "CamberAtMidspan"
-   ]
+   ],
+   "rn": "Camber Size",
+   "rk": "builtin"
   },
   "stl_connection": {
    "l": "End connection type",
@@ -4392,7 +4829,9 @@
    "ip": [
     "Moment Connection Start",
     "Moment Connection End"
-   ]
+   ],
+   "rn": "Moment Connection Start / End",
+   "rk": "builtin"
   },
   "stl_fire_protection": {
    "l": "Fire protection",
@@ -4416,7 +4855,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FireProtection",
+   "guid": "c3533fc8-a506-5e8a-9fe3-879ef8d3799b"
   },
   "stl_coating": {
    "l": "Coating / corrosion protection",
@@ -4442,7 +4884,10 @@
    ],
    "ip": [
     "CorrosionTreatment"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoatingCorrosionProtection",
+   "guid": "3e9e7f2b-992a-5f0e-822f-a121424eb597"
   },
   "mem_delegated_design": {
    "l": "Delegated (supplier) design",
@@ -4463,7 +4908,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DelegatedDesign",
+   "guid": "5de5af45-2dc9-5ef6-9964-f3893b5b0bfc"
   },
   "ftg_width": {
    "l": "Width",
@@ -4489,7 +4937,9 @@
    ],
    "ip": [
     "Width"
-   ]
+   ],
+   "rn": "Width",
+   "rk": "builtin"
   },
   "ftg_length": {
    "l": "Length",
@@ -4515,7 +4965,9 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rn": "Length",
+   "rk": "builtin"
   },
   "ftg_depth": {
    "l": "Thickness",
@@ -4542,7 +4994,9 @@
    "ip": [
     "Height",
     "Foundation Thickness"
-   ]
+   ],
+   "rn": "Foundation Thickness",
+   "rk": "builtin"
   },
   "ftg_bearing_capacity": {
    "l": "Design bearing resistance",
@@ -4568,7 +5022,10 @@
    ],
    "ip": [
     "LoadBearingCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignBearingResistance_kPa",
+   "guid": "1ab8b906-9922-5e61-89be-f4a84f587a01"
   },
   "ftg_bottom_elev": {
    "l": "Bottom elevation",
@@ -4594,7 +5051,9 @@
    ],
    "ip": [
     "Elevation at Bottom"
-   ]
+   ],
+   "rn": "Elevation at Bottom",
+   "rk": "builtin"
   },
   "ftg_frost_cover": {
    "l": "Frost protection depth",
@@ -4618,7 +5077,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FrostProtectionDepth",
+   "guid": "5d9fd607-f83c-528a-836c-66c4ab77a011"
   },
   "pile_size": {
    "l": "Diameter / section",
@@ -4644,7 +5106,9 @@
    ],
    "ip": [
     "CrossSectionArea"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "pile_capacity": {
    "l": "Design axial resistance",
@@ -4668,7 +5132,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignAxialResistance_kN",
+   "guid": "d7c0cd8c-315b-5f11-84f7-4955272d0471"
   },
   "pile_tip_elev": {
    "l": "Toe elevation",
@@ -4694,7 +5161,9 @@
    ],
    "ip": [
     "Elevation at Bottom"
-   ]
+   ],
+   "rn": "Elevation at Bottom",
+   "rk": "builtin"
   },
   "pile_cutoff_elev": {
    "l": "Cut-off elevation",
@@ -4720,7 +5189,9 @@
    ],
    "ip": [
     "Elevation at Top"
-   ]
+   ],
+   "rn": "Elevation at Top",
+   "rk": "builtin"
   },
   "pile_record": {
    "l": "Installation record",
@@ -4744,7 +5215,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_InstallationRecord",
+   "guid": "5837d5bd-5f54-5057-afb3-3ed88b4a5e51"
   },
   "rb_grade": {
    "l": "Reinforcement grade",
@@ -4771,7 +5245,10 @@
    "ip": [
     "ReinforcementStrengthClass",
     "StructuralGrade"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ReinforcementGrade",
+   "guid": "c0c53cb9-79ee-5b97-90d6-fb9f1e6a0024"
   },
   "rb_bar_size": {
    "l": "Bar size",
@@ -4798,7 +5275,9 @@
    "ip": [
     "NominalDiameter",
     "Bar Diameter"
-   ]
+   ],
+   "rn": "Bar Diameter",
+   "rk": "builtin"
   },
   "rb_spacing": {
    "l": "Spacing",
@@ -4824,7 +5303,10 @@
    ],
    "ip": [
     "Spacing"
-   ]
+   ],
+   "rn": "Spacing",
+   "rk": "builtin",
+   "rnote": "rebar set layout"
   },
   "rb_total_mass": {
    "l": "Total mass",
@@ -4850,7 +5332,10 @@
    ],
    "ip": [
     "Weight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TotalMass_kg",
+   "guid": "0b815374-04ec-51ea-952e-9a23ce7e3ea5"
   },
   "rb_total_length": {
    "l": "Total bar length",
@@ -4877,7 +5362,9 @@
    "ip": [
     "Length",
     "Total Bar Length"
-   ]
+   ],
+   "rn": "Total Bar Length",
+   "rk": "builtin"
   },
   "rb_count": {
    "l": "Number of bars",
@@ -4904,7 +5391,9 @@
    "ip": [
     "Count",
     "Quantity"
-   ]
+   ],
+   "rn": "Quantity",
+   "rk": "builtin"
   },
   "rb_coating": {
    "l": "Bar coating",
@@ -4928,7 +5417,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BarCoating",
+   "guid": "d78287ba-5146-5ab5-853d-b888baaab08a"
   },
   "rw_height": {
    "l": "Retained height",
@@ -4955,7 +5447,9 @@
    "ip": [
     "Height",
     "Unconnected Height"
-   ]
+   ],
+   "rn": "Unconnected Height",
+   "rk": "builtin"
   },
   "rw_length": {
    "l": "Length",
@@ -4981,7 +5475,9 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rn": "Length",
+   "rk": "builtin"
   },
   "rw_system": {
    "l": "Wall system",
@@ -5005,7 +5501,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_WallSystem",
+   "guid": "2bae5797-bbc2-544c-8196-f9e3a186c193"
   },
   "rw_drainage": {
    "l": "Drainage provisions",
@@ -5029,7 +5528,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DrainageProvisions",
+   "guid": "97d9e3d4-3cec-548a-9032-afcd28c95300"
   },
   "dct_shape": {
    "l": "Cross-section shape",
@@ -5055,7 +5557,9 @@
    ],
    "ip": [
     "CrossSectionShape"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "dct_size": {
    "l": "Size",
@@ -5086,7 +5590,9 @@
     "Width",
     "Height",
     "Diameter"
-   ]
+   ],
+   "rn": "Size",
+   "rk": "builtin"
   },
   "dct_pressure_class": {
    "l": "Pressure class",
@@ -5113,7 +5619,10 @@
    "ip": [
     "WorkingPressure",
     "PressureClass"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PressureClass_Pa",
+   "guid": "de3092ff-b4ef-5f16-9616-7e535f2d424f"
   },
   "dct_seal_class": {
    "l": "Seal / leakage class",
@@ -5139,7 +5648,10 @@
    ],
    "ip": [
     "LeakageClass"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SealLeakageClass",
+   "guid": "2692525e-cb5b-5de1-a38e-ee85d837e00e"
   },
   "dct_liner": {
    "l": "Internal liner",
@@ -5164,7 +5676,9 @@
     "HasLiner",
     "Lining Type",
     "Lining Thickness"
-   ]
+   ],
+   "rn": "Lining Type / Lining Thickness",
+   "rk": "builtin"
   },
   "dct_surface_area": {
    "l": "Outer surface area",
@@ -5191,7 +5705,9 @@
    "ip": [
     "OuterSurfaceArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "dmp_size": {
    "l": "Size",
@@ -5218,7 +5734,9 @@
    "ip": [
     "FaceArea",
     "Size"
-   ]
+   ],
+   "rn": "Size",
+   "rk": "builtin"
   },
   "dmp_fire_rating": {
    "l": "Fire-resistance rating",
@@ -5244,7 +5762,10 @@
    ],
    "ip": [
     "FireResistanceRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FireResistanceRating",
+   "guid": "662ec1de-6557-5ffa-bade-097aa5819ed3"
   },
   "dmp_closure_rating": {
    "l": "Dynamic / static rating",
@@ -5270,7 +5791,10 @@
    ],
    "ip": [
     "ClosureRatingEnum"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DynamicStaticRating",
+   "guid": "63359bc0-18be-5351-a176-1dad46ef0fbc"
   },
   "dmp_release_temp": {
    "l": "Release temperature",
@@ -5296,7 +5820,10 @@
    ],
    "ip": [
     "FusibleLinkTemperature"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ReleaseTemperature_C",
+   "guid": "7acce98f-2d79-5088-8a4f-a9887ae3d906"
   },
   "dmp_actuation": {
    "l": "Actuation / operation",
@@ -5323,7 +5850,10 @@
    "ip": [
     "ActuationType",
     "Operation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ActuationOperation",
+   "guid": "0260cd90-ef56-59c2-a1dd-ad5f936da798"
   },
   "dmp_leakage": {
    "l": "Leakage when closed",
@@ -5349,7 +5879,10 @@
    ],
    "ip": [
     "LeakageFullyClosed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LeakageWhenClosed_Ls",
+   "guid": "0e3f57b1-62c3-5bf5-99e3-46730c0f160b"
   },
   "dmp_access_door": {
    "l": "Access door provided",
@@ -5370,7 +5903,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_AccessDoorProvided",
+   "guid": "7ff90dd6-70dc-5fd7-97c3-55b470cb9da4"
   },
   "dmp_airflow": {
    "l": "Nominal airflow",
@@ -5396,7 +5932,10 @@
    ],
    "ip": [
     "NominalAirFlowRate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NominalAirflow_Ls",
+   "guid": "d054aca8-250a-5799-97d1-c83fe374fe57"
   },
   "pp_nominal_size": {
    "l": "Nominal size",
@@ -5424,7 +5963,9 @@
     "NominalDiameter",
     "Size",
     "Diameter"
-   ]
+   ],
+   "rn": "Size / Diameter",
+   "rk": "builtin"
   },
   "pp_pressure": {
    "l": "Working pressure rating",
@@ -5451,7 +5992,10 @@
    "ip": [
     "WorkingPressure",
     "PressureClass"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_WorkingPressureRating_kPa",
+   "guid": "55a21ab7-a531-5e97-9a45-ccf26a1d695d"
   },
   "pp_joint": {
    "l": "Joint type",
@@ -5475,7 +6019,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_JointType",
+   "guid": "6d0f3718-bb83-5c66-97e5-b82a4feef9c8"
   },
   "pp_slope": {
    "l": "Slope",
@@ -5502,7 +6049,9 @@
    "ip": [
     "Gradient",
     "Slope"
-   ]
+   ],
+   "rn": "Slope",
+   "rk": "builtin"
   },
   "pp_invert": {
    "l": "Invert elevation",
@@ -5529,7 +6078,9 @@
    "ip": [
     "InvertElevation",
     "Invert Elevation"
-   ]
+   ],
+   "rn": "Invert Elevation",
+   "rk": "builtin"
   },
   "pp_fluid": {
    "l": "Fluid / service",
@@ -5556,7 +6107,9 @@
    "ip": [
     "Fluid Type",
     "Fluid Temperature"
-   ]
+   ],
+   "rn": "Fluid Type",
+   "rk": "builtin"
   },
   "vlv_size": {
    "l": "Size",
@@ -5582,7 +6135,9 @@
    ],
    "ip": [
     "Size"
-   ]
+   ],
+   "rn": "Size",
+   "rk": "builtin"
   },
   "vlv_mechanism": {
    "l": "Valve mechanism",
@@ -5609,7 +6164,9 @@
    "ip": [
     "ValveMechanism",
     "ValvePattern"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "vlv_operation": {
    "l": "Operation",
@@ -5635,7 +6192,10 @@
    ],
    "ip": [
     "ValveOperation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Operation",
+   "guid": "3dee3c89-ebfc-555a-9116-6d9519a0d58c"
   },
   "vlv_pressure": {
    "l": "Working / test pressure",
@@ -5662,7 +6222,10 @@
    "ip": [
     "WorkingPressure",
     "TestPressure"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_WorkingTestPressure_kPa",
+   "guid": "0202c9d2-c9a5-5e5a-9dbb-f78d5934f3e9"
   },
   "vlv_flow_coefficient": {
    "l": "Flow coefficient (Kv / Cv)",
@@ -5688,7 +6251,10 @@
    ],
    "ip": [
     "FlowCoefficient"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FlowCoefficient",
+   "guid": "6aa62046-4825-57ac-a098-aa0781f566ab"
   },
   "vlv_normally_open": {
    "l": "Normally open",
@@ -5711,7 +6277,10 @@
    ],
    "ip": [
     "IsNormallyOpen"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NormallyOpen",
+   "guid": "e1692a30-c5cd-52f7-9ef1-8676d56a2b84"
   },
   "pmp_flow": {
    "l": "Design flow",
@@ -5738,7 +6307,9 @@
    "ip": [
     "FlowRateRange",
     "Flow"
-   ]
+   ],
+   "rn": "Flow",
+   "rk": "builtin"
   },
   "pmp_head": {
    "l": "Design head",
@@ -5762,7 +6333,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignHead_kPa",
+   "guid": "4ae2c484-1ae6-50d1-b21b-ebb35d2716c4"
   },
   "pmp_speed": {
    "l": "Nominal speed",
@@ -5788,7 +6362,10 @@
    ],
    "ip": [
     "NominalRotationSpeed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NominalSpeed_rpm",
+   "guid": "212c3b0b-7567-5df5-b9be-11124b530443"
   },
   "pmp_connection_size": {
    "l": "Connection size",
@@ -5814,7 +6391,10 @@
    ],
    "ip": [
     "ConnectionSize"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ConnectionSize",
+   "guid": "8c9070ea-a722-59a3-be4b-6537d81698c4"
   },
   "pmp_base": {
    "l": "Base / drive arrangement",
@@ -5841,7 +6421,10 @@
    "ip": [
     "BaseType",
     "DriveConnectionType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BaseDriveArrangement",
+   "guid": "98f1b834-21bf-57bf-a0c7-7186d596a887"
   },
   "eq_vfd": {
    "l": "Variable-frequency drive",
@@ -5862,7 +6445,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_VariableFrequencyDrive",
+   "guid": "2ae670cd-fb06-59a6-9e7f-7e89d4c07805"
   },
   "blr_input": {
    "l": "Input rating",
@@ -5888,7 +6474,10 @@
    ],
    "ip": [
     "NominalEnergyConsumption"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_InputRating_kW",
+   "guid": "2a418373-6fd0-548b-9391-9950c9aac062"
   },
   "blr_output": {
    "l": "Heating output",
@@ -5912,7 +6501,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HeatingOutput_kW",
+   "guid": "a7395f72-f06a-53d5-a053-525616b7b056"
   },
   "blr_efficiency": {
    "l": "Thermal efficiency",
@@ -5936,7 +6528,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ThermalEfficiency_pct",
+   "guid": "50f5cda1-c8bd-5a07-a657-e8c9cbce126d"
   },
   "blr_pressure": {
    "l": "Pressure rating",
@@ -5962,7 +6557,10 @@
    ],
    "ip": [
     "PressureRating"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PressureRating_kPa",
+   "guid": "feff18a3-4751-5471-b4ca-cf0018a7c426"
   },
   "blr_outlet_temp": {
    "l": "Design supply temperature",
@@ -5988,7 +6586,10 @@
    ],
    "ip": [
     "OutletTemperatureRange"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignSupplyTemperature_C",
+   "guid": "18a091bb-64c7-5f48-8cba-753fc09ade66"
   },
   "blr_operating_mode": {
    "l": "Firing / operating mode",
@@ -6014,7 +6615,10 @@
    ],
    "ip": [
     "OperatingMode"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FiringOperatingMode",
+   "guid": "dc51359e-0d09-54b2-b2b2-d48bb4f71184"
   },
   "chl_capacity": {
    "l": "Cooling capacity",
@@ -6040,7 +6644,10 @@
    ],
    "ip": [
     "ChillerCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoolingCapacity_kW",
+   "guid": "44201596-9941-5298-9935-137558b0c7e4"
   },
   "chl_cop": {
    "l": "Full-load efficiency (COP)",
@@ -6066,7 +6673,10 @@
    ],
    "ip": [
     "NominalEfficiency"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FullLoadEfficiency",
+   "guid": "ce910952-0fb5-5685-ab3d-c5f8407909f2"
   },
   "chl_iplv": {
    "l": "Part-load efficiency (IPLV)",
@@ -6090,7 +6700,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PartLoadEfficiency",
+   "guid": "89211d95-b559-5e3a-91ee-177baf031875"
   },
   "chl_power": {
    "l": "Input power",
@@ -6116,7 +6729,10 @@
    ],
    "ip": [
     "NominalPowerConsumption"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_InputPower_kW",
+   "guid": "45f08c9d-d447-58ae-9e7b-391f705a705e"
   },
   "chl_heat_rejection": {
    "l": "Heat rejection rate",
@@ -6142,7 +6758,10 @@
    ],
    "ip": [
     "NominalHeatRejectionRate"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HeatRejectionRate_kW",
+   "guid": "09324dfe-c37e-5b8b-9020-1dfe27ab0c17"
   },
   "eq_refrigerant": {
    "l": "Refrigerant",
@@ -6166,7 +6785,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_Refrigerant",
+   "guid": "6825e8e3-2d7f-5f3c-9ac9-2742c37097cb"
   },
   "ct_capacity": {
    "l": "Heat rejection capacity",
@@ -6192,7 +6814,10 @@
    ],
    "ip": [
     "NominalCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HeatRejectionCapacity_kW",
+   "guid": "a9e5867d-915b-5fa2-b0f0-6da4f3a79039"
   },
   "ct_cells": {
    "l": "Number of cells",
@@ -6218,7 +6843,10 @@
    ],
    "ip": [
     "NumberOfCells"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfCells",
+   "guid": "7ffd681a-57b4-512b-a05f-da746eb4215e"
   },
   "ct_design_wb": {
    "l": "Design wet-bulb temperature",
@@ -6244,7 +6872,10 @@
    ],
    "ip": [
     "AmbientDesignWetBulbTemperature"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignWetBulbTemperature_C",
+   "guid": "b00c93fe-42f1-5a8e-98e9-ae99f9415e2a"
   },
   "ct_makeup_water": {
    "l": "Make-up water requirement",
@@ -6270,7 +6901,10 @@
    ],
    "ip": [
     "WaterRequirement"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MakeUpWaterRequirement_Ls",
+   "guid": "8af2ce5a-e2b1-5550-868a-e672ae0895b3"
   },
   "ct_circuit": {
    "l": "Circuit type",
@@ -6297,7 +6931,10 @@
    "ip": [
     "CircuitType",
     "FlowArrangement"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CircuitType",
+   "guid": "28e22e34-d9ec-5e8f-8af8-06bf248c5793"
   },
   "fan_airflow": {
    "l": "Design airflow",
@@ -6324,7 +6961,9 @@
    "ip": [
     "NominalAirFlowRate",
     "Flow"
-   ]
+   ],
+   "rn": "Flow",
+   "rk": "builtin"
   },
   "fan_static": {
    "l": "Static pressure",
@@ -6351,7 +6990,10 @@
    "ip": [
     "NominalStaticPressure",
     "NominalTotalPressure"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_StaticPressure_Pa",
+   "guid": "59f54f77-8ffb-5d53-9312-faf47d529410"
   },
   "fan_speed": {
    "l": "Nominal speed",
@@ -6377,7 +7019,10 @@
    ],
    "ip": [
     "NominalRotationSpeed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NominalSpeed_rpm",
+   "guid": "212c3b0b-7567-5df5-b9be-11124b530443"
   },
   "fan_drive": {
    "l": "Drive type",
@@ -6403,7 +7048,10 @@
    ],
    "ip": [
     "MotorDriveType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DriveType",
+   "guid": "9ebff48b-2f44-596d-a66d-49a1a4fa380e"
   },
   "fan_capacity_control": {
    "l": "Capacity control",
@@ -6429,7 +7077,10 @@
    ],
    "ip": [
     "CapacityControlType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CapacityControl",
+   "guid": "630c57ff-6a23-509a-8f67-0a2e00767e60"
   },
   "fan_mounting": {
    "l": "Mounting",
@@ -6455,7 +7106,10 @@
    ],
    "ip": [
     "FanMountingType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MountingType",
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
   },
   "vav_max_flow": {
    "l": "Maximum airflow",
@@ -6482,7 +7136,9 @@
    "ip": [
     "NominalAirFlowRate",
     "Flow"
-   ]
+   ],
+   "rn": "Flow",
+   "rk": "builtin"
   },
   "vav_flow_range": {
    "l": "Minimum / maximum airflow",
@@ -6508,7 +7164,10 @@
    ],
    "ip": [
     "AirFlowRateRange"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MinimumMaximumAirflow_Ls",
+   "guid": "473dd2ba-d916-59de-add2-47d8c6d78a32"
   },
   "vav_reheat": {
    "l": "Reheat type",
@@ -6534,7 +7193,10 @@
    ],
    "ip": [
     "ReheatType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ReheatType",
+   "guid": "ba921ff9-3632-5d57-885b-0dd30e2bd762"
   },
   "vav_inlet_size": {
    "l": "Inlet size",
@@ -6560,7 +7222,10 @@
    ],
    "ip": [
     "NominalDamperDiameter"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_InletSize",
+   "guid": "6d54be01-068d-51c9-b8fb-e5a5cd10c8e0"
   },
   "vav_has_fan": {
    "l": "Fan-powered",
@@ -6584,7 +7249,10 @@
    "ip": [
     "HasFan",
     "ArrangementType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FanPowered",
+   "guid": "d6b243af-ce9c-5868-87d9-4e8746d6ffb7"
   },
   "hx_capacity": {
    "l": "Heat transfer capacity",
@@ -6608,7 +7276,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HeatTransferCapacity_kW",
+   "guid": "636a6e6e-39dd-535c-bc10-9b99b9bff5fb"
   },
   "hx_flow_arrangement": {
    "l": "Flow arrangement",
@@ -6634,7 +7305,10 @@
    ],
    "ip": [
     "FlowArrangement"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FlowArrangement",
+   "guid": "b799de3d-cedf-5759-bad3-3e8da60fe0be"
   },
   "hx_plates": {
    "l": "Number of plates",
@@ -6660,7 +7334,10 @@
    ],
    "ip": [
     "NumberOfPlates"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfPlates",
+   "guid": "21202cce-f046-51dd-b2cd-f095354d6e2b"
   },
   "hx_design_flows": {
    "l": "Design flows (primary / secondary)",
@@ -6684,7 +7361,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignFlows",
+   "guid": "b25b2918-a222-5ba5-a9e5-9b8a300231fb"
   },
   "dhw_storage": {
    "l": "Storage capacity",
@@ -6711,7 +7391,10 @@
    "ip": [
     "WaterStorageCapacity",
     "TankNominalCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_StorageCapacity_L",
+   "guid": "f600730a-fb5f-56e5-a305-ab7329527b65"
   },
   "dhw_recovery": {
    "l": "Recovery rate",
@@ -6735,7 +7418,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RecoveryRate_Lh",
+   "guid": "14db58f9-bc85-5cc6-9cc1-ec706d064806"
   },
   "dhw_setpoint": {
    "l": "Storage set-point",
@@ -6759,7 +7445,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_StorageSetPoint_C",
+   "guid": "780a0c1e-02c0-5630-a227-e331037e1b96"
   },
   "spk_type": {
    "l": "Sprinkler type",
@@ -6785,7 +7474,10 @@
    ],
    "ip": [
     "SprinklerType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SprinklerType",
+   "guid": "af9b1f8c-d4ea-562b-8101-4e1c5f333e21"
   },
   "spk_response": {
    "l": "Response",
@@ -6811,7 +7503,10 @@
    ],
    "ip": [
     "Response"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Response",
+   "guid": "f1a22acd-b545-56f2-8824-f2ee1b79d17a"
   },
   "spk_temp": {
    "l": "Temperature rating",
@@ -6838,7 +7533,10 @@
    "ip": [
     "ActivationTemperature",
     "BulbLiquidColour"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TemperatureRating_C",
+   "guid": "92cabb78-4683-5744-bb8c-249f2f098103"
   },
   "spk_k_factor": {
    "l": "K-factor",
@@ -6864,7 +7562,10 @@
    ],
    "ip": [
     "DischargeCoefficient"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_KFactor",
+   "guid": "0637c71c-0f62-5165-b8d0-6306102a6733"
   },
   "spk_coverage": {
    "l": "Coverage area",
@@ -6890,7 +7591,10 @@
    ],
    "ip": [
     "CoverageArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoverageArea",
+   "guid": "f500b071-894a-5cfe-a994-76483d8206d0"
   },
   "spk_hazard": {
    "l": "Hazard classification",
@@ -6914,7 +7618,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_HazardClassification",
+   "guid": "30483a46-3925-5388-b668-4a54527d5149"
   },
   "fa_address": {
    "l": "Device address",
@@ -6938,7 +7645,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DeviceAddress",
+   "guid": "b729f40e-f33e-547d-a6cc-148053c7c9fb"
   },
   "fa_coverage": {
    "l": "Coverage area",
@@ -6964,7 +7674,10 @@
    ],
    "ip": [
     "CoverageArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoverageArea",
+   "guid": "f500b071-894a-5cfe-a994-76483d8206d0"
   },
   "fa_setpoint": {
    "l": "Detection set point",
@@ -6993,7 +7706,10 @@
     "RateOfTemperatureRise",
     "SetPointConcentration",
     "FireSensorSetPoint"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DetectionSetPoint",
+   "guid": "af0d7b05-3b1e-5736-895b-72c4868da022"
   },
   "fa_listing": {
    "l": "Listing / certification",
@@ -7017,7 +7733,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ListingCertification",
+   "guid": "9c0ff299-afcc-55b2-b491-92f49ef8d0d2"
   },
   "fa_candela": {
    "l": "Visual signal intensity",
@@ -7041,7 +7760,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_VisualSignalIntensity_cd",
+   "guid": "180e7034-d21a-5157-b64a-c119caae4873"
   },
   "pnl_main_device": {
    "l": "Main device",
@@ -7067,7 +7789,9 @@
    ],
    "ip": [
     "MCB Rating"
-   ]
+   ],
+   "rn": "MCB Rating",
+   "rk": "builtin"
   },
   "pnl_circuits": {
    "l": "Number of circuits / spaces",
@@ -7094,7 +7818,9 @@
    "ip": [
     "NumberOfCircuits",
     "Max #1 Pole Breakers"
-   ]
+   ],
+   "rn": "Max #1 Pole Breakers",
+   "rk": "builtin"
   },
   "pnl_is_main": {
    "l": "Main board",
@@ -7117,7 +7843,10 @@
    ],
    "ip": [
     "IsMain"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MainBoard",
+   "guid": "0537e0fd-675a-5554-8ae8-79c7f0830005"
   },
   "pnl_mounting": {
    "l": "Mounting",
@@ -7143,7 +7872,9 @@
    ],
    "ip": [
     "Mounting"
-   ]
+   ],
+   "rn": "Mounting",
+   "rk": "builtin"
   },
   "tx_kva": {
    "l": "Rated power",
@@ -7170,7 +7901,10 @@
    "ip": [
     "MaximumApparentPower",
     "PrimaryApparentPower"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RatedPower_kVA",
+   "guid": "752f0555-9312-557f-b9e6-1496ea9c326f"
   },
   "tx_primary_v": {
    "l": "Primary voltage",
@@ -7196,7 +7930,10 @@
    ],
    "ip": [
     "PrimaryVoltage"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PrimaryVoltage_V",
+   "guid": "cc8f359d-b8af-5416-842a-c2319d5acabe"
   },
   "tx_secondary_v": {
    "l": "Secondary voltage",
@@ -7222,7 +7959,10 @@
    ],
    "ip": [
     "SecondaryVoltage"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SecondaryVoltage_V",
+   "guid": "76ada84a-83d0-5ff2-b4bc-7c67c3e3ccb0"
   },
   "tx_vector_group": {
    "l": "Vector group",
@@ -7248,7 +7988,10 @@
    ],
    "ip": [
     "TransformerVectorGroup"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_VectorGroup",
+   "guid": "235cc176-c2e5-52f2-8df2-e63e890ffffd"
   },
   "tx_impedance": {
    "l": "Impedance",
@@ -7275,7 +8018,10 @@
    "ip": [
     "ShortCircuitVoltage",
     "RealImpedanceRatio"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Impedance",
+   "guid": "b48ae904-c9d7-5e5e-a81e-2a86c2aa898f"
   },
   "tx_insulation": {
    "l": "Type (dry / liquid-filled)",
@@ -7299,7 +8045,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_Type",
+   "guid": "7b74fc42-5d12-58de-8bc9-604233b32122"
   },
   "tx_efficiency": {
    "l": "Efficiency",
@@ -7323,7 +8072,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_Efficiency_pct",
+   "guid": "7cb6a881-e868-5a9f-9dfc-db597a90e0e0"
   },
   "gen_kw": {
    "l": "Rated output",
@@ -7349,7 +8101,10 @@
    ],
    "ip": [
     "MaximumPowerOutput"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RatedOutput_kW",
+   "guid": "c967ff19-707a-5aac-8ebc-2153db381ac1"
   },
   "gen_efficiency": {
    "l": "Generator efficiency",
@@ -7375,7 +8130,10 @@
    ],
    "ip": [
     "ElectricGeneratorEfficiency"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_GeneratorEfficiency_pct",
+   "guid": "43f9d2a6-3d22-5dda-99a5-700f7f3bb09e"
   },
   "gen_runtime": {
    "l": "Fuel autonomy",
@@ -7399,7 +8157,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FuelAutonomy_h",
+   "guid": "580acb15-8f8b-5619-a444-1d4840ecd19e"
   },
   "gen_tank": {
    "l": "Fuel tank capacity",
@@ -7425,7 +8186,10 @@
    ],
    "ip": [
     "TankNominalCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FuelTankCapacity_L",
+   "guid": "cde9005b-6d19-59ea-87b0-894ccf55abcd"
   },
   "cc_size": {
    "l": "Size",
@@ -7456,7 +8220,10 @@
     "Width",
     "Height",
     "Diameter(Trade Size)"
-   ]
+   ],
+   "rn": "Width / Height / Diameter",
+   "rk": "builtin",
+   "rnote": "Trade Size"
   },
   "cc_kind": {
    "l": "Tray / conduit type",
@@ -7483,7 +8250,9 @@
    "ip": [
     "ConduitShapeType",
     "IsRigid"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "cc_service": {
    "l": "Service type",
@@ -7509,7 +8278,9 @@
    ],
    "ip": [
     "Service Type"
-   ]
+   ],
+   "rn": "Service Type",
+   "rk": "builtin"
   },
   "cc_has_cover": {
    "l": "Has cover",
@@ -7532,7 +8303,10 @@
    ],
    "ip": [
     "HasCover"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HasCover",
+   "guid": "fe99153b-66b1-5b73-9f00-92b6a3f34c3a"
   },
   "cc_fill": {
    "l": "Fill ratio",
@@ -7556,7 +8330,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FillRatio_pct",
+   "guid": "8fa1172b-6c66-5068-aaee-aca70202d44f"
   },
   "wd_sockets": {
    "l": "Number of sockets",
@@ -7582,7 +8359,10 @@
    ],
    "ip": [
     "NumberOfSockets"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfSockets",
+   "guid": "0137d767-d4eb-582f-9513-235f0e5c5099"
   },
   "wd_gangs": {
    "l": "Number of gangs",
@@ -7608,7 +8388,10 @@
    ],
    "ip": [
     "NumberOfGangs"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfGangs",
+   "guid": "3ad776c8-5adc-5428-8093-03827ffd2ad6"
   },
   "wd_configuration": {
    "l": "CSA configuration",
@@ -7632,7 +8415,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_CSAConfiguration",
+   "guid": "f7bf608d-5c6d-54f3-95d5-35f9a3df21bd"
   },
   "wd_gfci": {
    "l": "Ground-fault protected (GFCI)",
@@ -7653,7 +8439,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_GroundFaultProtected",
+   "guid": "e01bb3e5-b7fc-54d3-8d7c-5145a6c3e817"
   },
   "wd_switch_function": {
    "l": "Switch function",
@@ -7679,7 +8468,10 @@
    ],
    "ip": [
     "SwitchFunction"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SwitchFunction",
+   "guid": "51ba43d1-70c1-52df-93e9-9f102a6048d8"
   },
   "cs_network_address": {
    "l": "Network / head-end reference",
@@ -7703,7 +8495,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_NetworkHeadEndReference",
+   "guid": "e3f07f29-2bab-5e20-8bbc-57b97e168088"
   },
   "cs_power_source": {
    "l": "Power source",
@@ -7727,7 +8522,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PowerSource",
+   "guid": "d05f6ea2-5e2e-524f-bb23-ef01f5f93c44"
   },
   "cs_camera_resolution": {
    "l": "Video resolution",
@@ -7754,7 +8552,10 @@
    "ip": [
     "VideoResolutionWidth",
     "VideoResolutionHeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_VideoResolution",
+   "guid": "f02b870d-5d2d-5609-bc52-148a02f50673"
   },
   "cs_security_zone": {
    "l": "Security zone",
@@ -7778,7 +8579,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SecurityZone",
+   "guid": "4f2e244a-91aa-58d0-afca-c8a5b7b3eaa2"
   },
   "elv_load": {
    "l": "Rated load",
@@ -7804,7 +8608,10 @@
    ],
    "ip": [
     "CapacityWeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RatedLoad_kg",
+   "guid": "dc6846d4-2891-5bfc-a4ab-6d74eccd996a"
   },
   "elv_people": {
    "l": "Rated passengers",
@@ -7830,7 +8637,10 @@
    ],
    "ip": [
     "CapacityPeople"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RatedPassengers",
+   "guid": "8d688d71-ce91-5c2c-ba65-7f37ff120b43"
   },
   "elv_speed": {
    "l": "Rated speed",
@@ -7856,7 +8666,10 @@
    ],
    "ip": [
     "MaximumConstantSpeed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RatedSpeed_ms",
+   "guid": "7cecdf0a-dcfc-5e44-8346-d299ead2c367"
   },
   "elv_car_size": {
    "l": "Car inside dimensions",
@@ -7884,7 +8697,10 @@
     "ClearWidth",
     "ClearDepth",
     "ClearHeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CarInsideDimensions",
+   "guid": "3ca1e9af-c985-51f3-a09d-816c7e0aef41"
   },
   "elv_firefighter": {
    "l": "Firefighters' elevator",
@@ -7907,7 +8723,10 @@
    ],
    "ip": [
     "FireFightingLift"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FirefightersElevator",
+   "guid": "3cb29c9e-e276-5ea7-a404-b803a59f7b46"
   },
   "elv_stops": {
    "l": "Stops / openings",
@@ -7931,7 +8750,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_StopsOpenings",
+   "guid": "0e095709-5db5-5cf5-8fbb-207019ebfc09"
   },
   "elv_drive": {
    "l": "Drive type",
@@ -7955,7 +8777,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DriveType",
+   "guid": "9ebff48b-2f44-596d-a66d-49a1a4fa380e"
   },
   "elv_licence": {
    "l": "Regulator device number",
@@ -7979,7 +8804,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RegulatorDeviceNumber",
+   "guid": "129a675e-9bc5-5b54-a477-afe1a0ae1c98"
   },
   "fur_dimensions": {
    "l": "Nominal dimensions",
@@ -8010,7 +8838,9 @@
     "Width",
     "Depth",
     "Height"
-   ]
+   ],
+   "rk": "family",
+   "rn": ""
   },
   "fur_builtin": {
    "l": "Built-in",
@@ -8033,7 +8863,10 @@
    ],
    "ip": [
     "IsBuiltIn"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BuiltIn",
+   "guid": "07d20136-f20d-54bb-b1e0-620df8a602c8"
   },
   "fur_finish": {
    "l": "Finish / colour",
@@ -8061,7 +8894,10 @@
     "MainColour",
     "Style",
     "Finishing"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FinishColour",
+   "guid": "21706a78-61a3-591f-a97a-1a5cf6f3573e"
   },
   "fur_seismic_restraint": {
    "l": "Seismic restraint",
@@ -8082,7 +8918,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SeismicRestraint",
+   "guid": "b87f272c-87e3-5b2e-8ef8-7ac41aa5e7d6"
   },
   "spq_utilities": {
    "l": "Utility connections",
@@ -8106,7 +8945,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_UtilityConnections",
+   "guid": "0b0fb34c-7091-5851-a2eb-bfcd85a3dcad"
   },
   "spc_number": {
    "l": "Room number",
@@ -8133,7 +8975,9 @@
    "ip": [
     "Name",
     "Number"
-   ]
+   ],
+   "rn": "Number",
+   "rk": "builtin"
   },
   "spc_name": {
    "l": "Room name",
@@ -8160,7 +9004,9 @@
    "ip": [
     "LongName",
     "Name"
-   ]
+   ],
+   "rn": "Name",
+   "rk": "builtin"
   },
   "spc_net_area": {
    "l": "Net floor area",
@@ -8187,7 +9033,9 @@
    "ip": [
     "NetFloorArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "spc_gross_area": {
    "l": "Gross floor area",
@@ -8213,7 +9061,10 @@
    ],
    "ip": [
     "GrossFloorArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_GrossFloorArea",
+   "guid": "14a8700d-899b-5be2-9e42-4b1e08332a96"
   },
   "spc_planned_area": {
    "l": "Program area",
@@ -8240,7 +9091,10 @@
    "ip": [
     "NetPlannedArea",
     "GrossPlannedArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ProgramArea",
+   "guid": "bcfb99e9-e769-55b2-8051-6361695294b2"
   },
   "spc_height": {
    "l": "Height",
@@ -8268,7 +9122,9 @@
     "Height",
     "FinishCeilingHeight",
     "Unbounded Height"
-   ]
+   ],
+   "rn": "Unbounded Height",
+   "rk": "builtin"
   },
   "spc_volume": {
    "l": "Volume",
@@ -8296,7 +9152,9 @@
     "NetVolume",
     "GrossVolume",
     "Volume"
-   ]
+   ],
+   "rn": "Volume",
+   "rk": "builtin"
   },
   "spc_department": {
    "l": "Department",
@@ -8322,7 +9180,9 @@
    ],
    "ip": [
     "Department"
-   ]
+   ],
+   "rn": "Department",
+   "rk": "builtin"
   },
   "spc_occupancy": {
    "l": "Major occupancy (NBC group)",
@@ -8348,7 +9208,10 @@
    ],
    "ip": [
     "OccupancyType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MajorOccupancy",
+   "guid": "5add8552-dd12-556b-8048-b29c114f9f5c"
   },
   "spc_occupant_load": {
    "l": "Occupant load",
@@ -8375,7 +9238,10 @@
    "ip": [
     "OccupancyNumber",
     "AreaPerOccupant"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_OccupantLoad",
+   "guid": "5b1b1ff7-b404-5552-835c-c146696eb461"
   },
   "spc_finishes": {
    "l": "Finishes",
@@ -8408,7 +9274,9 @@
     "Wall Finish",
     "Ceiling Finish",
     "Base Finish"
-   ]
+   ],
+   "rn": "Floor / Wall / Ceiling / Base Finish",
+   "rk": "builtin"
   },
   "spc_setpoints": {
    "l": "Design temperature set-points",
@@ -8436,7 +9304,10 @@
     "TemperatureSetPoint",
     "TemperatureWinterMin",
     "TemperatureSummerMax"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignTemperatureSetPoints",
+   "guid": "a4448e7a-9361-5673-9bbd-333eed943e7b"
   },
   "spc_ventilation": {
    "l": "Outdoor-air ventilation",
@@ -8462,7 +9333,10 @@
    ],
    "ip": [
     "VentilationDesignAirFlow"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_OutdoorAirVentilation_Ls",
+   "guid": "bc7fa59f-cf8c-519b-8568-1d3ffa93f08a"
   },
   "spc_sprinklered": {
    "l": "Sprinklered",
@@ -8486,7 +9360,10 @@
    "ip": [
     "SprinklerProtection",
     "SprinklerProtectionAutomatic"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Sprinklered",
+   "guid": "d4979fa4-ae02-50be-944f-8a65cfedd4ce"
   },
   "spc_classification": {
    "l": "Space classification",
@@ -8513,7 +9390,10 @@
    "ip": [
     "ClassificationCode",
     "Identification"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SpaceClassification",
+   "guid": "aa98dcf1-7acc-59eb-8a77-c82a7f1a4ee2"
   },
   "zn_name": {
    "l": "Zone name",
@@ -8539,7 +9419,9 @@
    ],
    "ip": [
     "Name"
-   ]
+   ],
+   "rn": "Name",
+   "rk": "builtin"
   },
   "zn_type": {
    "l": "Zone type",
@@ -8566,7 +9448,10 @@
    "ip": [
     "PredefinedType",
     "ObjectType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ZoneType",
+   "guid": "5cdc5a6e-898c-54d2-8171-15c962d4d2f7"
   },
   "zn_members": {
    "l": "Member spaces",
@@ -8590,7 +9475,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_MemberSpaces",
+   "guid": "94e9133d-2d06-5542-9bbc-2bb70bfb9809"
   },
   "zn_area": {
    "l": "Zone area",
@@ -8617,7 +9505,10 @@
    "ip": [
     "NetPlannedArea",
     "GrossPlannedArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ZoneArea",
+   "guid": "681874b6-853e-52f4-a683-9de872f781e5"
   },
   "site_crs": {
    "l": "Coordinate reference system",
@@ -8646,7 +9537,10 @@
     "VerticalDatum",
     "MapProjection",
     "MapZone"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoordinateReferenceSystem",
+   "guid": "cc961b22-6179-5a1c-a992-702eb48240cb"
   },
   "site_area": {
    "l": "Site area",
@@ -8673,7 +9567,10 @@
    "ip": [
     "TotalArea",
     "GrossArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SiteArea",
+   "guid": "e69631c3-fe17-57cd-9da0-d4eea7b88a83"
   },
   "site_survey_source": {
    "l": "Survey source and date",
@@ -8697,7 +9594,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SurveySourceAndDate",
+   "guid": "7d7beddf-eb63-56bd-97cc-636f7891b101"
   },
   "site_cut_fill": {
    "l": "Cut / fill volumes",
@@ -8725,7 +9625,10 @@
     "UndisturbedVolume",
     "LooseVolume",
     "CompactedVolume"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CutFillVolumes",
+   "guid": "8db7bbb6-3076-5b03-9d3d-df5ba1e64e51"
   },
   "site_geotech_ref": {
    "l": "Geotechnical report",
@@ -8749,7 +9652,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_GeotechnicalReport",
+   "guid": "7dec07f4-9a15-54ad-b37b-56a623e6d2c4"
   },
   "pav_area": {
    "l": "Paved area",
@@ -8777,7 +9683,9 @@
     "NetArea",
     "GrossArea",
     "Area"
-   ]
+   ],
+   "rn": "Area",
+   "rk": "builtin"
   },
   "pav_thickness": {
    "l": "Pavement thickness",
@@ -8804,7 +9712,10 @@
    "ip": [
     "NominalThickness",
     "Depth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PavementThickness",
+   "guid": "9ed66df2-21c2-5a86-9637-d85f47d09d07"
   },
   "pav_type": {
    "l": "Pavement type",
@@ -8830,7 +9741,10 @@
    ],
    "ip": [
     "PredefinedType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PavementType",
+   "guid": "4f1185af-24b4-56d2-87f2-7669e59dbbd5"
   },
   "pav_slope": {
    "l": "Cross slope",
@@ -8857,7 +9771,10 @@
    "ip": [
     "StructuralSlope",
     "Crossfall"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CrossSlope_pct",
+   "guid": "0854613c-e882-573b-952a-76ae311bf893"
   },
   "pav_stalls": {
    "l": "Parking stalls",
@@ -8883,7 +9800,10 @@
    ],
    "ip": [
     "ParkingUnits"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ParkingStalls",
+   "guid": "fe5921fd-06e5-5de0-930a-93410833381b"
   },
   "pav_parking_use": {
    "l": "Parking use",
@@ -8909,7 +9829,10 @@
    ],
    "ip": [
     "ParkingUse"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ParkingUse",
+   "guid": "0274563b-0980-5eaf-a88d-0afa363e658d"
   },
   "pav_marking": {
    "l": "Pavement marking",
@@ -8937,7 +9860,10 @@
     "MaterialType",
     "MaterialColour",
     "NominalWidth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PavementMarking",
+   "guid": "2c1a4baa-183c-5dea-8516-b797b9f37553"
   },
   "kerb_type": {
    "l": "Curb type",
@@ -8965,7 +9891,10 @@
     "Upstand",
     "Mountable",
     "CombinedKerbGutter"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CurbType",
+   "guid": "3603e3f5-adca-57bc-9f19-748f3b17a6f7"
   },
   "ut_service": {
    "l": "Utility service",
@@ -8989,7 +9918,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_UtilityService",
+   "guid": "70116548-10e4-5c5c-b22f-2d1f2930baa4"
   },
   "ut_pipe_class": {
    "l": "Pipe class",
@@ -9013,7 +9945,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PipeClass",
+   "guid": "958209e2-fad2-52f6-8e98-7c9c4062f48e"
   },
   "ut_bedding": {
    "l": "Bedding class",
@@ -9037,7 +9972,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BeddingClass",
+   "guid": "1bf01e2b-0e11-5c1b-9834-22bbb87f8a96"
   },
   "ut_cover": {
    "l": "Depth of cover",
@@ -9061,7 +9999,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DepthOfCover",
+   "guid": "c0b770e1-db00-5c40-9836-54a111b63ebe"
   },
   "ut_from_to": {
    "l": "From / to structure",
@@ -9085,7 +10026,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_FromToStructure",
+   "guid": "77dade24-dfc8-5159-877f-51f4a828386a"
   },
   "ut_culvert_opening": {
    "l": "Culvert opening",
@@ -9112,7 +10056,10 @@
    "ip": [
     "InternalWidth",
     "ClearDepth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CulvertOpening",
+   "guid": "4265a600-5010-558a-bac6-66508dc24e18"
   },
   "mh_rim_elev": {
    "l": "Rim / cover elevation",
@@ -9136,7 +10083,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RimCoverElevation",
+   "guid": "b0bbe208-c5e8-5638-ade7-896b3b2b9aa1"
   },
   "mh_invert": {
    "l": "Invert elevation(s)",
@@ -9163,7 +10113,10 @@
    "ip": [
     "InvertLevel",
     "InspectionChamberInvertLevel"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_InvertElevation",
+   "guid": "00b8a3c6-59a1-5ceb-89d3-a36d2f78f4bd"
   },
   "mh_size": {
    "l": "Chamber size",
@@ -9190,7 +10143,10 @@
    "ip": [
     "ChamberLengthOrRadius",
     "ChamberWidth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ChamberSize",
+   "guid": "91db36d0-40e1-51c8-93f7-9877216a1a27"
   },
   "mh_depth": {
    "l": "Depth",
@@ -9216,7 +10172,10 @@
    ],
    "ip": [
     "Depth"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Depth",
+   "guid": "948a50cd-76f9-5c2f-a607-9a9b6932ec5b"
   },
   "mh_cover": {
    "l": "Cover / frame",
@@ -9244,7 +10203,10 @@
     "AccessCoverMaterial",
     "AccessCoverLoadRating",
     "AccessLengthOrRadius"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_CoverFrame",
+   "guid": "03bc3ca7-001f-56e0-884e-ee9ce64f84ac"
   },
   "mh_steps": {
    "l": "Has steps / ladder",
@@ -9267,7 +10229,10 @@
    ],
    "ip": [
     "HasSteps"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_HasStepsLadder",
+   "guid": "e0df708a-22fe-5c26-be90-58a45feaf2be"
   },
   "mh_backdrop": {
    "l": "Drop structure",
@@ -9290,7 +10255,10 @@
    ],
    "ip": [
     "WithBackdrop"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DropStructure",
+   "guid": "5a52b401-ac2a-528d-b25c-c14c62950f96"
   },
   "crs_layer": {
    "l": "Layer function",
@@ -9316,7 +10284,10 @@
    ],
    "ip": [
     "PredefinedType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LayerFunction",
+   "guid": "a31f1055-bacf-5f05-9479-c4cfe6264478"
   },
   "crs_thickness": {
    "l": "Layer thickness",
@@ -9343,7 +10314,10 @@
    "ip": [
     "NominalThickness",
     "Thickness"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LayerThickness",
+   "guid": "de5d3e52-618d-535d-b8a7-fc4c9e95b7f4"
   },
   "crs_material": {
    "l": "Mix / material specification",
@@ -9367,7 +10341,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_MixMaterialSpecification",
+   "guid": "73bda9dc-da6b-501c-a80f-e697abfb6376"
   },
   "crs_volume": {
    "l": "Layer volume",
@@ -9395,7 +10372,10 @@
     "Volume",
     "GrossVolume",
     "NetVolume"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LayerVolume",
+   "guid": "38ada2e5-9e52-52be-824e-4268c9f8c417"
   },
   "crs_mass": {
    "l": "Layer mass",
@@ -9421,7 +10401,10 @@
    ],
    "ip": [
     "Weight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LayerMass_t",
+   "guid": "f5b29f37-b125-5d01-bb74-e7494ccbdaeb"
   },
   "rd_design_speed": {
    "l": "Design speed",
@@ -9447,7 +10430,10 @@
    ],
    "ip": [
     "DesignSpeed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DesignSpeed_kmh",
+   "guid": "c229d5fa-5fe9-584f-ab9a-10092d5b3810"
   },
   "rd_lane_width": {
    "l": "Lane width",
@@ -9474,7 +10460,10 @@
    "ip": [
     "LaneWidth",
     "NumberOfThroughLanes"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LaneWidth",
+   "guid": "d1de3aa4-d766-5e14-bb83-93c2364cac80"
   },
   "pav_roughness": {
    "l": "Roughness (IRI) at handover",
@@ -9500,7 +10489,10 @@
    ],
    "ip": [
     "PavementRoughness"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RoughnessAtHandover_mkm",
+   "guid": "e11a116b-bcf8-5560-b0aa-8d0eb1f9efac"
   },
   "brr_system": {
    "l": "Barrier system / test level",
@@ -9524,7 +10516,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_BarrierSystemTestLevel",
+   "guid": "af65a49a-afde-5b20-9fd2-cbd991fb448c"
   },
   "brr_terminal": {
    "l": "End terminal",
@@ -9551,7 +10546,10 @@
    "ip": [
     "IsTerminal",
     "TerminalType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_EndTerminal",
+   "guid": "d1a0f61c-00b8-536c-ba1f-4edb5166e2b3"
   },
   "brr_transition": {
    "l": "Transition section",
@@ -9574,7 +10572,10 @@
    ],
    "ip": [
     "IsTransition"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TransitionSection",
+   "guid": "ca53ac2c-5dd3-5d33-b542-ca85fd951888"
   },
   "brr_moveable": {
    "l": "Moveable / temporary",
@@ -9597,7 +10598,10 @@
    ],
    "ip": [
     "IsMoveable"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MoveableTemporary",
+   "guid": "ced68b47-e1df-5601-9ca7-edc930987af0"
   },
   "brr_post_spacing": {
    "l": "Post spacing",
@@ -9621,7 +10625,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PostSpacing",
+   "guid": "8eb95d71-d0bc-5f46-8468-178b766fc0c0"
   },
   "sgn_category": {
    "l": "Sign category",
@@ -9647,7 +10654,10 @@
    ],
    "ip": [
     "Category"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SignCategory",
+   "guid": "656134f0-d579-54e1-9d5c-fa46d156c190"
   },
   "sgn_code": {
    "l": "Standard sign code",
@@ -9671,7 +10681,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_StandardSignCode",
+   "guid": "71ad8138-c0fb-5ea7-b36e-d9c34ed56d67"
   },
   "sgn_legend": {
    "l": "Legend / message",
@@ -9697,7 +10710,10 @@
    ],
    "ip": [
     "SignLegend"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_LegendMessage",
+   "guid": "749d0685-e51b-56a5-ac0b-838518aac98e"
   },
   "sgn_size": {
    "l": "Sign size",
@@ -9725,7 +10741,10 @@
     "Width",
     "Height",
     "SignArea"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SignSize",
+   "guid": "9fc825e9-de46-59ad-a08f-583eab5a7803"
   },
   "sgn_tactile": {
    "l": "Tactile / braille",
@@ -9748,7 +10767,10 @@
    ],
    "ip": [
     "TactileMarking"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TactileBraille",
+   "guid": "3f4aa3e5-e7bc-560b-a94f-df543adbb0ac"
   },
   "sgn_sheeting": {
    "l": "Retroreflective sheeting",
@@ -9772,7 +10794,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RetroreflectiveSheeting",
+   "guid": "130d152d-a131-52aa-b9f9-588fcaccca7a"
   },
   "trk_rail_section": {
    "l": "Rail section",
@@ -9799,7 +10824,10 @@
    "ip": [
     "ProfileName",
     "TechnicalStandard"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RailSection",
+   "guid": "983152be-b726-5167-a42b-236f39c0701f"
   },
   "trk_gauge": {
    "l": "Track gauge",
@@ -9825,7 +10853,10 @@
    ],
    "ip": [
     "TrackGaugeLength"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TrackGauge",
+   "guid": "c43473a3-c52f-5c96-a0ab-ffd0883da08a"
   },
   "trk_cwr": {
    "l": "Continuous welded rail",
@@ -9848,7 +10879,10 @@
    ],
    "ip": [
     "HasCWR"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ContinuousWeldedRail",
+   "guid": "bc2f7199-cd10-53dc-8807-850eae7db354"
   },
   "trk_ballasted": {
    "l": "Ballasted track",
@@ -9872,7 +10906,10 @@
    "ip": [
     "HasBallastTrack",
     "TrackSupportingStructure"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BallastedTrack",
+   "guid": "48dff494-d3cb-5aae-aa05-cf8eb7c8c406"
   },
   "trk_sleeper_type": {
    "l": "Tie / sleeper type",
@@ -9899,7 +10936,10 @@
    "ip": [
     "SleeperType",
     "FasteningType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TieSleeperType",
+   "guid": "2ac8cf45-a4eb-57dc-bf7a-1bbbef1f4210"
   },
   "trk_sleeper_spacing": {
    "l": "Tie spacing",
@@ -9923,7 +10963,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_TieSpacing",
+   "guid": "5f9f453b-bd16-596a-9a1c-8aabeeab961d"
   },
   "trk_fastening": {
    "l": "Fastening system",
@@ -9950,7 +10993,10 @@
    "ip": [
     "TrackFasteningElasticityType",
     "TechnicalStandard"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_FasteningSystem",
+   "guid": "0a888ead-7e76-5888-95e6-38a5f6d18fc6"
   },
   "trk_ballast_depth": {
    "l": "Ballast depth",
@@ -9976,7 +11022,10 @@
    ],
    "ip": [
     "NominalThickness"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_BallastDepth",
+   "guid": "2b363b92-fc51-5632-b78e-196558e0234e"
   },
   "trk_id": {
    "l": "Track identifier",
@@ -10003,7 +11052,10 @@
    "ip": [
     "TrackID",
     "TrackNumber"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TrackIdentifier",
+   "guid": "740fde81-5e64-51dd-9ade-fa2656a00e5c"
   },
   "trk_speed": {
    "l": "Line speed",
@@ -10027,7 +11079,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_LineSpeed_kmh",
+   "guid": "245963fb-8155-50a9-b53c-264485bab79d"
   },
   "trk_cant": {
    "l": "Cant (superelevation)",
@@ -10051,7 +11106,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_Cant",
+   "guid": "49097711-ebf9-57f8-b2a3-e57f73b9a8db"
   },
   "to_type": {
    "l": "Turnout type",
@@ -10078,7 +11136,10 @@
    "ip": [
     "TypeOfTurnout",
     "TypeOfJunction"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_TurnoutType",
+   "guid": "dac3e981-c200-5819-86a5-bd6403cb5b5f"
   },
   "to_radius": {
    "l": "Diverging radius",
@@ -10104,7 +11165,10 @@
    ],
    "ip": [
     "TurnoutCurvedRadius"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DivergingRadius",
+   "guid": "572fafe0-1704-56f9-9dcf-16fa998abaf3"
   },
   "to_diverging_speed": {
    "l": "Diverging speed",
@@ -10130,7 +11194,10 @@
    ],
    "ip": [
     "MaximumSpeedLimitOfDivergingLine"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DivergingSpeed_kmh",
+   "guid": "d0873dc4-df06-5ab9-8be5-07f8dcc8f2b9"
   },
   "to_hand": {
    "l": "Hand",
@@ -10156,7 +11223,10 @@
    ],
    "ip": [
     "BranchLineDirection"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Hand",
+   "guid": "1ee76d2c-1088-5547-9445-3d1eca27451a"
   },
   "to_point_machines": {
    "l": "Point machines",
@@ -10183,7 +11253,10 @@
    "ip": [
     "TurnoutPointMachineCount",
     "TypeOfDrivingDevice"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PointMachines",
+   "guid": "04ef9cac-9fca-57fa-96e5-bfc60b0e60b1"
   },
   "to_heater": {
    "l": "Switch heater",
@@ -10209,7 +11282,10 @@
    ],
    "ip": [
     "TurnoutHeaterType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SwitchHeater",
+   "guid": "2bc29ce4-f72b-5211-b9a4-7b6445f2fe45"
   },
   "sig_type": {
    "l": "Signal type",
@@ -10236,7 +11312,10 @@
    "ip": [
     "RailwaySignalType",
     "SignalIndicatorType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SignalType",
+   "guid": "0636bdcf-3858-50a1-96a3-e60b3e7242e9"
   },
   "sig_lamps": {
    "l": "Number of lamps / aspects",
@@ -10262,7 +11341,10 @@
    ],
    "ip": [
     "NumberOfLamps"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_NumberOfLampsAspects",
+   "guid": "1f39a7eb-2af1-59a0-9a3c-324d972b299f"
   },
   "sig_sighting": {
    "l": "Required sighting distance",
@@ -10289,7 +11371,10 @@
    "ip": [
     "RequiredDisplayDistance",
     "MaximumDisplayDistance"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RequiredSightingDistance",
+   "guid": "ff6e8196-f8d0-5ae9-b093-196b648aec47"
   },
   "sig_mounting": {
    "l": "Mounting",
@@ -10316,7 +11401,10 @@
    "ip": [
     "SignalFrameType",
     "BackboardType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_MountingType",
+   "guid": "d39a36f7-38c6-5545-ae7a-0cb680643510"
   },
   "sig_approach_speed": {
    "l": "Approach speed",
@@ -10342,7 +11430,10 @@
    ],
    "ip": [
     "ApproachSpeed"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ApproachSpeed_kmh",
+   "guid": "f8fa217d-d1ac-54be-80c3-0022afa5a350"
   },
   "ocs_support_type": {
    "l": "Support type",
@@ -10370,7 +11461,10 @@
     "TypeOfSupportingSystem",
     "NumberOfCantilevers",
     "CantileverType"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SupportType",
+   "guid": "1365dc69-10ab-56eb-827b-93425bc038b8"
   },
   "ocs_pole_height": {
    "l": "Pole height",
@@ -10396,7 +11490,10 @@
    ],
    "ip": [
     "NominalHeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PoleHeight",
+   "guid": "e67b5843-aca4-5e77-a663-1aeb153cb5f3"
   },
   "ocs_pole_strength": {
    "l": "Pole strength",
@@ -10425,7 +11522,10 @@
     "TorsionalStrength",
     "WindLoadRating",
     "LoadBearingCapacity"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PoleStrength",
+   "guid": "b1dd2b48-52e7-513c-9dd5-366fe01064b1"
   },
   "ocs_wire_height": {
    "l": "Contact wire height",
@@ -10451,7 +11551,10 @@
    ],
    "ip": [
     "ContactWireNominalHeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ContactWireHeight",
+   "guid": "c5fd7195-4641-5fc4-9954-63d2cdb6dbf3"
   },
   "ocs_stagger": {
    "l": "Stagger",
@@ -10477,7 +11580,10 @@
    ],
    "ip": [
     "ContactWireStagger"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Stagger",
+   "guid": "aac359e6-2c60-5db9-abb6-76b77cd2ccc4"
   },
   "ocs_system_height": {
    "l": "System height",
@@ -10503,7 +11609,10 @@
    ],
    "ip": [
     "SystemHeight"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SystemHeight",
+   "guid": "3eb2a3e0-0dd8-5dfc-b2f0-7798916487b7"
   },
   "ocs_span": {
    "l": "Span length",
@@ -10529,7 +11638,10 @@
    ],
    "ip": [
     "SpanNominalLength"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SpanLength",
+   "guid": "30d28b31-9d30-5a63-bc13-b22edad7d267"
   },
   "ocs_clearance": {
    "l": "Electrical clearance",
@@ -10555,7 +11667,10 @@
    ],
    "ip": [
     "ElectricalClearance"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_ElectricalClearance",
+   "guid": "274cc9f5-dd0d-560b-9528-b8e0b398a076"
   },
   "plt_height": {
    "l": "Platform height above rail",
@@ -10579,7 +11694,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_PlatformHeightAboveRail",
+   "guid": "0283bc8b-4e93-5ab4-bd58-1ae973622da0"
   },
   "plt_edge_offset": {
    "l": "Edge offset from track",
@@ -10603,7 +11721,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_EdgeOffsetFromTrack",
+   "guid": "ef93f530-b735-5e07-bebf-fffaf3b2e0f0"
   },
   "plt_length": {
    "l": "Platform length",
@@ -10629,7 +11750,10 @@
    ],
    "ip": [
     "Length"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_PlatformLength",
+   "guid": "123b4e63-cd66-55a0-a774-a75e13bf70a6"
   },
   "plt_tactile": {
    "l": "Tactile warning surface",
@@ -10650,7 +11774,10 @@
     "TBD",
     "N/A"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_TactileWarningSurface",
+   "guid": "85cadd72-18cb-51a8-9785-b580d72c2e2d"
   },
   "bri_structure_id": {
    "l": "Structure number",
@@ -10674,7 +11801,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_StructureNumber",
+   "guid": "188e85a1-04cc-500b-824d-3ef83cedfcd9"
   },
   "bri_design_code": {
    "l": "Design code and live load",
@@ -10698,7 +11828,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignCodeAndLiveLoad",
+   "guid": "88df1f47-eb32-5364-8a98-edf4a963eb15"
   },
   "bri_prestress": {
    "l": "Prestressing",
@@ -10725,7 +11858,10 @@
    "ip": [
     "InitialTension",
     "TendonRelaxation"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_Prestressing",
+   "guid": "8b88a052-e171-561d-98ae-8629ec706603"
   },
   "bri_wearing_surface": {
    "l": "Wearing surface / waterproofing",
@@ -10749,7 +11885,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_WearingSurfaceWaterproofing",
+   "guid": "bf946e13-9c2f-5167-a50e-cc05abeb128e"
   },
   "bri_inspection_element": {
    "l": "Inspection element reference",
@@ -10773,7 +11912,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_InspectionElementReference",
+   "guid": "52f02467-a068-52e0-ab1f-34d24d65bd75"
   },
   "bri_scour": {
    "l": "Scour protection",
@@ -10797,7 +11939,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_ScourProtection",
+   "guid": "b353d336-87a9-5331-b5dd-89ff6ff2e12b"
   },
   "brgb_vertical_capacity": {
    "l": "Vertical load capacity",
@@ -10821,7 +11966,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_VerticalLoadCapacity_kN",
+   "guid": "79dbd273-c20f-5520-9aa2-00a48d5da067"
   },
   "brgb_displacement": {
    "l": "Displacement accommodated",
@@ -10844,7 +11992,10 @@
    ],
    "ip": [
     "DisplacementAccommodated"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_DisplacementAccommodated",
+   "guid": "f0d18794-bda0-5b99-aa15-7eb484d81612"
   },
   "brgb_rotation": {
    "l": "Rotation accommodated",
@@ -10867,7 +12018,10 @@
    ],
    "ip": [
     "RotationAccommodated"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RotationAccommodated",
+   "guid": "9149a6a4-04ae-5402-91de-19afba4936ba"
   },
   "brgb_movement": {
    "l": "Design movement range",
@@ -10891,7 +12045,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_DesignMovementRange",
+   "guid": "ddcfe105-f96d-5a54-8df1-33acf7027dbe"
   },
   "brgb_setting_temp": {
    "l": "Setting temperature / preset",
@@ -10915,7 +12072,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_SettingTemperaturePreset",
+   "guid": "ffa522ff-bd07-5316-b078-a79086b7a1ae"
   },
   "tnl_ring_type": {
    "l": "Ring / segment type",
@@ -10939,7 +12099,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_RingSegmentType",
+   "guid": "871e1351-24f2-56fc-abd7-ea7065eaec28"
   },
   "tnl_thickness": {
    "l": "Lining thickness",
@@ -10963,7 +12126,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_LiningThickness",
+   "guid": "983c2f72-5116-50b5-a110-3bb279763b98"
   },
   "tnl_internal_dia": {
    "l": "Internal diameter",
@@ -10987,7 +12153,10 @@
     "Default",
     "<By Category>"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_InternalDiameter",
+   "guid": "025e91b7-e1f5-5e62-b111-cb2778cdfa88"
   },
   "tnl_gasket": {
    "l": "Gasket / waterproofing",
@@ -11011,7 +12180,10 @@
     "<By Category>",
     "Generic"
    ],
-   "ip": []
+   "ip": [],
+   "rk": "shared",
+   "rn": "CA_GasketWaterproofing",
+   "guid": "1eb78d4e-0f91-58fe-a08b-3f61c653518f"
   },
   "spec_section": {
    "l": "Specification section",
@@ -11031,7 +12203,10 @@
     "",
     "TBD",
     "0"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_SpecificationSection",
+   "guid": "770602c2-0cf0-59df-9734-9abc2cb36792"
   },
   "epd_ref": {
    "l": "Environmental product declaration",
@@ -11051,7 +12226,10 @@
     "",
     "TBD",
     "N/A"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_EPDReference",
+   "guid": "8433cb04-5219-577a-b742-86283b2140d1"
   },
   "recycled_content": {
    "l": "Recycled content",
@@ -11070,7 +12248,10 @@
    "sus": [
     "",
     "0"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_RecycledContent",
+   "guid": "f7d24471-2d9b-57c2-b514-d303a031502a"
   },
   "embodied_carbon": {
    "l": "Embodied carbon",
@@ -11089,7 +12270,10 @@
    "sus": [
     "",
     "0"
-   ]
+   ],
+   "rk": "shared",
+   "rn": "CA_EmbodiedCarbon",
+   "guid": "b6a567c0-f8d6-5cef-be22-8c5e77f71c5e"
   }
  },
  "C": [
@@ -11655,7 +12839,11 @@
      "t": "Screws, fasteners and wire connectors; installation details are in the manufacturer instructions and the specification."
     }
    ],
-   "m": "elec.1"
+   "m": "elec.1",
+   "mf": [
+    "26 51 00",
+    "26 56 00"
+   ]
   },
   {
    "id": "door",
@@ -12163,7 +13351,11 @@
      "t": "Gaskets and seals as geometry; their type and rating are in the specification."
     }
    ],
-   "m": "arch.1"
+   "m": "arch.1",
+   "mf": [
+    "08 11 00",
+    "08 14 00"
+   ]
   },
   {
    "id": "wall_interior",
@@ -12537,7 +13729,11 @@
      "t": "Acoustic sealant beads and small trims; these are shown on architectural details."
     }
    ],
-   "m": "arch.0"
+   "m": "arch.0",
+   "mf": [
+    "09 21 00",
+    "04 20 00"
+   ]
   },
   {
    "id": "wall_exterior",
@@ -12915,7 +14111,11 @@
      "t": "Sealant beads, flashing laps and tapes; these are shown on envelope details."
     }
    ],
-   "m": "arch.0"
+   "m": "arch.0",
+   "mf": [
+    "04 20 00",
+    "07 42 00"
+   ]
   },
   {
    "id": "air_terminal",
@@ -13293,7 +14493,10 @@
      "t": "Air throw pattern as solid geometry; throw is a parameter and part of the design calculation."
     }
    ],
-   "m": "mech.4"
+   "m": "mech.4",
+   "mf": [
+    "23 37 00"
+   ]
   },
   {
    "id": "ahu",
@@ -13801,7 +15004,11 @@
      "t": "Casing bolts and fasteners; these are shown on manufacturer drawings."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 73 00",
+    "23 74 00"
+   ]
   },
   {
    "id": "structural_column",
@@ -14176,7 +15383,11 @@
      "t": "Paint and coating textures; coating systems are described in the specification."
     }
    ],
-   "m": "str.1"
+   "m": "str.1",
+   "mf": [
+    "05 12 00",
+    "03 30 00"
+   ]
   },
   {
    "id": "plumbing_fixture",
@@ -14602,7 +15813,10 @@
      "t": "Sealants, mounting bolts and anchors; installation is covered by the manufacturer instructions and the specification."
     }
    ],
-   "m": "plumb.0"
+   "m": "plumb.0",
+   "mf": [
+    "22 40 00"
+   ]
   },
   {
    "id": "footing",
@@ -15002,7 +16216,10 @@
      "t": "Formwork, shoring and dewatering are not modelled; they belong to the contractor’s temporary works drawings."
     }
    ],
-   "m": "str.0"
+   "m": "str.0",
+   "mf": [
+    "03 30 00"
+   ]
   },
   {
    "id": "pile",
@@ -15380,7 +16597,11 @@
      "t": "Driving records and load test results are not geometry; they live in the installation logs referenced by the pile."
     }
    ],
-   "m": "str.0"
+   "m": "str.0",
+   "mf": [
+    "31 62 00",
+    "31 63 00"
+   ]
   },
   {
    "id": "retaining_wall",
@@ -15799,7 +17020,11 @@
      "t": "Temporary excavation support and shoring are not modelled with the permanent wall; they belong to temporary works drawings."
     }
    ],
-   "m": "str.0"
+   "m": "str.0",
+   "mf": [
+    "03 30 00",
+    "32 32 00"
+   ]
   },
   {
    "id": "slab",
@@ -16234,7 +17459,11 @@
      "t": "Surface texture, curing and sealers are not modelled; the specification describes them."
     }
    ],
-   "m": "str.2"
+   "m": "str.2",
+   "mf": [
+    "03 30 00",
+    "05 31 00"
+   ]
   },
   {
    "id": "roof",
@@ -16646,7 +17875,11 @@
      "t": "Surface colour and granule texture are not geometry; they are given in the specification."
     }
    ],
-   "m": "arch.2"
+   "m": "arch.2",
+   "mf": [
+    "07 50 00",
+    "07 30 00"
+   ]
   },
   {
    "id": "beam",
@@ -17042,7 +18275,12 @@
      "t": "Temporary erection aids, shims and lifting lugs are not modelled; they belong to the erection drawings."
     }
    ],
-   "m": "str.1"
+   "m": "str.1",
+   "mf": [
+    "05 12 00",
+    "06 17 00",
+    "03 30 00"
+   ]
   },
   {
    "id": "structural_member",
@@ -17390,7 +18628,12 @@
      "t": "Temporary erection bracing is not modelled; it belongs to the erection drawings."
     }
    ],
-   "m": "str.3"
+   "m": "str.3",
+   "mf": [
+    "05 12 00",
+    "05 21 00",
+    "06 17 53"
+   ]
   },
   {
    "id": "rebar",
@@ -17662,7 +18905,10 @@
      "t": "Placed reinforcement is not field-surveyed into the model; inspection reports record what was placed."
     }
    ],
-   "m": "str.4"
+   "m": "str.4",
+   "mf": [
+    "03 20 00"
+   ]
   },
   {
    "id": "curtain_wall",
@@ -18121,7 +19367,11 @@
      "t": "Internal drainage paths and weep holes are not modelled; see the manufacturer details."
     }
    ],
-   "m": "arch.0"
+   "m": "arch.0",
+   "mf": [
+    "08 44 00",
+    "08 41 00"
+   ]
   },
   {
    "id": "window",
@@ -18615,7 +19865,11 @@
      "t": "Insect screens and their mesh are not modelled in detail; see the product data."
     }
    ],
-   "m": "arch.1"
+   "m": "arch.1",
+   "mf": [
+    "08 50 00",
+    "08 60 00"
+   ]
   },
   {
    "id": "ceiling",
@@ -18966,7 +20220,11 @@
      "t": "Tile textures, perforation patterns and acoustic backing are not geometry; see the specification."
     }
    ],
-   "m": "arch.2"
+   "m": "arch.2",
+   "mf": [
+    "09 51 00",
+    "09 21 00"
+   ]
   },
   {
    "id": "stair",
@@ -19348,7 +20606,11 @@
      "t": "Reinforcement in concrete stairs is not modelled at these levels; see the structural drawings."
     }
    ],
-   "m": "arch.3"
+   "m": "arch.3",
+   "mf": [
+    "05 51 00",
+    "03 30 00"
+   ]
   },
   {
    "id": "ramp",
@@ -19676,7 +20938,10 @@
      "t": "Reinforcement and heating cables are not modelled individually; see the structural and electrical drawings."
     }
    ],
-   "m": "arch.3"
+   "m": "arch.3",
+   "mf": [
+    "03 30 00"
+   ]
   },
   {
    "id": "railing",
@@ -19987,7 +21252,10 @@
      "t": "Surface finishes, coatings and colour are not geometry; see the specification."
     }
    ],
-   "m": "arch.3"
+   "m": "arch.3",
+   "mf": [
+    "05 52 00"
+   ]
   },
   {
    "id": "furniture_casework",
@@ -20404,7 +21672,11 @@
      "t": "Small loose items such as accessories and office equipment are not modelled; see the furniture inventory."
     }
    ],
-   "m": "arch.5"
+   "m": "arch.5",
+   "mf": [
+    "12 30 00",
+    "12 50 00"
+   ]
   },
   {
    "id": "specialty_equipment",
@@ -20830,7 +22102,10 @@
      "t": "Nameplate data are not geometry; record them as parameters on the element."
     }
    ],
-   "m": "arch.5"
+   "m": "arch.5",
+   "mf": [
+    "11 00 00"
+   ]
   },
   {
    "id": "elevator",
@@ -21300,7 +22575,11 @@
      "t": "Ropes, sheaves, governor and fasteners are not modelled; they appear in the shop drawings."
     }
    ],
-   "m": "arch.3"
+   "m": "arch.3",
+   "mf": [
+    "14 20 00",
+    "14 30 00"
+   ]
   },
   {
    "id": "duct",
@@ -21664,7 +22943,10 @@
      "t": "Insulation jacketing, labels and flow arrows are not modelled; they belong in the specification and identification schedule."
     }
    ],
-   "m": "mech.1"
+   "m": "mech.1",
+   "mf": [
+    "23 31 00"
+   ]
   },
   {
    "id": "damper",
@@ -22124,7 +23406,10 @@
      "t": "Firestopping and caulking around the sleeve are not modelled; the tested assembly details show them."
     }
    ],
-   "m": "mech.1"
+   "m": "mech.1",
+   "mf": [
+    "23 33 00"
+   ]
   },
   {
    "id": "pipe",
@@ -22490,7 +23775,13 @@
      "t": "Small pipes below a size agreed in the BEP, such as trap primer lines, are shown on drawings only and not modelled."
     }
    ],
-   "m": "mech.2"
+   "m": "mech.2",
+   "mf": [
+    "22 11 00",
+    "22 13 00",
+    "23 21 00",
+    "21 13 00"
+   ]
   },
   {
    "id": "valve",
@@ -22897,7 +24188,11 @@
      "t": "Actuator wiring and control tubing are not modelled; the controls drawings show them."
     }
    ],
-   "m": "mech.2"
+   "m": "mech.2",
+   "mf": [
+    "22 05 23",
+    "23 05 23"
+   ]
   },
   {
    "id": "pump",
@@ -23389,7 +24684,12 @@
      "t": "Bolts, nuts, shims and grout are not modelled; the installation instructions and shop drawings cover them."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 21 23",
+    "22 11 23",
+    "21 30 00"
+   ]
   },
   {
    "id": "boiler",
@@ -23867,7 +25167,10 @@
      "t": "Jacket finish, insulation layers and nameplates are not modelled; the specification describes them."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 52 00"
+   ]
   },
   {
    "id": "chiller",
@@ -24342,7 +25645,10 @@
      "t": "Fan blades, coil fins and casing finish are not modelled; the specification and product data cover them."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 64 00"
+   ]
   },
   {
    "id": "cooling_tower",
@@ -24788,7 +26094,10 @@
      "t": "Water treatment and Legionella control measures are not geometry; they are in the specification and operation manual."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 65 00"
+   ]
   },
   {
    "id": "fan",
@@ -25248,7 +26557,10 @@
      "t": "Fan curves and sound data are not geometry; they are in the approved submittal."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 34 00"
+   ]
   },
   {
    "id": "vav_box",
@@ -25690,7 +27002,10 @@
      "t": "Commissioning airflows are data, not geometry; record them as parameters."
     }
    ],
-   "m": "mech.4"
+   "m": "mech.4",
+   "mf": [
+    "23 36 00"
+   ]
   },
   {
    "id": "heat_exchanger",
@@ -26098,7 +27413,10 @@
      "t": "Bolts, nuts and other fasteners are not modelled; see shop drawings."
     }
    ],
-   "m": "mech.0"
+   "m": "mech.0",
+   "mf": [
+    "23 57 00"
+   ]
   },
   {
    "id": "water_heater",
@@ -26536,7 +27854,11 @@
      "t": "Small fittings, valve trim and fasteners are not modelled; see the plumbing drawings and specification."
     }
    ],
-   "m": "plumb.0"
+   "m": "plumb.0",
+   "mf": [
+    "22 33 00",
+    "22 34 00"
+   ]
   },
   {
    "id": "sprinkler",
@@ -26869,7 +28191,10 @@
      "t": "Spare-head cabinet contents are recorded as data, not modelled."
     }
    ],
-   "m": "fire.0"
+   "m": "fire.0",
+   "mf": [
+    "21 13 00"
+   ]
   },
   {
    "id": "fire_alarm_device",
@@ -27268,7 +28593,10 @@
      "t": "Measured sound levels are not modelled; they are in the verification report."
     }
    ],
-   "m": "fire.1"
+   "m": "fire.1",
+   "mf": [
+    "28 46 00"
+   ]
   },
   {
    "id": "distribution_board",
@@ -27723,7 +29051,10 @@
      "t": "Labels and nameplates are not modelled; record their content as parameters."
     }
    ],
-   "m": "elec.0"
+   "m": "elec.0",
+   "mf": [
+    "26 24 00"
+   ]
   },
   {
    "id": "transformer",
@@ -28195,7 +29526,11 @@
      "t": "Cable terminations and lugs inside the enclosure are not modelled; see the single-line diagram and shop drawings."
     }
    ],
-   "m": "elec.0"
+   "m": "elec.0",
+   "mf": [
+    "26 22 00",
+    "26 12 00"
+   ]
   },
   {
    "id": "generator",
@@ -28659,7 +29994,10 @@
      "t": "Noise, emissions and fuel consumption are not shown as geometry; see the parameters and the specification."
     }
    ],
-   "m": "elec.0"
+   "m": "elec.0",
+   "mf": [
+    "26 32 00"
+   ]
   },
   {
    "id": "cable_carrier",
@@ -28967,7 +30305,12 @@
      "t": "Fasteners, splice plates, clamps and bonding jumpers are not modelled; see the specification and shop drawings."
     }
    ],
-   "m": "elec.3"
+   "m": "elec.3",
+   "mf": [
+    "26 05 36",
+    "26 05 33",
+    "26 25 00"
+   ]
   },
   {
    "id": "wiring_device",
@@ -29289,7 +30632,10 @@
      "t": "Branch circuit routes from devices to panels are not modelled; see circuit and panel schedules."
     }
    ],
-   "m": "elec.2"
+   "m": "elec.2",
+   "mf": [
+    "26 27 26"
+   ]
   },
   {
    "id": "comm_security_device",
@@ -29705,7 +31051,11 @@
      "t": "Patch cords, labels and small mounting hardware are not modelled; see the specification and shop drawings."
     }
    ],
-   "m": "elec.2"
+   "m": "elec.2",
+   "mf": [
+    "27 00 00",
+    "28 10 00"
+   ]
   },
   {
    "id": "space",
@@ -30063,7 +31413,8 @@
      "t": "Areas under leasing or legal measurement rules are not taken from room objects unless the BEP says so; see area plans."
     }
    ],
-   "m": "arch.4"
+   "m": "arch.4",
+   "mf": []
   },
   {
    "id": "zone",
@@ -30293,7 +31644,8 @@
      "t": "Tenancy boundaries for legal or lease purposes are not set by the model; see the lease plans."
     }
    ],
-   "m": "arch.4"
+   "m": "arch.4",
+   "mf": []
   },
   {
    "id": "site_terrain",
@@ -30553,7 +31905,11 @@
      "t": "Survey control points, benchmarks and legal boundary details are kept in the survey plan, not in the surface."
     }
    ],
-   "m": "civil.0"
+   "m": "civil.0",
+   "mf": [
+    "31 20 00",
+    "31 10 00"
+   ]
   },
   {
    "id": "paving_parking",
@@ -30890,7 +32246,12 @@
      "t": "Paint thickness and reflective beads of markings are not modelled; see the specification."
     }
    ],
-   "m": "civil.2"
+   "m": "civil.2",
+   "mf": [
+    "32 12 00",
+    "32 13 00",
+    "32 16 00"
+   ]
   },
   {
    "id": "utility_pipe",
@@ -31262,7 +32623,12 @@
      "t": "Tracer wire and warning tape are not modelled; their requirements are on the standard details."
     }
    ],
-   "m": "civil.1"
+   "m": "civil.1",
+   "mf": [
+    "33 10 00",
+    "33 30 00",
+    "33 40 00"
+   ]
   },
   {
    "id": "utility_structure",
@@ -31660,7 +33026,11 @@
      "t": "Flow channel finish and internal coatings are not modelled; the standard details describe them."
     }
    ],
-   "m": "civil.1"
+   "m": "civil.1",
+   "mf": [
+    "33 39 13",
+    "33 49 13"
+   ]
   },
   {
    "id": "road_pavement",
@@ -32048,7 +33418,11 @@
      "t": "Pavement markings are not modelled as solids within the layers; their layout is on the signing and marking drawings."
     }
    ],
-   "m": "civil.2"
+   "m": "civil.2",
+   "mf": [
+    "32 12 00",
+    "32 11 00"
+   ]
   },
   {
    "id": "road_barrier",
@@ -32387,7 +33761,10 @@
      "t": "Crash test details and dynamic behaviour are not modelled; they are in the product approval documents."
     }
    ],
-   "m": "civil.3"
+   "m": "civil.3",
+   "mf": [
+    "34 71 13"
+   ]
   },
   {
    "id": "signage",
@@ -32701,7 +34078,11 @@
      "t": "Braille dots and tactile relief are not modelled; their layout is on the sign detail drawings."
     }
    ],
-   "m": "arch.5"
+   "m": "arch.5",
+   "mf": [
+    "10 14 00",
+    "34 41 00"
+   ]
   },
   {
    "id": "rail_track",
@@ -33068,7 +34449,10 @@
      "t": "Track circuit wiring and bonding are not modelled; they are on the signalling drawings."
     }
    ],
-   "m": "sys.0"
+   "m": "sys.0",
+   "mf": [
+    "34 11 00"
+   ]
   },
   {
    "id": "rail_turnout",
@@ -33502,7 +34886,10 @@
      "t": "Heater elements and control wiring are not modelled; they are on the signalling and power drawings."
     }
    ],
-   "m": "sys.0"
+   "m": "sys.0",
+   "mf": [
+    "34 11 00"
+   ]
   },
   {
    "id": "rail_signal",
@@ -33942,7 +35329,10 @@
      "t": "Fixing bolts, cable glands and labels are not modelled; refer to installation drawings and the specification."
     }
    ],
-   "m": "sys.1"
+   "m": "sys.1",
+   "mf": [
+    "34 42 00"
+   ]
   },
   {
    "id": "ocs_support",
@@ -34378,7 +35768,10 @@
      "t": "Electrical sectioning and feeding arrangements are not geometry; they are shown on the electrification schematic drawings."
     }
    ],
-   "m": "sys.1"
+   "m": "sys.1",
+   "mf": [
+    "34 23 00"
+   ]
   },
   {
    "id": "rail_platform",
@@ -34783,7 +36176,11 @@
      "t": "Joint sealants, bedding mortar and fixings are not modelled; refer to the specification and shop drawings."
     }
    ],
-   "m": "sys.0"
+   "m": "sys.0",
+   "mf": [
+    "03 30 00",
+    "03 40 00"
+   ]
   },
   {
    "id": "bridge_superstructure",
@@ -35260,7 +36657,11 @@
      "t": "Waterproofing membrane and wearing surface texture are not modelled; the surfacing build-up is in the specification."
     }
    ],
-   "m": "str.2"
+   "m": "str.2",
+   "mf": [
+    "03 40 00",
+    "05 12 00"
+   ]
   },
   {
    "id": "bridge_substructure",
@@ -35673,7 +37074,11 @@
      "t": "Soil layers and ground properties are not drawn with the substructure; they are in the geotechnical reports and ground model."
     }
    ],
-   "m": "str.1"
+   "m": "str.1",
+   "mf": [
+    "03 30 00",
+    "31 60 00"
+   ]
   },
   {
    "id": "bridge_bearing",
@@ -36076,7 +37481,8 @@
      "t": "Load, movement and rotation capacities are data, not geometry; they are held in parameters and design calculations."
     }
    ],
-   "m": "str.3"
+   "m": "str.3",
+   "mf": []
   },
   {
    "id": "tunnel_lining",
@@ -36436,7 +37842,63 @@
      "t": "Annulus grout and waterproofing membranes are not modelled as solids; they are on drawings and in the specification."
     }
    ],
-   "m": "str.2"
+   "m": "str.2",
+   "mf": [
+    "31 70 00"
+   ]
   }
+ ],
+ "mfdiv": {
+  "03": "Concrete",
+  "04": "Masonry",
+  "05": "Metals",
+  "06": "Wood, plastics and composites",
+  "07": "Thermal and moisture protection",
+  "08": "Openings",
+  "09": "Finishes",
+  "10": "Specialties",
+  "11": "Equipment",
+  "12": "Furnishings",
+  "14": "Conveying equipment",
+  "21": "Fire suppression",
+  "22": "Plumbing",
+  "23": "Heating, ventilating and air conditioning (HVAC)",
+  "26": "Electrical",
+  "27": "Communications",
+  "28": "Electronic safety and security",
+  "31": "Earthwork",
+  "32": "Exterior improvements",
+  "33": "Utilities",
+  "34": "Transportation"
+ },
+ "ufgrp": {
+  "A10": "Foundations",
+  "A20": "Basement construction",
+  "B10": "Superstructure",
+  "B20": "Exterior enclosure",
+  "B30": "Roofing",
+  "C10": "Interior construction",
+  "C20": "Stairs",
+  "C30": "Interior finishes",
+  "D10": "Conveying",
+  "D20": "Plumbing",
+  "D30": "HVAC",
+  "D40": "Fire protection",
+  "D50": "Electrical",
+  "E10": "Equipment",
+  "E20": "Furnishings",
+  "G10": "Site preparation",
+  "G20": "Site improvements",
+  "G30": "Site civil and mechanical utilities"
+ },
+ "idp": [
+  "type_name",
+  "type_mark",
+  "mark",
+  "description",
+  "uniformat_code",
+  "ifc_export_class",
+  "status",
+  "spec_section"
  ]
 }

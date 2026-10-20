@@ -43,7 +43,7 @@ button,input,select{font:inherit;color:inherit}
 .lead{font-size:16.5px}
 .note{color:var(--muted);font-size:13.5px}
 .legend{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin:14px 0 4px}
-.legend div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;font-size:13px}
+.legend>div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;font-size:13px}
 .chip{display:inline-block;font-family:var(--f-mono);font-size:12px;font-weight:600;padding:1px 7px;border-radius:4px;white-space:nowrap}
 .v100{background:var(--l100);color:var(--l100i)}.v200{background:var(--l200);color:#fff}.v300{background:var(--l300);color:#fff}.v350{background:var(--l350);color:#fff}.v400{background:var(--l400);color:var(--l400i)}.v500{background:var(--l500);color:#fff}
 .layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:24px;margin-top:18px;align-items:start}
@@ -85,11 +85,24 @@ ul.nx{margin:6px 0;padding-left:20px}
 .flag{background:var(--warn-soft);border-left:3px solid var(--warn);padding:8px 12px;border-radius:4px;font-size:14px;margin:12px 0}
 .actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .src{margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+.ill{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;margin:6px 0 4px}
+.legend .cap,.sum .cap{font-size:12px;color:var(--muted)}
+.rk{display:inline-block;font-size:11px;font-weight:600;border-radius:3px;padding:0 5px;margin-right:4px;white-space:nowrap}
+.rk.builtin{background:var(--sunk);color:var(--ink)}.rk.shared{background:var(--accent-soft);color:var(--accent)}.rk.family{background:var(--warn-soft);color:var(--warn)}
+td.rv code,td.ifc code{font-family:var(--f-mono);font-size:12px;word-break:break-word}
+td.rv{min-width:190px}td.ifc{min-width:200px;font-size:12.5px}
+td.sc{white-space:nowrap;font-size:12.5px}
+.kinds{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:8px 0 12px}
+.kinds div{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:8px 10px;font-size:13px}
+.proj{background:var(--accent-soft);border-radius:var(--r);padding:8px 12px;margin:0 0 14px;font-size:14px}
+.proj .chip{margin:0 2px}
+.filters label.chk{display:flex;gap:6px;align-items:center;font-size:14px;text-transform:none;letter-spacing:0;color:var(--ink)}.chk input{width:auto}
 @media print{.side,.filters,.top .bar,.actions,.intro .legend{display:none}.layout{display:block}body{background:#fff}.tw{overflow:visible}}
 </style>
 <script src="../translations/strings.js"></script>
 <script src="../translations/i18n.js"></script>
 <script src="spec-data.js"></script>
+<script src="illustrations.js"></script>
 <body>
 <div class="wrap">
 <header class="top">
@@ -102,20 +115,24 @@ ul.nx{margin:6px 0;padding-left:20px}
 
 <section class="intro">
   <h1>Level of development, element by element</h1>
-  <p class="lead">"LOD 300" alone says almost nothing. For each kind of element, this page lists what must be drawn in 3D and which data it must carry at each level, and which BIM uses need it. A BEP or contract can point to these rows, and a model checker can test them.</p>
-  <p>Each level adds to the one before. Geometry and data are listed separately because they mature at different speeds: a door can be placed exactly (geometry at LOD 300) long before its hardware set is known.</p>
+  <p class="lead">"LOD 300" alone says almost nothing. For each kind of element, this page lists what must be drawn in 3D and which Revit parameters it must carry at each level, and which BIM uses need it. A BEP or contract can point to these rows, and a model checker can test them.</p>
+  <p>The BEP Builder's LOD matrix sets the level of each element type at each stage. This page is what each of those cells means. Each level adds to the one before; geometry and data are listed separately because they mature at different speeds.</p>
   <div class="legend" id="legend"></div>
   <p class="note">LOD 500 means checked in the field after construction, to a stated accuracy. It is not more detail than LOD 400, and it is never assumed: the owner asks for it, pays for it and says who surveys.</p>
 </section>
 
 <div class="layout">
   <nav class="side" aria-label="Element types">
-    <input id="q" type="search" placeholder="Find an element type" aria-label="Find an element type">
+    <label class="note" for="grp">Group by</label>
+    <select id="grp"></select>
+    <input id="q" type="search" placeholder="Find an element type" aria-label="Find an element type" style="margin-top:8px">
     <div id="list"></div>
   </nav>
   <main>
+    <div id="proj"></div>
     <div class="filters">
       <div><label for="upto">Show requirements up to</label><select id="upto"></select></div>
+      <div><label>IFC</label><label class="chk"><input type="checkbox" id="ifc"> <span>Show the IFC export columns</span></label></div>
       <div style="grid-column:1/-1"><label>Only what these BIM uses need</label><div class="uses" id="uses"></div></div>
     </div>
     <article id="el"></article>
@@ -123,68 +140,99 @@ ul.nx{margin:6px 0;padding-left:20px}
 </div>
 
 <section class="src note">
-  <p>All wording on this page is OpenBEP's own. The levels are organised like the BIMForum LOD Specification, which may be cited but not copied; clearance zones and connectors follow good practice in manufacturers' object guides such as the bimstore Bible. Parameter names come from IFC 4.3 property sets and COBie fields; Revit names are built-in parameter names, to verify for each Revit version. Which BIM use needs which requirement is our own judgement, still to be validated with practitioners. Text: CC BY 4.0.</p>
+  <p>All wording on this page is OpenBEP's own. The levels are organised like the BIMForum LOD Specification, which may be cited but not copied; clearance zones and connectors follow good practice in manufacturers' object guides such as the bimstore Bible. Revit names are built-in parameter names, to verify for each Revit version; shared parameters come from the OpenBEP list. IFC targets follow IFC 4.3 property sets. Uniformat II and MasterFormat numbers are our mapping, to check against the edition your project uses. Which BIM use needs which requirement is our own judgement, still to be validated with practitioners. Text: CC BY 4.0.</p>
   <p>Data file: <a href="spec.json" data-notr>spec.json</a>. The BEP Builder reads the same file, so the two never disagree.</p>
 </section>
 </div>
 
 <script>
-const D=window.OPENBEP_LOD, LV=['100','200','300','350','400','500'];
+const D=window.OPENBEP_LOD, ILL=window.OPENBEP_LOD_ILL, LV=['100','200','300','350','400','500'];
 const KIND=[['shape','Size and shape'],['place','Location and orientation'],['open','Openings and penetrations'],['part','Parts and layers'],['conn','Connections and supports'],['zone','Clearance and access zones'],['rec','As-built record']];
 const KN=Object.fromEntries(KIND);
+const RK={builtin:'Revit built-in',shared:'OpenBEP shared',family:'Family parameter'};
+const GRP={disc:'Discipline',uf:'Uniformat II',mf:'MasterFormat',az:'A to Z'};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]);
 const byId=Object.fromEntries(D.C.map(c=>[c.id,c]));
-const st={el:(location.hash.slice(1)&&byId[location.hash.slice(1)])?location.hash.slice(1):D.C[0].id, upto:'500', uses:new Set(), q:''};
+// The BEP Builder saves the project's levels per element type and stage here (same site, same browser).
+let PJ=null; try{PJ=JSON.parse(localStorage.getItem('openbep-lod-project')||'null')}catch(e){}
+const pjGrp=PJ&&PJ.cls&&(PJ.cls.includes('uf')?'uf':PJ.cls.includes('mf')?'mf':'');
+const st={el:(location.hash.slice(1)&&byId[location.hash.slice(1)])?location.hash.slice(1):'door', upto:'500', uses:new Set(), q:'', grp:pjGrp||'disc', ifc:false};
 const lang=()=>document.documentElement.lang||'en';
 const tr=t=>{const L=lang(); if(L==='en'||typeof trText!=='function') return t; return trText(t,(window.OPENBEP_STRINGS||{})[L]||{},L)||t};
 const $=s=>document.querySelector(s);
 
-$('#legend').innerHTML=LV.map(v=>`<div><span class="chip v${v}">LOD ${v}</span><br>${esc(D.lod[v])}</div>`).join('');
+$('#legend').innerHTML=LV.map(v=>`<div><span class="chip v${v}">LOD ${v}</span>${ILL.svg('door',v)}<div class="cap">${esc(ILL.cap('door',v))}</div><div>${esc(D.lod[v])}</div></div>`).join('');
 $('#upto').innerHTML=LV.map(v=>`<option value="${v}">LOD ${v}</option>`).join('');
 $('#upto').value=st.upto;
+$('#grp').innerHTML=Object.entries(GRP).map(([k,n])=>`<option value="${k}">${esc(n)}</option>`).join('');
+$('#grp').value=st.grp;
 $('#uses').innerHTML=Object.entries(D.uses).map(([k,n])=>`<button type="button" data-use="${k}" aria-pressed="false">${esc(n)}</button>`).join('');
 
+// Groups for the element list: [sort key, heading, element types]
+function groups(){const out=new Map(), add=(k,h,c)=>{if(!out.has(k)) out.set(k,[k,h,[]]); out.get(k)[2].push(c)};
+  D.C.forEach(c=>{
+    if(st.grp==='disc'){const g=D.groups[+c.grp-1]||''; add(c.grp,g.replace(/^\d+ /,''),c)}
+    else if(st.grp==='uf'){const u=(c.uf[0]||'').slice(0,3); u?add(u,[u,D.ufgrp[u]],c):add('ZZ','No code in this system',c)}
+    else if(st.grp==='mf'){const m=(c.mf[0]||'').slice(0,2); m?add(m,[m,D.mfdiv[m]],c):add('ZZ','No code in this system',c)}
+    else add('','',c)});
+  const name=c=>tr(c.n);
+  return [...out.values()].sort((a,b)=>a[0].localeCompare(b[0])).map(g=>[g[0],g[1],g[2].sort((a,b)=>name(a).localeCompare(name(b),lang()))])}
+function code(c){return st.grp==='uf'?(c.uf[0]||'').slice(0,5):st.grp==='mf'?(c.mf[0]||''):''}
 function list(){const q=st.q.toLowerCase();
-  const hit=c=>!q||[c.n,tr(c.n),c.ifc,...(c.rc||[])].join(' ').toLowerCase().includes(q);
-  $('#list').innerHTML=D.groups.map((g,i)=>{const gid=String(i+1).padStart(2,'0'), els=D.C.filter(c=>c.grp===gid&&hit(c)); if(!els.length) return '';
-    return `<div class="g">${esc(g.replace(/^\d+ /,''))}</div><ul>${els.map(c=>`<li><button type="button" data-el="${c.id}" aria-current="${c.id===st.el}">${esc(c.n)}</button></li>`).join('')}</ul>`}).join('')||'<p class="note">No element type matches.</p>'}
+  const hit=c=>!q||[c.n,tr(c.n),c.ifc,...(c.rc||[]),...c.uf,...c.mf].join(' ').toLowerCase().includes(q);
+  $('#list').innerHTML=groups().map(([k,h,els])=>{els=els.filter(hit); if(!els.length) return '';
+    return `${h?`<div class="g">${Array.isArray(h)?`<span data-notr>${esc(h[0])}</span> <span>${esc(h[1])}</span>`:esc(h)}</div>`:''}<ul>${els.map(c=>`<li><button type="button" data-el="${c.id}" aria-current="${c.id===st.el}">${code(c)?`<span class="mono tag" data-notr>${esc(code(c))}</span> `:''}${esc(c.n)}</button></li>`).join('')}</ul>`}).join('')||'<p class="note">No element type matches.</p>'}
 
 const useOk=u=>!st.uses.size||u.some(x=>st.uses.has(x));
 const tags=u=>`<span class="tags">${u.map(x=>`<span class="${st.uses.has(x)?'hit':''}">${esc(D.uses[x]||x)}</span>`).join('')}</span>`;
 const cells=f=>LV.map(v=>{const on=+v>=+f, from=v===f, out=+v>+st.upto;
   return `<td class="l ${on?'on':''} ${from?'from':''}" ${from?`title="Required from LOD ${f}"`:''}>${on&&!out?`<span class="v${v}"></span>`:''}</td>`}).join('');
 const lvHead=()=>LV.map(v=>`<th class="l"><span class="chip v${v}">${v}</span></th>`).join('');
+function rvCell(p){const n=p.rn?`<code data-notr>${esc(p.rn)}</code>`:(p.rk==='family'?'<span>Set inside the family</span>':'<span>Shared parameter to add</span>');
+  return `<span class="rk ${p.rk}">${esc(RK[p.rk])}</span> ${n}${p.guid?`<small data-notr>GUID ${esc(p.guid)}</small>`:''}${p.rnote?`<small>${esc(p.rnote)}</small>`:''}`}
+function ifcCell(p){if(!p.ifc) return '<small>No IFC target</small>';
+  return `<code data-notr>${esc(p.ifc)}</code><small>${p.rk==='builtin'?'Revit\'s IFC exporter writes built-in parameters to their IFC target; check one export.':'Exported only if listed in the IFC export\'s user-defined property set file.'}</small>`}
+function projLine(c){if(!PJ||!PJ.el||!PJ.el[c.id]) return '';
+  const e=PJ.el[c.id]; return `<div class="proj"><b>${esc(PJ.name||'Your project')}</b>: <span>levels set in the BEP Builder</span> ${PJ.stages.filter(([s])=>e[s]).map(([s,n])=>`<span class="chip ${/^\d/.test(e[s])?'v'+e[s]:''}">${esc(e[s])}</span> <span>${esc(n)}</span>`).join(' · ')}</div>`}
 
-function view(){const c=byId[st.el], up=+st.upto;
-  const gx=(c.gx||[]).filter(x=>+x.f<=up), gShow=gx.filter(x=>useOk(x.u||[]));
-  const gHidden=(c.gx||[]).length-gShow.length;
-  const P=D.P, rows=c.r.filter(r=>P[r[0]]).map(r=>({p:P[r[0]],id:r[0],f:r[1],u:r[2],x:r[3]}));
-  const rIn=rows.filter(r=>+r.f<=up), rShow=rIn.filter(r=>useOk(r.u)).sort((a,b)=>+a.f-+b.f||a.p.l.localeCompare(b.p.l));
-  const rHidden=rows.length-rShow.length;
+function view(){const c=byId[st.el], up=+st.upto, ik=ILL.of(c.id);
+  const gShow=(c.gx||[]).filter(x=>+x.f<=up&&useOk(x.u||[])), gHidden=(c.gx||[]).length-gShow.length;
+  const rows=c.r.filter(r=>D.P[r[0]]).map(r=>({p:D.P[r[0]],id:r[0],f:r[1],u:r[2],x:r[3]}));
+  const rShow=rows.filter(r=>+r.f<=up&&useOk(r.u)), rHidden=rows.length-rShow.length;
+  const idRows=D.idp.map(k=>rShow.find(r=>r.id===k)).filter(Boolean), other=rShow.filter(r=>!D.idp.includes(r.id)).sort((a,b)=>+a.f-+b.f||a.p.l.localeCompare(b.p.l));
+  const nCol=LV.length+4+(st.ifc?1:0);
   const gRows=KIND.map(([k,n])=>{const its=gShow.filter(x=>x.k===k).sort((a,b)=>+a.f-+b.f); if(!its.length) return '';
     return `<tr class="k"><td colspan="${LV.length+2}">${esc(n)}</td></tr>`+its.map(x=>`<tr><td class="req">${esc(x.t)}</td>${cells(x.f)}<td>${tags(x.u||[])}</td></tr>`).join('')}).join('');
-  const rv=p=>p.rv&&p.rv[1]?`${p.rv[0]==='builtin'?'Revit built-in':'Shared parameter'}: <span data-notr>${esc(p.rv[1])}</span>`:'Shared parameter to add';
-  const pRows=rShow.map(r=>`<tr><td class="req"><b>${esc(r.p.l)}</b>${r.p.d?`<small>${esc(r.p.d)}</small>`:''}${r.x?`<small>${esc(r.x)}</small>`:''}</td>${cells(r.f)}<td>${tags(r.u)}</td><td class="code"><small>${rv(r.p)}</small><small data-notr>IFC: ${esc(r.p.ifc||'–')}</small>${r.p.ex?`<small data-notr>e.g. ${esc(r.p.ex)}${r.p.u?' '+esc(r.p.u):''}</small>`:''}</td></tr>`).join('');
+  const pRow=r=>`<tr><td class="req"><b>${esc(r.p.l)}</b>${r.p.d?`<small>${esc(r.p.d)}</small>`:''}${r.x?`<small>${esc(r.x)}</small>`:''}${r.p.ex?`<small><span>Example:</span> <span data-notr>${esc(r.p.ex)}${r.p.u?' '+esc(r.p.u):''}</span></small>`:''}</td>${cells(r.f)}<td>${tags(r.u)}</td><td class="rv">${rvCell(r.p)}</td><td class="sc">${r.p.sc==='type'?'Type':'Instance'}</td>${st.ifc?`<td class="ifc">${ifcCell(r.p)}</td>`:''}</tr>`;
+  const pRows=(idRows.length?`<tr class="k"><td colspan="${nCol}">Identification and classification</td></tr>${idRows.map(pRow).join('')}`:'')+(other.length?`<tr class="k"><td colspan="${nCol}">Data, by the level it is first needed</td></tr>${other.map(pRow).join('')}`:'');
   $('#el').innerHTML=`<h2>${esc(c.n)}</h2>
-  <p class="meta"><span>Revit:</span> <span data-notr>${esc((c.rc||[]).join(', '))}</span> · <span>IFC:</span> <span data-notr>${esc(c.ifc)}</span> · <span>Uniformat II:</span> <span data-notr>${esc((c.uf||[]).join(', '))}</span></p>
-  <div class="sum">${LV.map(v=>`<div class="${+v>up?'dim':''}"><span class="chip v${v}">LOD ${v}</span><div>${esc(c.g[v]||'–')}</div></div>`).join('')}</div>
+  <p class="meta"><span>Revit categories:</span> <span data-notr>${esc((c.rc||[]).join(', '))}</span></p>
+  <p class="meta"><span>Uniformat II:</span> <span data-notr>${esc(c.uf.join(', ')||'–')}</span> · <span>MasterFormat:</span> <span data-notr>${esc(c.mf.join(', ')||'–')}</span>${st.ifc?` · <span>IFC:</span> <span data-notr>${esc(c.ifc)}</span>`:''}</p>
+  ${projLine(c)}
+  <div class="sum">${LV.map(v=>`<div class="${+v>up?'dim':''}"><span class="chip v${v}">LOD ${v}</span>${ik?ILL.svg(ik,v):''}<div>${esc(c.g[v]||'–')}</div></div>`).join('')}</div>
+  ${ik&&!['door','duct','ahu'].includes(c.id)?'<p class="note">Sketches show a typical element of this kind, not this exact element type.</p>':''}
   <h3>Geometry: what must be drawn in 3D</h3>
   <p class="note">● marks the level where a requirement starts; it stays required at every higher level.</p>
   ${gRows?`<div class="tw"><table><thead><tr><th>Requirement</th>${lvHead()}<th>Needed for</th></tr></thead><tbody>${gRows}</tbody></table></div>`:'<p class="note">No geometry requirement matches these filters.</p>'}
   ${gHidden?`<p class="hidden-note">${gHidden} geometry requirements hidden by the filters.</p>`:''}
-  <h3>Data: parameters the element must carry</h3>
-  ${pRows?`<div class="tw"><table><thead><tr><th>Parameter</th>${lvHead()}<th>Needed for</th><th>Revit and IFC</th></tr></thead><tbody>${pRows}</tbody></table></div>`:'<p class="note">No parameter matches these filters.</p>'}
+  <h3>Data: Revit parameters the element must carry</h3>
+  <div class="kinds"><div><span class="rk builtin">Revit built-in</span> Comes with Revit in every model. Nothing to add: fill it.</div><div><span class="rk shared">OpenBEP shared</span> Load it from the OpenBEP shared parameter file and add it as a project parameter on the listed categories. Its fixed GUID lets data from different projects and firms be combined, and it can be tagged and scheduled.</div><div><span class="rk family">Family parameter</span> Defined inside the family by its author; check the family before accepting it.</div></div>
+  <p class="note">Plain project parameters, made without a shared parameter file, are not used: they cannot be tagged and do not keep the same identity from one project to the next.</p>
+  ${pRows?`<div class="tw"><table><thead><tr><th>Parameter</th>${lvHead()}<th>Needed for</th><th>Revit parameter</th><th>Type or instance</th>${st.ifc?'<th>IFC export (optional)</th>':''}</tr></thead><tbody>${pRows}</tbody></table></div>`:'<p class="note">No parameter matches these filters.</p>'}
   ${rHidden?`<p class="hidden-note">${rHidden} parameters hidden by the filters.</p>`:''}
   ${(c.nx||[]).length?`<h3>Not expected in the model</h3><ul class="nx">${c.nx.map(x=>`<li>${esc(x.t)}</li>`).join('')}</ul>`:''}
   ${(c.notes||[]).length?`<h3>Notes</h3><ul class="nx">${c.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
   <div class="actions"><button class="btn" type="button" id="csvEl">Download this element (CSV)</button><button class="btn" type="button" id="csvAll">Download the whole specification (CSV)</button><button class="btn" type="button" id="print">Print</button></div>`;
 }
 
+function projBanner(){$('#proj').innerHTML=PJ&&PJ.el?`<div class="proj"><span>Showing the levels of</span> <b>${esc(PJ.name||'Your project')}</b> <span>from the BEP Builder in this browser.</span> <a href="../app/bep-builder.html">Change them in the LOD matrix</a></div>`:`<div class="proj"><span>Set the level of each element type at each stage in the BEP Builder's LOD matrix; this page then shows your project's levels too.</span> <a href="../app/bep-builder.html">Open the BEP Builder</a></div>`}
+
 function csv(els){const q=v=>`"${String(v??'').replace(/"/g,'""')}"`;
-  const L=[['Element type','Kind','Requirement','Required from LOD','Needed for','Revit','IFC','Example'].map(q).join(',')];
-  els.forEach(c=>{(c.gx||[]).forEach(x=>L.push([c.n,'Geometry: '+KN[x.k],x.t,x.f,(x.u||[]).map(u=>D.uses[u]).join('; '),'','',''].map(q).join(',')));
-    c.r.filter(r=>D.P[r[0]]).forEach(r=>{const p=D.P[r[0]]; L.push([c.n,'Parameter',p.l+(r[3]?' ('+r[3]+')':''),r[1],r[2].map(u=>D.uses[u]).join('; '),p.rv&&p.rv[1]?p.rv[1]:'',p.ifc||'',p.ex||''].map(q).join(','))});
-    (c.nx||[]).forEach(x=>L.push([c.n,'Not in the model',x.t,'','','','',''].map(q).join(',')))});
+  const L=[['Element type','Uniformat II','MasterFormat','Kind','Requirement','Required from LOD','Needed for','Revit parameter','Revit kind','Type or instance','GUID','IFC target (optional)'].map(q).join(',')];
+  els.forEach(c=>{const uf=c.uf.join('; '), mf=c.mf.join('; ');
+    (c.gx||[]).forEach(x=>L.push([c.n,uf,mf,'Geometry: '+KN[x.k],x.t,x.f,(x.u||[]).map(u=>D.uses[u]).join('; '),'','','','',''].map(q).join(',')));
+    c.r.filter(r=>D.P[r[0]]).forEach(r=>{const p=D.P[r[0]]; L.push([c.n,uf,mf,D.idp.includes(r[0])?'Identification':'Parameter',p.l+(r[3]?' ('+r[3]+')':''),r[1],r[2].map(u=>D.uses[u]).join('; '),p.rn||'',RK[p.rk],p.sc==='type'?'Type':'Instance',p.guid||'',p.ifc||''].map(q).join(','))});
+    (c.nx||[]).forEach(x=>L.push([c.n,uf,mf,'Not in the model',x.t,'','','','','','',''].map(q).join(',')))});
   return '﻿'+L.join('\r\n')}
 function dl(name,text){const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type:'text/csv'})); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
 
@@ -196,8 +244,11 @@ document.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b)
   if(b.id==='csvAll') dl('OpenBEP-LOD-specification.csv',csv(D.C));
   if(b.id==='print') window.print()});
 $('#q').addEventListener('input',e=>{st.q=e.target.value; list()});
+$('#grp').addEventListener('change',e=>{st.grp=e.target.value; list()});
 $('#upto').addEventListener('change',e=>{st.upto=e.target.value; view()});
+$('#ifc').addEventListener('change',e=>{st.ifc=e.target.checked; view()});
+document.addEventListener('change',e=>{if(e.target.matches('select[data-i18n-lang]')) setTimeout(list,50)});
 window.addEventListener('hashchange',()=>{const h=location.hash.slice(1); if(byId[h]){st.el=h; render()}});
-render();
+projBanner(); render();
 </script>
 </body>
