@@ -30,7 +30,7 @@
 <main class="wrap">
   <h1 data-i18n>A file format won't fix vague BIM</h1>
   <p class="lede" data-i18n><strong>An IFC or COBie file is a printout of the model. It is not a plan, and it goes stale.</strong></p>
-  <p data-i18n>Quebec's government BIM roadmap promotes "open BIM": IFC model files, IDS requirement files, the bSDD data dictionary and the other buildingSMART standards. Its guidance document, written by Érik Poirier and Cloé Arnould and approved in May 2025, is a serious piece of work.<sup><a href="#s1">1</a></sup> One disclosure up front: OpenBEP's founder works at VIM, a company with its own exchange format, discussed near the end. We agree with parts of it. We disagree with an idea we hear often: that if public owners require IFC and open tools on every project, the industry's BIM problems will go away.</p>
+  <p data-i18n>Quebec's government BIM roadmap promotes "open BIM": IFC model files, IDS requirement files, the bSDD data dictionary and the other buildingSMART standards. Its guidance document, written by Érik Poirier and Cloé Arnould and approved in May 2025, is a serious piece of work.<sup><a href="#s1">1</a></sup> One disclosure up front: OpenBEP's founder works at VIM, a company with its own exchange format, which this page discusses with other alternatives near the end. We agree with parts of it. We disagree with an idea we hear often: that if public owners require IFC and open tools on every project, the industry's BIM problems will go away.</p>
   <p data-i18n>In our experience, the main problem is not the file format. It is that owners ask for "the BIM" without saying what it is for. A vague model saved as IFC is still a vague model.</p>
 
   <div class="box key">
@@ -147,15 +147,29 @@
   <h2 data-i18n>Free tools are not the bottleneck</h2>
   <p data-i18n>Open-source tools are welcome, and several can already write IDS files.<sup><a href="#s1">1</a></sup> But in our experience, the price of a licence is rarely what stops a project from getting useful BIM. What stops it is an owner who cannot say what it needs, a team that was never trained to deliver it, and nobody checking the result. What the Welsh study's participants asked for was practical templates, worked examples and validation tools.<sup><a href="#s9">9</a></sup> A free tool in untrained hands produces a free vague model.</p>
 
-  <h2 data-i18n>A different design: VIM</h2>
-  <p class="disclose" data-i18n><strong>Disclosure:</strong> OpenBEP's founder works at VIM, the company behind this format. Weigh this section with that in mind.</p>
-  <p data-i18n>If the industry wants an open exchange format that copes with very large models, it is worth looking at formats designed for that from the start. VIM is one. Its specification describes it as <q>a modern and efficient open 3D data interchange format designed for BIM and manufacturing data optimized for efficient loading and rendering on low-power devices</q>, built <q>to carry substantial amounts of complex relational data and instanced geometry in an efficient and standardized manner with minimal pre-processing</q>.<sup><a href="#s26">26</a></sup></p>
+  <h2 data-i18n>Other designs worth watching</h2>
+  <p data-i18n>If the industry wants open exchange that copes with very large models, it is worth looking at formats designed for that from the start. None of them is an ISO standard, and each is backed by one company or a small community. All of them are newer than IFC, and the claims below come from their own documentation; we have not benchmarked them.</p>
+
+  <p class="claim" data-i18n>Fragments, by That Open Company</p>
+  <p data-i18n>That Open Company, the team behind IFC.js, publishes Fragments, which it describes as <q>an open BIM format optimized for handling large datasets efficiently</q>: binary, compact, and supporting <q>geometries, properties, and relationships</q>. Its viewer is <q>designed to handle millions of elements in seconds</q>. The format is built on Google's FlatBuffers, so anyone can write a reader or writer in any language, and the libraries are published under the MIT licence.<sup><a href="#s28">28</a></sup> Its README says the easiest way to make Fragments is its built-in IFC importer, so today it builds on IFC rather than replacing it.<sup><a href="#s28">28</a></sup></p>
+
+  <p class="claim" data-i18n>VIM</p>
+  <p class="disclose" data-i18n><strong>Disclosure:</strong> OpenBEP's founder works at VIM, the company behind this format. Weigh this part with that in mind.</p>
+  <p data-i18n>VIM's specification describes it as <q>a modern and efficient open 3D data interchange format designed for BIM and manufacturing data optimized for efficient loading and rendering on low-power devices</q>, built <q>to carry substantial amounts of complex relational data and instanced geometry in an efficient and standardized manner with minimal pre-processing</q>.<sup><a href="#s26">26</a></sup></p>
   <ul>
     <li data-i18n><strong>Geometry stored for display at scale.</strong> Per its specification, geometry is stored as meshes with instancing, so a repeated object is stored once, and text is deduplicated.<sup><a href="#s26">26</a></sup> IFC can also reuse geometry and store meshes, but its files are built on the STEP layout that buildingSMART itself plans to leave behind.<sup><a href="#s22">22</a></sup></li>
     <li data-i18n><strong>BIM data kept as tables.</strong> Element parameters are stored in relational tables linked to the geometry, and the schema can be extended without breaking readers.<sup><a href="#s26">26</a></sup></li>
     <li data-i18n><strong>Open code.</strong> The format libraries and a React-based web viewer are published under the MIT licence.<sup><a href="#s27">27</a></sup></li>
   </ul>
-  <p data-i18n>Its limits, stated plainly: VIM is maintained by one company, not a neutral standards body, and it is not an ISO standard. Like IFC, it is an export, not an authoring master, so the native files still matter. And we have not published a side-by-side benchmark with IFC; the claims above come from the format's own specification. Our point is narrower: a requirement written only as "deliver IFC" fixes the container, while a requirement written as "deliver this data, checkable against this IDS" fixes what matters and leaves room for better containers.</p>
+
+  <p class="claim" data-i18n>And others</p>
+  <ul>
+    <li data-i18n><strong>Speckle</strong> is an open-source data hub that <q>connects with your favorite AEC tools</q> and streams objects between them, with an Apache-2.0 web viewer.<sup><a href="#s29">29</a></sup></li>
+    <li data-i18n><strong>dotbim</strong> is <q>an open-source and minimalist file format for BIM</q>, MIT-licensed, with triangulated meshes only and one page of documentation, against 100+ for IFC by its own count.<sup><a href="#s30">30</a></sup></li>
+    <li data-i18n><strong>iTwin.js</strong>, from Bentley, is <q>An open source library for creating, querying, modifying, and displaying Infrastructure Digital Twins</q>, under the MIT licence.<sup><a href="#s31">31</a></sup></li>
+    <li data-i18n><strong>OpenUSD</strong>, the scene format created by Pixar, is, in its industry alliance's words, <q>now being embraced by industries beyond the film industry, including architecture, engineering, construction</q>.<sup><a href="#s32">32</a></sup> The IFC 5 work borrows ideas from it.<sup><a href="#s22">22</a></sup></li>
+  </ul>
+  <p data-i18n>We are not asking owners to require any of these instead of IFC. Like IFC, they are exports, not authoring masters, so the native files still matter. Our point is narrower: a requirement written only as "deliver IFC" fixes the container, while a requirement written as "deliver this data, checkable against this IDS" fixes what matters and leaves room for better containers.</p>
 
   <h2 data-i18n>What practitioners say</h2>
   <p data-i18n>We read public LinkedIn posts and the replies under them, including under buildingSMART International's own posts. Quotes are word for word. Where someone's role was not shown, we give only their name. The people defending IFC are quoted too.</p>
@@ -229,6 +243,11 @@
     <li id="s25">B. East, <a href="https://prairieskyconsulting.com/blog/f/introducing-the-cobieqc2023-software"><cite>Introducing the COBieQC2023 software</cite></a>, Prairie Sky Consulting, 2023-07-17.</li>
     <li id="s26">VIMaec, <a href="https://github.com/vimaec/vim-format/blob/master/docs/vim.md"><cite>VIM v1.0.0</cite></a>, format specification, GitHub.</li>
     <li id="s27">VIMaec, <a href="https://github.com/vimaec/vim-format">vim-format</a> and <a href="https://github.com/vimaec/vim-web">vim-web</a>, GitHub; <span data-i18n>MIT licence as listed on GitHub and npm</span>.</li>
+    <li id="s28">That Open Company, <a href="https://github.com/ThatOpen/engine_fragment">engine_fragment</a> (Fragments), GitHub README; <span data-i18n>MIT licence per npm (@thatopen/fragments)</span>.</li>
+    <li id="s29">Speckle, <a href="https://github.com/specklesystems/speckle-server">speckle-server</a>, GitHub README; <span data-i18n>Apache-2.0 per npm (@speckle/viewer)</span>.</li>
+    <li id="s30">W. Radaczyński, <a href="https://github.com/paireks/dotbim">dotbim</a>, GitHub README and licence.</li>
+    <li id="s31">Bentley Systems, <a href="https://github.com/iTwin/itwinjs-core">iTwin.js</a>, GitHub README; <span data-i18n>MIT licence per npm (@itwin/core-backend)</span>.</li>
+    <li id="s32">Alliance for OpenUSD, <a href="https://aousd.org/">aousd.org</a> <span data-i18n>(viewed October 20, 2026)</span>.</li>
   </ol>
 </main>
 
