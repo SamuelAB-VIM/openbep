@@ -39,6 +39,7 @@ button,input,select{font:inherit;color:inherit}
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .btn{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:6px 11px;cursor:pointer;text-decoration:none;color:var(--ink);font-size:14px}
 .btn:hover{border-color:var(--accent)}
+p.edit{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}p.edit .btn{border-color:var(--accent);color:var(--accent);font-weight:600}p.edit .note{flex:1 1 320px;margin:0}
 .intro{padding:22px 0 8px;max-width:860px}.intro p{margin:8px 0}
 .lead{font-size:16.5px}
 .note{color:var(--muted);font-size:13.5px}
@@ -209,6 +210,7 @@ function view(){const c=byId[st.el], up=+st.upto, ik=ILL.of(c.id);
   <p class="meta"><span>Revit categories:</span> <span data-notr>${esc((c.rc||[]).join(', '))}</span></p>
   <p class="meta"><span>Uniformat II:</span> <span data-notr>${esc(c.uf.join(', ')||'–')}</span> · <span>MasterFormat:</span> <span data-notr>${esc(c.mf.join(', ')||'–')}</span>${st.ifc?` · <span>IFC:</span> <span data-notr>${esc(c.ifc)}</span>`:''}</p>
   ${projLine(c)}
+  <p class="edit"><a class="btn" href="../app/bep-builder.html#el=${c.id}">Set its levels and edit these requirements for your project</a> <span class="note">These are the OpenBEP defaults. In the BEP Builder you can move a requirement to another level, drop it, reword what a valid value is or add your own; the result goes into the BEP, the model checker and the IDS file.</span></p>
   <div class="sum">${LV.map(v=>`<div class="${+v>up?'dim':''}"><span class="chip v${v}">LOD ${v}</span>${ik?ILL.svg(ik,v):''}<div>${esc(c.g[v]||'–')}</div></div>`).join('')}</div>
   ${ik&&!['door','duct','ahu'].includes(c.id)?'<p class="note">Sketches show a typical element of this kind, not this exact element type.</p>':''}
   <h3>Geometry: what must be drawn in 3D</h3>
@@ -225,7 +227,7 @@ function view(){const c=byId[st.el], up=+st.upto, ik=ILL.of(c.id);
   <div class="actions"><button class="btn" type="button" id="csvEl">Download this element (CSV)</button><button class="btn" type="button" id="csvAll">Download the whole specification (CSV)</button><button class="btn" type="button" id="print">Print</button></div>`;
 }
 
-function projBanner(){$('#proj').innerHTML=PJ&&PJ.el?`<div class="proj"><span>Showing the levels of</span> <b>${esc(PJ.name||'Your project')}</b> <span>from the BEP Builder in this browser.</span> <a href="../app/bep-builder.html">Change them in the LOD matrix</a></div>`:`<div class="proj"><span>Set the level of each element type at each stage in the BEP Builder's LOD matrix; this page then shows your project's levels too.</span> <a href="../app/bep-builder.html">Open the BEP Builder</a></div>`}
+function projBanner(){$('#proj').innerHTML=PJ&&PJ.el?`<div class="proj"><span>Showing the levels of</span> <b>${esc(PJ.name||'Your project')}</b> <span>from the BEP Builder in this browser.</span> <a href="../app/bep-builder.html">Change them in the BEP Builder</a></div>`:`<div class="proj"><span>Set the level of each element type at each stage in the BEP Builder's LOD matrix; this page then shows your project's levels too.</span> <a href="../app/bep-builder.html">Open the BEP Builder</a></div>`}
 
 function csv(els){const q=v=>`"${String(v??'').replace(/"/g,'""')}"`;
   const L=[['Element type','Uniformat II','MasterFormat','Kind','Requirement','Required from LOD','Needed for','Revit parameter','Revit kind','Type or instance','GUID','IFC target (optional)'].map(q).join(',')];
