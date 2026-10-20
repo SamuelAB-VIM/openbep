@@ -58,6 +58,20 @@ if (await page.locator('#ctrySel').count()) {
   for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
 }
 
+// LOD matrix drill-down into one element type, with one edit of each kind so the "edited" wording shows.
+for (const lang of ['en']) {
+  await page.evaluate(() => { localStorage.clear(); }); await page.reload();
+  if (await page.locator('#ctrySel').count()) await page.selectOption('#ctrySel', 'ca');
+  await page.selectOption('#langSel', lang);
+  await page.locator('[data-ex="school"]').first().click(); await page.waitForTimeout(200);
+  await page.locator('#steps [data-step="5"]').click(); await openAll();
+  if (!(await page.locator('[data-lbgo]').count())) { await page.locator('[data-lodx]').first().click(); await page.waitForTimeout(150); await openAll(); }
+  await page.locator('[data-lbgo]').first().click(); await page.waitForTimeout(150); await openAll();
+  const setv = (q, v) => page.evaluate(([q, v]) => { const x = document.querySelector(q); if (x) { if (x.type === 'checkbox') x.checked = v; else x.value = v; x.dispatchEvent(new Event('change', { bubbles: true })); } }, [q, v]);
+  await setv('[data-lbnote]', 'Crawl note'); await openAll(); await setv('[data-lbgf]', '400'); await openAll();
+  await page.fill('#lbg-t', 'Crawl geometry'); await page.locator('#lbgAdd').click(); await page.waitForTimeout(150); await openAll();
+  for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
+}
 // Other site pages use translations/i18n.js; record what they show too.
 const record = async (p2, rel) => {
   for (const k of await p2.evaluate(() => window.openbepStrings ? window.openbepStrings() : [])) {
