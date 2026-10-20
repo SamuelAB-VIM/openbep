@@ -20,3 +20,6 @@ model,"The Quebec and federal tenders we could read give BIM no points of its ow
 issue,Model-to-sheet check before each issue,Issue of drawings (émission).
 bep,BEP (BIM Execution Plan),"The in-app glossary entry names both PGB (STM, 2022 SQI guide) and PEB on purpose, so readers recognise either."
 model,"Many public tenders give BIM no points of its own, and the notices rarely mention BIM at all. The UK Ministry of Defence does the opposite: bidders submit a BEP with the bid, judged on {1} criteria, {2} of them pass or fail. This grid follows that model and is built from your choices.","""Follows that model"" means example (modèle), not a maquette."
+model,Specific device models and mounting accessories.,"Product model (modèle, 機種), not a BIM model."
+model,Design code edition and live-load model.,"Load model (modèle de charge), not a BIM model."
+model,Manufacturer model designation (installed model at LOD 500).,"Product model (型番), not a BIM model."
