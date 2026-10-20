@@ -12,6 +12,15 @@ One list of Revit parameters that every owner in Canada can ask for, tied to the
 
 The BEP Builder (v0.22, step "Element requirements") exports the subset each project needs. That subset comes from the chosen BIM uses and target LODs. The export is a .txt file plus a binding list (CSV). The school example gives 153 shared parameters, 65 built-in parameters and 54 element types.
 
+The same step also exports an IDS file (buildingSMART Information Delivery Specification 1.0) so an IFC export can be checked against the plan, plus a property set file for the Revit IFC exporter:
+
+- One IDS specification per element type at its target LOD (handover target, or final design target). Each requirement says which BIM uses need it and from which LOD.
+- Each specification targets IFC4 and IFC4X3_ADD2, except rail, road and bridge elements, which exist only in IFC4X3_ADD2.
+- OpenBEP shared parameters, and built-in parameters with no standard IFC location, are checked in a property set named `OpenBEP`, under their Revit parameter names. The property set file tells the Revit IFC exporter to write them there.
+- Built-in parameters with a standard IFC location are checked there (for example `Qto_SlabBaseQuantities.Depth`); UniFormat codes as a classification; materials as a material.
+- Items with no fixed place in IFC (phase status, circuit, connector sizes) are listed in each specification's instructions, to check in Revit.
+- Native Revit stays the contract master; the IDS only checks IFC copies. Not yet tested on a real Revit export.
+
 ## Rules used
 
 1. **Use Revit's built-in parameters wherever they exist.** For example, Fire Rating, Manufacturer, Model and Flow are built in. They are listed in the manifest as "Built-in" and never duplicated.
