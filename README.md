@@ -4,6 +4,8 @@ OpenBEP is an open toolkit for writing BIM Execution Plans (BEPs) in Canada, for
 
 Vague BIM is useless BIM. When an owner only asks for "the BIM", with no uses, no plan and no deliverables, every firm models its own way and the models don't talk to each other. OpenBEP starts from the uses the owner actually needs and builds everything else from them: the plan, the level of development per element, the parameters each element must carry, and the checks at each milestone.
 
+Why it matters, with the evidence and every source: [openbep.com/why](https://openbep.com/why/) ([français](https://openbep.com/why/fr/)).
+
 > Status: early draft (v0.x). Nothing here has been tested on a live project yet.
 
 ## What's here
