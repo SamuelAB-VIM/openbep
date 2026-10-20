@@ -42,6 +42,19 @@ await walk();
 if (await page.locator('#ctrySel').count()) {
   await page.evaluate(() => { localStorage.clear(); }); await page.reload();
   await page.selectOption('#ctrySel', 'jp'); await walk();
+  // Japan and design-build choices, new BIM use options, overtime and AR fields, so their wording is recorded too.
+  const go = async i => { await page.locator(`#steps [data-step="${i}"]`).click(); await page.waitForTimeout(150); await openAll(); await page.waitForTimeout(150); };
+  const tick = q => page.evaluate(q => document.querySelectorAll(q).forEach(x => { if (!x.checked) x.click(); }), q);
+  await go(1); await page.selectOption('#p-view', 'db'); await page.waitForTimeout(150); await openAll();
+  await tick('[data-jp]'); await openAll(); await tick('[data-hand]'); await openAll();
+  await go(4); await tick('[data-opt^="qto."],[data-opt^="ar."],[data-opt="survey.control"],[data-opt^="handover."],[data-opt^="space."],[data-opt^="maint."],[data-opt^="monitor."],[data-opt^="security."]');
+  await go(7);
+  const setv = (q, v) => page.evaluate(([q, v]) => { const x = document.querySelector(q); if (x) { x.value = v; x.dispatchEvent(new Event('change', { bubbles: true })); } }, [q, v]);
+  for (const [k, v] of [['otAvg', '60'], ['otPeak', '110'], ['otMonths', '7']]) { await setv(`[data-pe="0"][data-k="${k}"]`, v); await openAll(); }
+  await setv('[data-pe="1"][data-k="otAvg"]', '50'); await openAll(); await setv('[data-pe="2"][data-k="otAvg"]', '20'); await openAll();
+  
+  await go(1); await page.selectOption('#p-view', 'gc'); await page.waitForTimeout(150); await openAll();
+  for (let i = 1; i <= 13; i++) await go(i);
   for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
 }
 
