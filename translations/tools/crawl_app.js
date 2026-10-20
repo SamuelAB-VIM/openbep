@@ -59,6 +59,12 @@ if (await page.locator('#ctrySel').count()) {
 }
 
 // Other site pages use translations/i18n.js; record what they show too.
+const record = async (p2, rel) => {
+  for (const k of await p2.evaluate(() => window.openbepStrings ? window.openbepStrings() : [])) {
+    const r = await p2.evaluate(k => { const F = (window.OPENBEP_STRINGS || {}).fr || {}; if (k.endsWith('…') || !/[a-z]{3}/.test(k)) return null; if (F[k]) return [k, true]; if (trText(k, F, 'fr')) return null; return [i18nKey(k), !!F[i18nKey(k)]]; }, k);
+    if (r && !seen.has(r[0])) seen.set(r[0], [rel, r[1]]);
+  }
+};
 for (const rel of ['app/scorecard.html', 'lod/index.html']) {
   const p2 = await browser.newPage();
   p2.on('pageerror', e => errors.push(rel + ': ' + String(e)));
@@ -71,11 +77,13 @@ for (const rel of ['app/scorecard.html', 'lod/index.html']) {
   if (rel === 'lod/index.html') {
     for (const id of await p2.evaluate(() => [...document.querySelectorAll('[data-el]')].map(b => b.dataset.el))) await p2.locator(`[data-el="${id}"]`).click();
     await p2.locator('[data-use="fm"]').click(); await p2.waitForTimeout(100);
+    // IFC columns, each grouping of the list, and a project saved by the BEP Builder.
+    await p2.locator('#ifc').check(); await p2.locator('[data-el="door"]').click();
+    for (const g of ['uf', 'mf', 'az']) { await p2.selectOption('#grp', g); await p2.waitForTimeout(100); }
+    await p2.evaluate(() => localStorage.setItem('openbep-lod-project', JSON.stringify({ name: 'Test', stages: [['final', 'Final design']], el: { door: { final: '300' } }, cls: [] })));
+    await record(p2, rel); await p2.reload(); await p2.waitForTimeout(200); await p2.locator('[data-el="door"]').click();
   }
-  for (const k of await p2.evaluate(() => window.openbepStrings ? window.openbepStrings() : [])) {
-    const r = await p2.evaluate(k => { const F = (window.OPENBEP_STRINGS || {}).fr || {}; if (k.endsWith('…') || !/[a-z]{3}/.test(k)) return null; if (F[k]) return [k, true]; if (trText(k, F, 'fr')) return null; return [i18nKey(k), !!F[i18nKey(k)]]; }, k);
-    if (r && !seen.has(r[0])) seen.set(r[0], [rel, r[1]]);
-  }
+  await record(p2, rel);
   await p2.selectOption('select[data-i18n-lang]', 'fr');
   await p2.waitForTimeout(200);
   await p2.close();
