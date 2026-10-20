@@ -53,6 +53,8 @@ if (await page.locator('#ctrySel').count()) {
   for (const [k, v] of [['otAvg', '60'], ['otPeak', '110'], ['otMonths', '7']]) { await setv(`[data-pe="0"][data-k="${k}"]`, v); await openAll(); }
   await setv('[data-pe="1"][data-k="otAvg"]', '50'); await openAll(); await setv('[data-pe="2"][data-k="otAvg"]', '20'); await openAll();
   
+  // Each delivery mode's notes, as shown outside Canada (Canadian contract references removed).
+  for (const d of ['dbb', 'cm', 'db', 'ccp', 'ipd', 'ppp', 'pppm']) { await go(1); await page.selectOption('#p-deliv', d); await page.waitForTimeout(150); await openAll(); await go(13); }
   await go(1); await page.selectOption('#p-view', 'gc'); await page.waitForTimeout(150); await openAll();
   for (let i = 1; i <= 13; i++) await go(i);
   for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);

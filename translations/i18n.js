@@ -14,15 +14,22 @@
    build_i18n.py copies the block between the I18NCORE markers into app/bep-builder.html. */
 /*I18NCORE*/
 const I18N_COLON=L=>L==='fr'?'\u00a0:':L==='ja'||L==='zh'?'：':':', I18N_CJK=L=>L==='ja'||L==='zh';
-const I18N_NUM=/\bv\d+(?:\.\d+)+\b|\b\d{4}-\d{2}-\d{2}\b|(?<![\w.,])\d+(?:\.\d+)?(?![\w])/g, I18N_LEAD=/^([·:;,.–—-]\s*)(.+)$/s;
+const I18N_NUM=/\bv\d+(?:\.\d+)+\b|\b\d{4}-\d{2}-\d{2}\b|(?<![\w.,])\d{1,3}(?:,\d{3})+(?![\w,])|(?<![\w.,])\d+(?:\.\d+)?(?![\w])/g, I18N_LEAD=/^([·:;,.–—-]\s*)(.+)$/s;
 function i18nKey(k){const m=k.match(I18N_LEAD); if(m) k=m[2]; if(/[^:]:$/.test(k)) k=k.slice(0,-1).trim(); let i=0; return k.replace(I18N_NUM,()=>'{'+(++i)+'}')}
-function trText(k,T,L){if(!k) return null; if(!/[A-Za-z]/.test(k)) return k; if(T[k]) return T[k];
+// part: k is one piece of a longer sentence, so a product or firm name (every long word capitalised) stays as typed.
+const I18N_NAME=k=>{const w=k.split(/\s+/); return /^[A-Z0-9]/.test(k)&&!/[.!?]$/.test(k)&&w.every(x=>x.length<4||/^[A-Z0-9(]/.test(x))&&(w.filter(x=>/^[A-Z]/.test(x)).length>1||/^\S*[a-z]\S*[A-Z0-9]/.test(k))};
+function trText(k,T,L,part){if(!k) return null; if(!/[A-Za-z]/.test(k)) return k; if(T[k]) return T[k];
   let m=k.match(I18N_LEAD); if(m){const t=trText(m[2],T,L); return t&&m[1]+t}
   if(/[^:]:$/.test(k)){const t=trText(k.slice(0,-1).trim(),T,L); return t&&t+I18N_COLON(L)}
   const nums=k.match(I18N_NUM); if(nums){const t=T[i18nKey(k)]; if(t) return t.replace(/\{(\d+)\}/g,(x,i)=>nums[i-1]==null?x:nums[i-1])}
-  for(const sep of [' · ','; ',', ']) if(k.includes(sep)){const out=k.split(sep).map(p=>trText(p.trim(),T,L)); if(out.every(Boolean)) return out.join(I18N_CJK(L)&&sep!==' · '?'、':sep)}
+  for(const sep of [' · ','; ',', ']) if(k.includes(sep)){const out=k.split(sep).map(p=>trText(p.trim(),T,L,1)); if(out.every(Boolean)) return out.join(I18N_CJK(L)&&sep!==' · '?'、':sep)}
   const ss=k.split(/(?<=[.!?]) (?=[A-Z])/); if(ss.length>1){const out=ss.map(p=>trText(p,T,L)); if(out.every(Boolean)) return out.join(I18N_CJK(L)?'':' ')}
-  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+I18N_COLON(L))(trText(h,T,L))), tr=th&&trText(k.slice(c+2).trim(),T,L); if(tr) return th+(I18N_CJK(L)&&/：$/.test(th)?'':' ')+tr}
+  for(let c=k.indexOf(': ');c>0;c=k.indexOf(': ',c+1)){const h=k.slice(0,c), th=T[h+':']||((x=>x&&x+I18N_COLON(L))(trText(h,T,L)||(I18N_NAME(h)?h:null))), tr=th&&trText(k.slice(c+2).trim(),T,L,1); if(tr) return th+(I18N_CJK(L)&&/：$/.test(th)?'':' ')+tr}
+  if(/[^.]\.$/.test(k)){const t=trText(k.slice(0,-1),T,L,part); if(t) return /[.。！？]$/.test(t)?t:t+(I18N_CJK(L)?'。':'.')}
+  if(/^[a-z][a-z]/.test(k)){const t=trText(k[0].toUpperCase()+k.slice(1),T,L,part); if(t) return I18N_CJK(L)||!/^.[a-zà-ÿ]/.test(t)?t:t[0].toLowerCase()+t.slice(1)}
+  if(part&&(I18N_NAME(k)||/[\u3040-\u30ff\u4e00-\u9fff]/.test(k)&&!/[A-Za-z]{3,} [a-z]{2,}/.test(k))) return k;
+  // A value typed by the user in brackets at the end (a product name, or text in the reader's own script) stays as typed.
+  m=k.match(/^(.+?) \(([^()]+)\)(\.?)$/); if(m&&(I18N_NAME(m[2])||!/[A-Za-z]{3}/.test(m[2]))){const t=trText(m[1]+m[3],T,L,part); if(t) return I18N_CJK(L)?t.replace(/。$/,'')+'（'+m[2]+'）'+(m[3]?'。':''):t.replace(/\.$/,'')+' ('+m[2]+')'+m[3]}
   return null}
 /*/I18NCORE*/
 
