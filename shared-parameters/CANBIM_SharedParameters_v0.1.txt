@@ -11,6 +11,7 @@ GROUP	5	CANBIM 05 Plumbing and fire protection
 GROUP	6	CANBIM 06 Electrical and communications
 GROUP	7	CANBIM 07 Site and civil
 GROUP	8	CANBIM 08 Rail, bridges and tunnels
+GROUP	9	CANBIM 09 Specialty systems
 *PARAM	GUID	NAME	DATATYPE	DATACATEGORY	GROUP	VISIBLE	DESCRIPTION	USERMODIFIABLE
 PARAM	d24e1c2e-c37e-58b2-80df-9757b1599fd2	CA_BarcodeAssetLabel	TEXT		1	1	Barcode / asset label. Barcode or QR label attached to the asset.	1
 PARAM	7c5a7a0d-f50e-5e88-be15-bbc806fe4be5	CA_BuildingAutomationReference	TEXT		1	1	Building automation (BAS) reference. Controller / point name prefix linking the element to the building automation system. Owner property set.	1
@@ -316,3 +317,18 @@ PARAM	770602c2-0cf0-59df-9734-9abc2cb36792	CA_SpecificationSection	TEXT		1	1	Spe
 PARAM	8433cb04-5219-577a-b742-86283b2140d1	CA_EPDReference	TEXT		1	1	Environmental product declaration. Product declaration used for the certification credits (OpenBEP addition).	1
 PARAM	f7d24471-2d9b-57c2-b514-d303a031502a	CA_RecycledContent	NUMBER		1	1	Recycled content (%). Share of recycled material by mass (OpenBEP addition).	1
 PARAM	b6a567c0-f8d6-5cef-be22-8c5e77f71c5e	CA_EmbodiedCarbon	NUMBER		1	1	Embodied carbon (kg CO2e per unit). Cradle-to-gate emissions per unit, from the product declaration (OpenBEP addition).	1
+PARAM	db066e0e-5a05-57ef-9d18-7309f40f9cc3	CA_BaggageSystemFunction	TEXT		9	1	Baggage system function. Role of the section in the baggage flow: check-in, collector, screening, sortation, make-up, early bag storage, transfer or reclaim.	1
+PARAM	6e51951f-cb7b-5142-8bae-27aeb904111e	CA_ConveyorSectionID	TEXT		9	1	Conveyor section ID. Identifier the controls use for the section, so the model, the control screens and the maintenance system name it the same way.	1
+PARAM	bb84a58c-fa0e-59ba-813a-5cc805e7c6c5	CA_BeltWidth	LENGTH		9	1	Belt width (mm). Width of the conveying surface.	1
+PARAM	066b7e6e-4d75-5ec6-9092-ae726526157e	CA_TopOfBeltHeight	LENGTH		9	1	Top of belt height (mm). Height of the conveying surface above finished floor, used to check clearances with structure, ceilings, doors and other services.	1
+PARAM	e7e48ad2-adc8-5ace-8e51-fde75857e572	CA_ConveyorSpeed_ms	NUMBER		9	1	Conveyor speed (m/s). Design belt speed of the section.	1
+PARAM	2e0d728f-2487-51b9-9598-7348eda45c61	CA_DesignThroughput	NUMBER		9	1	Design throughput (bags/h). Number of bags per hour the section is designed to carry.	1
+PARAM	766e8af9-b2ad-5395-a231-2418ed17f131	CA_ControlZone	TEXT		9	1	Control zone. Motor control panel or control zone that powers and controls the section.	1
+PARAM	7e66e5ab-ee48-5736-af26-015dac4545b7	CA_GateNumber	TEXT		9	1	Gate number. Gate the boarding bridge serves.	1
+PARAM	7a711f47-05d8-5d65-b6d0-9d77f6480dc6	CA_BoardingBridgeType	TEXT		9	1	Boarding bridge type. Kind of bridge (apron drive, nose loader, fixed, over-the-wing) and number of tunnel sections.	1
+PARAM	71ca8f51-29df-554b-ae4b-4f90a857311e	CA_AircraftServed	TEXT		9	1	Aircraft served. Range of aircraft the bridge must reach, by aerodrome reference code letter or by aircraft model.	1
+PARAM	4e3849d5-77a0-5092-a803-b2dddd3ef9fc	CA_RetractedLength	LENGTH		9	1	Retracted length (mm). Length from rotunda centre to cab front with the tunnels fully retracted.	1
+PARAM	c026a502-cf9f-54d1-9c89-25654a43804f	CA_ExtendedLength	LENGTH		9	1	Extended length (mm). Length from rotunda centre to cab front with the tunnels fully extended.	1
+PARAM	fda9ff10-ea98-540e-9827-dc5cdf571ae3	CA_CabFloorHeightRange	TEXT		9	1	Cab floor height range. Lowest and highest cab floor height, which sets the aircraft door sills the bridge can reach.	1
+PARAM	bee30006-db9d-5526-b32c-acd1d2ca1d2c	CA_PreconditionedAirUnit	YESNO		9	1	Pre-conditioned air unit. Bridge carries a pre-conditioned air unit for the parked aircraft.	1
+PARAM	37fed21b-4ca2-5cdd-b9a1-56e2a013ce8a	CA_GroundPower400Hz	YESNO		9	1	400 Hz ground power unit. Bridge carries a 400 Hz ground power unit for the parked aircraft.	1
