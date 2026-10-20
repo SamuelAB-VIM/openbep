@@ -82,6 +82,8 @@ def translate(page, lang, table, missing):
     out = UNIT.sub(body, page)
     out = re.sub(r'<[^>]*\bdata-i18n-attr\b[^>]*>', attrs, out)
     out = re.sub(r'<html lang="en"', '<html lang="%s"' % lang, out, count=1)
+    # Links into the app open it in the page's language.
+    out = out.replace('bep-builder.html?lang=en', 'bep-builder.html?lang=%s' % lang)
     # The language page sits one folder deeper than the master.
     out = URL.sub(lambda m: '%s="%s"' % (m.group('name'), relative(m.group('val'), 1)), out)
     return out
