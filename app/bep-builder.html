@@ -2991,6 +2991,8 @@ document.addEventListener('click',e=>{const t=e.target;
   if(t.id==='sgBtn'){sign(false);return} if(t.id==='sgDel'){sign(true);return}});
 document.addEventListener('change',e=>{if(e.target.id==='onPick'&&e.target.value){if(e.target.value!==NET.pid) openShared(e.target.value)}});
 
+// Other site pages link here as ?lang=<code> (open in that language) and &step=<n> (open at step n, counted from 1).
+{const q=new URLSearchParams(location.search), l=q.get('lang'), st=q.get('step'); if(l&&(l==='en'||I18N[l])) S.lang=l; if(st!==null&&/^\d+$/.test(st)&&STEPS[st-1]) S.step=+st; if(l||st!==null){save(); history.replaceState(null,'',location.pathname+location.hash)}}
 // The LOD specification page links here as #el=<element type> to edit that element's requirements.
 {const m=/^#el=([a-z_0-9]+)$/.exec(location.hash); if(m&&LBP[m[1]]){const L=lbState(); L.cat=m[1]; const t=lbTgt(m[1]); if(t.fin) L.view=t.fin; S.step=6; history.replaceState(null,'',location.pathname+location.search)}}
 render(); document.documentElement.lang=S.lang||'en'; trNode(document.body); onInit();
