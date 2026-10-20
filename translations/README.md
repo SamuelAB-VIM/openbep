@@ -62,4 +62,8 @@ On every pull request, GitHub runs the lookup tests, opens the pages in a headle
 
 Quebec usage and OQLF typography, accents always. Terms follow the glossary; its `source` column says which document each choice comes from, and only documents we actually opened are cited. Judgment calls still to review with Sam: stage names (conception préliminaire / définitive), "maquette d’archives" for record model, "décision d’un tiers (adjudication)", "plan de livraison" for delivery plan, "fiche de suivi" for scorecard.
 
+## Japanese
+
+Plain business Japanese, です・ます in sentences, short noun phrases in labels and buttons. BIM terms follow the Japanese government's building BIM guidelines (MLIT, 建築分野におけるBIMの標準ワークフローとその活用方策に関するガイドライン 第2版, and 官庁営繕事業におけるBIM活用ガイドライン): BEP = BIM実行計画書, EIR = 発注者情報要件, owner = 発注者, clash detection = 干渉チェック, CDE = 共通データ環境, LOD = 詳細度, preliminary / final design = 基本設計 / 実施設計. Stage "Concept" = 基本計画, "Blocking:" = 要対応：, "To review:" = 要確認：. Canadian names, laws and organisations are kept and translated as written. **Not yet reviewed by a native speaker.** The lookup runtime gives Japanese a full-width colon, 、 between list items and no space between sentences.
+
 The file is still named `canbim_strings.csv` from the project's working name; the app's export button saves under that name too.

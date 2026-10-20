@@ -1,4 +1,4 @@
 code,name,show,notes
 en,English,yes,Master language. The en column of canbim_strings.csv is the key.
 fr,Français,yes,"Quebec French (OQLF usage and typography), accents always."
-ja,日本語,no,Column ready; not translated yet. Set show to yes once filled.
+ja,日本語,yes,"Plain business Japanese; BIM terms follow the MLIT building BIM guidelines (see glossary.csv). Not yet reviewed by a native speaker."
