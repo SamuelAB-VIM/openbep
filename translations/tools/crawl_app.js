@@ -1,6 +1,6 @@
 // Opens the BEP Builder in a headless browser, walks every step of both
 // examples with all sections open (in English, then again in French to catch
-// page errors), then opens the other site pages (Scorecard), and lists the dictionary rows the app
+// page errors, then in English with a country other than Canada), then opens the other site pages (Scorecard), and lists the dictionary rows the app
 // needed (numbers already replaced by {1}, {2}...) and whether French exists.
 // Writes translations/build/app_seen.json; check_i18n.py --app reads it.
 // Usage: node translations/tools/crawl_app.js   (needs Playwright + Chromium;
@@ -22,7 +22,7 @@ page.on('pageerror', e => errors.push(String(e)));
 await page.goto(app);
 await page.evaluate(() => { localStorage.clear(); });
 await page.reload();
-const openAll = () => page.evaluate(() => document.querySelectorAll('details').forEach(d => { d.open = true }));
+const openAll = () => page.evaluate(() => { document.querySelectorAll('details').forEach(d => { d.open = true }); document.querySelectorAll('[data-fall="1"]').forEach(b => b.click()); const ws = document.querySelector('[data-showws]'); if (ws && !ws.checked) ws.click(); });
 const seen = new Map();
 const walk = async () => { for (const ex of ['school', 'rail']) {
   const b = page.locator(`[data-ex="${ex}"]`).first();
@@ -38,6 +38,12 @@ await walk();
 for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
 await page.selectOption('#langSel', 'fr');
 await walk();
+// Outside Canada the app swaps Canadian references for neutral wording; record that wording too.
+if (await page.locator('#ctrySel').count()) {
+  await page.evaluate(() => { localStorage.clear(); }); await page.reload();
+  await page.selectOption('#ctrySel', 'jp'); await walk();
+  for (const [k, w, fr] of await page.evaluate(() => window.__canbimStrings())) if (!seen.has(k)) seen.set(k, [w, fr]);
+}
 
 // Other site pages use translations/i18n.js; record what they show too.
 for (const rel of ['app/scorecard.html']) {
